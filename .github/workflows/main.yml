@@ -40,8 +40,7 @@ jobs:
           mkdir -p /tmp/workingdir/netcracker
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           cd /tmp/workingdir/netcracker
-          git clone https://github.com/Netcracker/qubership-core-utils.git
-          git clone https://github.com/Netcracker/qubership-nifi-registry.git
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=500" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
           cd ..
           java -jar stats-collector.jar /tmp/workingdir/netcracker
 
@@ -49,11 +48,11 @@ jobs:
       - name: Do commit back to repo
         run: |
           date=$(date +"%d-%m-%Y-%H-%M-%S")
-          cp /tmp/workingdir/netcracker/combined-report.json ./reports-are-here/combined-report-$date.json
+          cp /tmp/workingdir/netcracker/combined-report.json ./reports-are-here/json/combined-report-$date.json
           cp /tmp/workingdir/netcracker/combined-report.md ./reports-are-here/combined-report-$date.md
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add ./reports-are-here/combined-report-$date.json
+          git add ./reports-are-here/json/combined-report-$date.json
           git add ./reports-are-here/combined-report-$date.md
           git commit -m "generated"
           git push
