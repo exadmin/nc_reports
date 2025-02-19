@@ -1,8 +1,0 @@
-org/qubership/reporter/ReposAnalyzerApp.class
-org/qubership/reporter/ReportsAggregatorApp.class
-org/qubership/reporter/utils/FileUtils$FileAcceptor.class
-org/qubership/reporter/utils/FileUtils.class
-org/qubership/reporter/utils/DateUtils.class
-org/qubership/reporter/model/TheReport.class
-org/qubership/reporter/utils/TheLogger.class
-org/qubership/reporter/model/TheReportItemModel.class

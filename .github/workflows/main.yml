@@ -37,13 +37,18 @@ jobs:
       - name: Run reports
         working-directory: ./stats-collector
         run: |
-          mkdir -p /tmp/workingdir
+          mkdir -p /tmp/workingdir/netcracker
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
+          cd /tmp/workingdir/netcracker
+          git clone https://github.com/Netcracker/qubership-core-utils.git
+          git clone https://github.com/Netcracker/qubership-nifi-registry.git
+          cd ..
+          java -jar stats-collector.jar /tmp/workingdir/netcracker
           cd /tmp/workingdir
-          java -jar stats-collector.jar
-          date > generated.txt
+          git clone https://github.com/exadmin/nc_reports.git
+          cp /tmp/workingdir/netcracker/combined-report.json /tmp/workingdir/nc_reports/reports-are-here/combined-report.json
+          cd /tmp/workingdir/nc_reports
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
           git commit -m "generated"
           git push
