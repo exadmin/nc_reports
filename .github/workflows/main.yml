@@ -44,10 +44,11 @@ jobs:
           git clone https://github.com/Netcracker/qubership-nifi-registry.git
           cd ..
           java -jar stats-collector.jar /tmp/workingdir/netcracker
-          cd /tmp/workingdir
-          git clone https://github.com/exadmin/nc_reports.git
-          cp /tmp/workingdir/netcracker/combined-report.json /tmp/workingdir/nc_reports/reports-are-here/combined-report.json
-          cd /tmp/workingdir/nc_reports
+
+      - uses: actions/checkout@v4
+      - name: Do commit back to repo
+        run: |
+          cp /tmp/workingdir/netcracker/combined-report.json ./reports-are-here/combined-report.json
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add ./reports-are-here/combined-report.json
