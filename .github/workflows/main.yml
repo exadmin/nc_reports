@@ -35,9 +35,10 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Run reports
+        working-directory: ./stats-collector
         run: |
           mkdir -p /tmp/workingdir
-          cp ./target/stats-collector-*.jar /tmp/workingdir/stats-collector.jar
+          cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           cd /tmp/workingdir
           java -jar stats-collector.jar
           date > generated.txt
