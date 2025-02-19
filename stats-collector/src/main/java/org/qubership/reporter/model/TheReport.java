@@ -7,13 +7,17 @@ import java.util.List;
 
 public class TheReport {
     @JsonProperty("items")
-    List<TheReportItemModel> reportItems;
+    List<TheReportItem> reportItems;
 
-    public void addReportItems(TheReportItemModel reportItem) {
+    public void addReportItems(TheReportItem reportItem) {
         if (this.reportItems == null) {
             this.reportItems = new ArrayList<>();
         }
 
         reportItems.add(reportItem);
+    }
+
+    public List<TheReportItem> getReportItems() {
+        return reportItems;
     }
 }

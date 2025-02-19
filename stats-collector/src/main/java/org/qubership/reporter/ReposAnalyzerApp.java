@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.qubership.reporter.model.TheReportItemModel;
+import org.qubership.reporter.model.TheReportItem;
 import org.qubership.reporter.utils.DateUtils;
 import org.qubership.reporter.utils.TheLogger;
 
@@ -44,7 +44,7 @@ public class ReposAnalyzerApp {
     private void processRepoDir(File repoDir) throws Exception {
         TheLogger.debug("Processing repository at '" + repoDir + "'");
 
-        TheReportItemModel reportModel = new TheReportItemModel();
+        TheReportItem reportModel = new TheReportItem();
         reportModel.setName(repoDir.getName());
         reportModel.setVerifyResult(DateUtils.getCurrentDateTimeStamp());
 
