@@ -36,6 +36,10 @@ jobs:
 
       - name: Run reports
         run: |
+          mkdir -p /tmp/workingdir
+          cp ./target/stats-collector-*.jar /tmp/workingdir/stats-collector.jar
+          cd /tmp/workingdir
+          java -jar stats-collector.jar
           date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
