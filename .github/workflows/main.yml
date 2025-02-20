@@ -13,8 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # note - time in UTC
   schedule:
-    - cron: "45 19 * * *"
+    - cron: "55 16 * * *"
 
   # todo: apply new java code in the github actions
 
