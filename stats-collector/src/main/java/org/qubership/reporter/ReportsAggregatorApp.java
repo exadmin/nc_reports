@@ -46,6 +46,9 @@ public class ReportsAggregatorApp {
         FileUtils.saveToFile(mdContent, allReposRootDir + File.separator + "combined-report.md");
     }
 
+    private static final String OK_PREFIX = "✅&nbsp;";
+    private static final String ER_PREFIX = "❌&nbsp;";
+
     private static String createMD(TheReportModel theReport) throws Exception {
         theReport.normalizeData();
 
@@ -66,6 +69,9 @@ public class ReportsAggregatorApp {
         for (String rowName : theReport.getRowNames()) {
             for (String colName : theReport.getColumnNames()) {
                 String value = theReport.getValue(rowName, colName);
+                if (value.startsWith("OK:")) value = value.replaceFirst("OK:", OK_PREFIX);
+                if (value.startsWith("ERROR:")) value = value.replaceFirst("ERROR:", ER_PREFIX);
+
                 sb.append("| ").append(value);
             }
             sb.append("|\n");

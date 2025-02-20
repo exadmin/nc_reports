@@ -18,7 +18,8 @@ public class CheckApache20License extends ARepositoryInspector {
         // check sha256 sum
         try {
             String sha256 = FileUtils.getSHA256(licenseFile.toString());
-            if (LICENSE_SHA256_BASE64_EXP_VALUE.equals(sha256)) return ok("Apache 2.0");
+            if (LICENSE_SHA256_BASE64_EXP_VALUE_v1.equals(sha256)) return ok("Apache 2.0");
+            if (LICENSE_SHA256_BASE64_EXP_VALUE_v2.equals(sha256)) return ok("Apache 2.0");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -31,6 +32,7 @@ public class CheckApache20License extends ARepositoryInspector {
         return "License";
     }
 
-    private static final String LICENSE_SHA256_BASE64_EXP_VALUE = "ze0cov5Be1Lnvb/b7RZI0wf+7ZD5S2IsVHMtH4ppc/4=";
+    private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v1 = "z8d0m5b2O9McPEK1xHG/dWgUBT6EfBDz6wA0F7xSPTA=";
+    private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v2 = "xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ=";
 
 }
