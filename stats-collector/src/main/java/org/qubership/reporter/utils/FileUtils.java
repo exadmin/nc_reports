@@ -61,4 +61,9 @@ public class FileUtils {
         byte[] hash = digest.digest();
         return Base64.getEncoder().encodeToString(hash);
     }
+
+    public static String readFile(String filePath) throws IOException {
+        byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+        return new String(bytes);
+    }
 }

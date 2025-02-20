@@ -5,7 +5,7 @@ package org.qubership.reporter.inspectors.api;
  * Please, register any new implementation in InspectorsHolder class.
  */
 public abstract class ARepositoryInspector {
-    protected abstract InspectorResult inspectRepoFolder(String pathToRepository);
+    protected abstract InspectorResult inspectRepoFolder(String pathToRepository) throws Exception;
 
     /**
      * Return metric name which is calculated by current inspector. It will be printed in corresponding table column header.

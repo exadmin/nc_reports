@@ -1,6 +1,7 @@
 package org.qubership.reporter.inspectors.api;
 
 import org.qubership.reporter.inspectors.impl.CheckApache20License;
+import org.qubership.reporter.inspectors.impl.ReadmeFileContent;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,6 +12,7 @@ public class InspectorsHolder {
     static {
         // register all necessary inspectors here
         registeredInspectors.add(new CheckApache20License());
+        registeredInspectors.add(new ReadmeFileContent());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }
