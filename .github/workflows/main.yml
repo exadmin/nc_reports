@@ -15,7 +15,7 @@ on:
 
   # note - time in UTC
   schedule:
-    - cron: "55 16 * * *"
+    - cron: "15 2 * * *"
 
   # todo: apply new java code in the github actions
 
