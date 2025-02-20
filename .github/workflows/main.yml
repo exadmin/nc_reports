@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  schedule:
+    - cron: "45 19 * * *"
+
   # todo: apply new java code in the github actions
 
 permissions:
