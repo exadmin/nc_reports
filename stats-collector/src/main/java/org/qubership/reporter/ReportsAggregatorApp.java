@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.qubership.reporter.inspectors.api.MessageType;
 import org.qubership.reporter.model.TheReportModel;
 import org.qubership.reporter.utils.DateUtils;
 import org.qubership.reporter.utils.FileUtils;
@@ -12,6 +13,8 @@ import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
 import java.util.Map;
+
+import static org.qubership.reporter.inspectors.api.MessageType.*;
 
 public class ReportsAggregatorApp {
     public static void main(String[] args) throws Exception {
@@ -69,8 +72,9 @@ public class ReportsAggregatorApp {
         for (String rowName : theReport.getRowNames()) {
             for (String colName : theReport.getColumnNames()) {
                 String value = theReport.getValue(rowName, colName);
-                if (value.startsWith("OK:")) value = value.replaceFirst("OK:", OK_PREFIX);
-                if (value.startsWith("ERROR:")) value = value.replaceFirst("ERROR:", ER_PREFIX);
+                if (value.startsWith(OK.toString())) value = value.replaceFirst(OK.toString(), OK_PREFIX);
+                if (value.startsWith(ERROR.toString())) value = value.replaceFirst(ERROR.toString(), ER_PREFIX);
+                if (value.startsWith(INFO.toString())) value = value.replaceFirst(INFO.toString(), "");
 
                 sb.append("| ").append(value);
             }

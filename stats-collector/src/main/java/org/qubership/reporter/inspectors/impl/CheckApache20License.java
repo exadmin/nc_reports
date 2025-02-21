@@ -6,14 +6,16 @@ import org.qubership.reporter.utils.FileUtils;
 
 import java.io.File;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.Map;
 
 public class CheckApache20License extends ARepositoryInspector {
 
     @Override
-    public InspectorResult inspectRepoFolder(String pathToRepository) {
+    public InspectorResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> metaData) {
         File licenseFile = Paths.get(pathToRepository, "LICENSE").toFile();
-        if (!licenseFile.exists()) return createError("Not found");
-        if (!licenseFile.isFile()) return createError("Not found");
+        if (!licenseFile.exists()) return error("Not found");
+        if (!licenseFile.isFile()) return error("Not found");
 
         // check sha256 sum
         try {
@@ -24,7 +26,12 @@ public class CheckApache20License extends ARepositoryInspector {
             ex.printStackTrace();
         }
 
-        return createError("SHA-256 failed");
+        return error("SHA-256 failed");
+    }
+
+    @Override
+    protected String getMetricDescriptionInMDFormat() {
+        return "Checks if '/LICENSE' file exist in repository with expected content (SHA-256 check-sum is used)";
     }
 
     @Override

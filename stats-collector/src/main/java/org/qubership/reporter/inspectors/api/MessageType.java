@@ -1,11 +1,11 @@
 package org.qubership.reporter.inspectors.api;
 
-public enum BinnaryResult {
-    OK("OK"), ERROR("ERROR");
+public enum MessageType {
+    OK("OK:"), ERROR("ERROR:"), INFO("INFO:");
 
     private final String asString;
 
-    BinnaryResult(String asString) {
+    MessageType(String asString) {
         this.asString = asString;
     }
 

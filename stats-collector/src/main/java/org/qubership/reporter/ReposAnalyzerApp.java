@@ -2,6 +2,7 @@ package org.qubership.reporter;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
@@ -11,7 +12,9 @@ import org.qubership.reporter.model.ReservedColumns;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ReposAnalyzerApp {
@@ -39,14 +42,18 @@ public class ReposAnalyzerApp {
             System.exit(-1);
         }
 
+        // read meta-data from all_repos_pageX.json files
+        List<Map<String, Object>> metaData = theApp.loadMetaData(allReposRootDir);
+
+        // process each repo
         for (File nextFile : files) {
             if (nextFile.isDirectory()) {
-                theApp.processRepoDir(nextFile);
+                theApp.processRepoDir(nextFile, metaData);
             }
         }
     }
 
-    private void processRepoDir(File repoDir) throws Exception {
+    private void processRepoDir(File repoDir, List<Map<String, Object>> metaData) throws Exception {
         TheLogger.debug("Processing repository at '" + repoDir + "'");
 
         Map<String, String> map = new HashMap<>();
@@ -56,10 +63,33 @@ public class ReposAnalyzerApp {
 
         // perform all registered checks
         for (ARepositoryInspector inspector : InspectorsHolder.getRegisteredInspectors()) {
-            InspectorResult result = inspector.runInspectionFor(repoDir.getAbsolutePath());
-            map.put(result.getMetricName(), result.getOkOrError() + ":" + result.getMessage());
+            InspectorResult result = inspector.runInspectionFor(repoDir.getAbsolutePath(), metaData);
+            map.put(result.getMetricName(), result.getMsgType() + result.getMessage());
         }
 
         mapper.writeValue(new File(repoDir + File.separator + REPORT_SHORT_FILE_NAME), map);
+    }
+
+    private List<Map<String, Object>> loadMetaData(String allReposRootDir) throws Exception {
+        File dir = new File(allReposRootDir);
+        File[] files = dir.listFiles();
+
+        TypeReference<List<Map<String, Object>>> type = new TypeReference<>() {};
+        List<Map<String, Object>> resultList = new ArrayList<>(320);
+
+        for (File file : files) {
+            if (file.isFile()) {
+                String fileName = file.getName();
+                if (fileName.startsWith("all_repos_page") && fileName.endsWith(".json")) {
+                    List<Map<String, Object>> fileData = mapper.readValue(file, type);
+
+                    resultList.addAll(fileData);
+                }
+            }
+        }
+
+        if (resultList.isEmpty()) throw new IllegalStateException("No files 'all_repos_pageX.json' where found. Terminating");
+
+        return resultList;
     }
 }

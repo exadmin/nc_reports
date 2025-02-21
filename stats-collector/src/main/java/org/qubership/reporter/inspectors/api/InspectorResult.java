@@ -2,12 +2,12 @@ package org.qubership.reporter.inspectors.api;
 
 public class InspectorResult {
     private final String message;
-    private final BinnaryResult okOrError;
+    private final MessageType msgType;
     private final String metricName;
 
-    InspectorResult(String metricName, BinnaryResult okOrError, String message) {
+    InspectorResult(String metricName, MessageType msgType, String message) {
         this.message = message;
-        this.okOrError = okOrError;
+        this.msgType = msgType;
         this.metricName = metricName;
     }
 
@@ -15,8 +15,8 @@ public class InspectorResult {
         return message;
     }
 
-    public BinnaryResult getOkOrError() {
-        return okOrError;
+    public MessageType getMsgType() {
+        return msgType;
     }
 
     public String getMetricName() {

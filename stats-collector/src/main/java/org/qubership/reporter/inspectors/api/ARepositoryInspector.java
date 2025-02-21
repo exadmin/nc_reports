@@ -1,11 +1,14 @@
 package org.qubership.reporter.inspectors.api;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Defines base abstraction of inspection implementation.
  * Please, register any new implementation in InspectorsHolder class.
  */
 public abstract class ARepositoryInspector {
-    protected abstract InspectorResult inspectRepoFolder(String pathToRepository) throws Exception;
+    protected abstract InspectorResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> metaData) throws Exception;
 
     /**
      * Return metric name which is calculated by current inspector. It will be printed in corresponding table column header.
@@ -14,19 +17,25 @@ public abstract class ARepositoryInspector {
      */
     protected abstract String getMetricName();
 
-    protected InspectorResult createError(String msg) {
-        return new InspectorResult(getMetricName(), BinnaryResult.ERROR, msg);
+    protected abstract String getMetricDescriptionInMDFormat();
+
+    protected InspectorResult error(String msg) {
+        return new InspectorResult(getMetricName(), MessageType.ERROR, msg);
     }
 
     protected InspectorResult ok(String msg) {
-        return new InspectorResult(getMetricName(), BinnaryResult.OK, msg);
+        return new InspectorResult(getMetricName(), MessageType.OK, msg);
     }
 
-    public final InspectorResult runInspectionFor(String pathToRepository) {
+    protected InspectorResult info(String msg) {
+        return new InspectorResult(getMetricName(), MessageType.INFO, msg);
+    }
+
+    public final InspectorResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
         try {
-            return inspectRepoFolder(pathToRepository);
+            return inspectRepoFolder(pathToRepository, metaData);
         } catch (Exception ex) {
-            return createError("Internal error: " + ex);
+            return error("Internal error: " + ex);
         }
     }
 }
