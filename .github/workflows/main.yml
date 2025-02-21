@@ -44,7 +44,11 @@ jobs:
           mkdir -p /tmp/workingdir/netcracker
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           cd /tmp/workingdir/netcracker
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=500" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=1" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=2" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=3" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=4" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
+          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=5" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
           cd ..
           java -jar stats-collector.jar /tmp/workingdir/netcracker
 
