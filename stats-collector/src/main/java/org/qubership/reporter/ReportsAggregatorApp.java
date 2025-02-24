@@ -5,7 +5,6 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.qubership.reporter.inspectors.api.MessageType;
 import org.qubership.reporter.model.TheReportModel;
 import org.qubership.reporter.utils.DateUtils;
 import org.qubership.reporter.utils.FileUtils;
@@ -51,6 +50,7 @@ public class ReportsAggregatorApp {
 
     private static final String OK_PREFIX = "✅&nbsp;";
     private static final String ER_PREFIX = "❌&nbsp;";
+    private static final String WARN_PREFIX = "⚡&nbsp;"; //&26a1;
 
     private static String createMD(TheReportModel theReport) throws Exception {
         theReport.normalizeData();
@@ -75,6 +75,7 @@ public class ReportsAggregatorApp {
                 if (value.startsWith(OK.toString())) value = value.replaceFirst(OK.toString(), OK_PREFIX);
                 if (value.startsWith(ERROR.toString())) value = value.replaceFirst(ERROR.toString(), ER_PREFIX);
                 if (value.startsWith(INFO.toString())) value = value.replaceFirst(INFO.toString(), "");
+                if (value.startsWith(WARN.toString())) value = value.replaceFirst(WARN.toString(), WARN_PREFIX);
 
                 sb.append("| ").append(value);
             }

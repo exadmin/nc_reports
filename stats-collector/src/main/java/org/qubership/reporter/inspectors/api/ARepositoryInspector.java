@@ -27,6 +27,10 @@ public abstract class ARepositoryInspector {
         return new InspectorResult(getMetricName(), MessageType.OK, msg);
     }
 
+    protected InspectorResult warn(String msg) {
+        return new InspectorResult(getMetricName(), MessageType.WARN, msg);
+    }
+
     protected InspectorResult info(String msg) {
         return new InspectorResult(getMetricName(), MessageType.INFO, msg);
     }

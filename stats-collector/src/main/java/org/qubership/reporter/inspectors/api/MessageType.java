@@ -1,7 +1,7 @@
 package org.qubership.reporter.inspectors.api;
 
 public enum MessageType {
-    OK("OK:"), ERROR("ERROR:"), INFO("INFO:");
+    OK("OK:"), ERROR("ERROR:"), INFO("INFO:"), WARN("WARN:");
 
     private final String asString;
 

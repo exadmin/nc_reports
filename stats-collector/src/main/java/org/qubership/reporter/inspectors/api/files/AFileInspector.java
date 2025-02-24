@@ -33,7 +33,7 @@ public abstract class AFileInspector extends ARepositoryInspector {
                     }
                 }
 
-                if (!checkIsPassed) return error("Unexpected content");
+                if (!checkIsPassed) return warn("Unexpected content");
             } catch (Exception ex) {
                 ex.printStackTrace();
                 return error("Error: " + ex);

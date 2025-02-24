@@ -13,7 +13,7 @@ public class ReadmeFileContent extends AFileInspector {
 
     @Override
     protected String getMetricName() {
-        return "README.md";
+        return "/README";
     }
 
     @Override
