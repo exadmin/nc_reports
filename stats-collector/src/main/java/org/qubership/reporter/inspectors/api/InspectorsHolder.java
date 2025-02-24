@@ -1,5 +1,6 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.inspectors.impl.AutomaticPRLabeler;
 import org.qubership.reporter.inspectors.impl.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.ReadmeFileContent;
 import org.qubership.reporter.inspectors.impl.TopicAdded;
@@ -15,6 +16,8 @@ public class InspectorsHolder {
         registeredInspectors.add(new CheckApache20License());
         registeredInspectors.add(new ReadmeFileContent());
         registeredInspectors.add(new TopicAdded());
+
+        registeredInspectors.add(new AutomaticPRLabeler());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }
