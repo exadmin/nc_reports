@@ -10,7 +10,7 @@ public abstract class AGithubWorkflowFileInspector extends AFileInspector {
 
     @Override
     protected final FileRequirements getFileRequirements() {
-        FileRequirements fReqs = new FileRequirements("./github/workflows/" + getShortFileNamePlacedInGitHubWorkflowFolder());
+        FileRequirements fReqs = new FileRequirements(".github/workflows/" + getShortFileNamePlacedInGitHubWorkflowFolder());
 
         // add sha256 sums - if set
         List<String> expSha256Sums = new ArrayList<>();

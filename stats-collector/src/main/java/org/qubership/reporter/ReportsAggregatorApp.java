@@ -48,9 +48,10 @@ public class ReportsAggregatorApp {
         FileUtils.saveToFile(mdContent, allReposRootDir + File.separator + "combined-report.md");
     }
 
+    // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp
     private static final String OK_PREFIX = "✅&nbsp;";
     private static final String ER_PREFIX = "❌&nbsp;";
-    private static final String WARN_PREFIX = "⚡&nbsp;"; //&26a1;
+    private static final String WARN_PREFIX = "❎&nbsp;";
 
     private static String createMD(TheReportModel theReport) throws Exception {
         theReport.normalizeData();
