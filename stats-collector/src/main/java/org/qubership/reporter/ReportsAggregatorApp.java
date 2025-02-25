@@ -29,7 +29,7 @@ public class ReportsAggregatorApp {
         File[] files = dir.listFiles();
         for (File nextFile : files) {
             if (nextFile.isDirectory()) {
-                File jsonFile = new File(nextFile.toString() + File.separator + ReposAnalyzerApp.REPORT_SHORT_FILE_NAME);
+                File jsonFile = new File(nextFile + File.separator + ReposAnalyzerApp.REPORT_SHORT_FILE_NAME);
                 if (jsonFile.isFile() && jsonFile.exists()) {
                     TheLogger.debug("Reading json-report at '" + jsonFile + "'");
 
@@ -57,7 +57,23 @@ public class ReportsAggregatorApp {
         theReport.normalizeData();
 
         StringBuilder sb = new StringBuilder();
+        // add html content with references to styles.css
+        sb.append("<!DOCTYPE html>\n");
+        sb.append("<html>\n");
+        sb.append("<head>\n");
+        sb.append("<link rel=\"stylesheet\" href=\"css/styles.css\">\n");
+        sb.append("</head>\n");
+        sb.append("<body>\n");
+        sb.append("\n");
+
+
+
+    // render report
         sb.append("# Report on " + DateUtils.getCurrentDateTimeStamp() + "\n");
+        sb.append("\n");
+
+        sb.append("<div class=\"table-wrapper\" markdown=\"block\">\n");
+        sb.append("\n"); // note: empty line between div and markdown content is required
 
         for (String colName : theReport.getColumnNames()) {
             sb.append("| ").append(colName).append(" ");
@@ -82,6 +98,11 @@ public class ReportsAggregatorApp {
             }
             sb.append("|\n");
         }
+
+        sb.append("\n");
+        sb.append("</div>\n");
+        sb.append("</body>\n");
+        sb.append("</html>\n");
 
         return sb.toString();
     }
