@@ -2,6 +2,7 @@ package org.qubership.reporter.inspectors.api;
 
 import org.qubership.reporter.inspectors.impl.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.ReadmeFileContent;
+import org.qubership.reporter.inspectors.impl.RepoIDInspector;
 import org.qubership.reporter.inspectors.impl.TopicAdded;
 import org.qubership.reporter.inspectors.impl.workflowfiles.*;
 
@@ -26,6 +27,7 @@ public class InspectorsHolder {
         registeredInspectors.add(new PrettierFileInspector());
         registeredInspectors.add(new ProfanityFilterFileInspector());
         registeredInspectors.add(new SuperLinterFileInspector());
+        registeredInspectors.add(new RepoIDInspector());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }

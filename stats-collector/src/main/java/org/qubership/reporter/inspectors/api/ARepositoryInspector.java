@@ -1,5 +1,8 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.utils.TheLogger;
+
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +11,26 @@ import java.util.Map;
  * Please, register any new implementation in InspectorsHolder class.
  */
 public abstract class ARepositoryInspector {
-    protected abstract InspectorResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> metaData) throws Exception;
+    protected abstract OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception;
+
+    protected final OneMetricResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> allReposMetaData) throws Exception {
+        File repoDir = new File(pathToRepository);
+        String expCloneUrl = "https://github.com/Netcracker/" + repoDir.getName() + ".git";
+
+        Map<String, Object> repoMetaData = null;
+        for (Map<String, Object> next : allReposMetaData) {
+            if (expCloneUrl.equals(next.get("clone_url"))) {
+                repoMetaData = next;
+                break;
+            }
+        }
+
+        if (repoMetaData == null) {
+            TheLogger.error("Can't find meta-data for the repo " + pathToRepository);
+        }
+
+        return inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);
+    }
 
     /**
      * Return metric name which is calculated by current inspector. It will be printed in corresponding table column header.
@@ -19,23 +41,23 @@ public abstract class ARepositoryInspector {
 
     protected abstract String getMetricDescriptionInMDFormat();
 
-    protected InspectorResult error(String msg) {
-        return new InspectorResult(getMetricName(), MessageType.ERROR, msg);
+    protected OneMetricResult error(String msg) {
+        return new OneMetricResult(getMetricName(), ResultSeverity.ERROR, msg);
     }
 
-    protected InspectorResult ok(String msg) {
-        return new InspectorResult(getMetricName(), MessageType.OK, msg);
+    protected OneMetricResult ok(String msg) {
+        return new OneMetricResult(getMetricName(), ResultSeverity.OK, msg);
     }
 
-    protected InspectorResult warn(String msg) {
-        return new InspectorResult(getMetricName(), MessageType.WARN, msg);
+    protected OneMetricResult warn(String msg) {
+        return new OneMetricResult(getMetricName(), ResultSeverity.WARN, msg);
     }
 
-    protected InspectorResult info(String msg) {
-        return new InspectorResult(getMetricName(), MessageType.INFO, msg);
+    protected OneMetricResult info(String msg) {
+        return new OneMetricResult(getMetricName(), ResultSeverity.INFO, msg);
     }
 
-    public final InspectorResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
+    public final OneMetricResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
         try {
             return inspectRepoFolder(pathToRepository, metaData);
         } catch (Exception ex) {

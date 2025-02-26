@@ -1,11 +1,11 @@
 package org.qubership.reporter.inspectors.api;
 
-public enum MessageType {
+public enum ResultSeverity {
     OK("OK:"), ERROR("ERROR:"), INFO("INFO:"), WARN("WARN:");
 
     private final String asString;
 
-    MessageType(String asString) {
+    ResultSeverity(String asString) {
         this.asString = asString;
     }
 

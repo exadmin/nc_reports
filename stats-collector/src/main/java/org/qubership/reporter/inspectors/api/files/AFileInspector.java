@@ -1,7 +1,7 @@
 package org.qubership.reporter.inspectors.api.files;
 
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.InspectorResult;
+import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.utils.FileUtils;
 
 import java.io.File;
@@ -13,7 +13,7 @@ public abstract class AFileInspector extends ARepositoryInspector {
     protected abstract FileRequirements getFileRequirements();
 
     @Override
-    protected final InspectorResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> metaData) throws Exception {
+    protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         FileRequirements fReqs = getFileRequirements();
 
         File licenseFile = Paths.get(pathToRepository, fReqs.getExpectedFileName()).toFile();

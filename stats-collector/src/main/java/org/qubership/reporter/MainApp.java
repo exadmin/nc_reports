@@ -1,8 +1,17 @@
 package org.qubership.reporter;
 
+import org.qubership.reporter.markdown.MarkdownRenderer;
+import org.qubership.reporter.model.ReportModel;
+
+import java.io.File;
+
 public class MainApp {
     public static void main(String[] args) throws Exception{
-        ReposAnalyzerApp.main(args);
-        ReportsAggregatorApp.main(args);
+        ReposAnalyzerApp analyzer = new ReposAnalyzerApp();
+        ReportModel report = analyzer.analyzeAllIn(args[0]);
+
+        MarkdownRenderer renderer = new MarkdownRenderer();
+        String outputFileName = args[0] + File.separator + "combined-report.md";
+        renderer.createMarkdawnFile(report, outputFileName);
     }
 }
