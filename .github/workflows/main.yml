@@ -42,6 +42,8 @@ jobs:
         working-directory: ./stats-collector
         run: |
           mkdir -p /tmp/workingdir/netcracker
+          mkdir -p /tmp/workingdir/docs
+          cp ./../docs/template.html /tmp/workingdir/docs/template.html
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           cd /tmp/workingdir/netcracker
           curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=1" > all_repos_page1.json
@@ -56,7 +58,7 @@ jobs:
           cat all_repos_page4.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
           cat all_repos_page5.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
           
-          cd ..
+          cd /tmp/workingdir
           java -jar stats-collector.jar /tmp/workingdir/netcracker
 
       - uses: actions/checkout@v4
