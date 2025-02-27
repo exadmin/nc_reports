@@ -4,6 +4,7 @@ import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
 import org.qubership.reporter.utils.FileUtils;
+import org.qubership.reporter.utils.StrUtils;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -18,8 +19,8 @@ public abstract class AFileInspector extends ARepositoryInspector {
         FileRequirements fReqs = getFileRequirements();
 
         File file = Paths.get(pathToRepository, fReqs.getExpectedFileName()).toFile();
-        if (!file.exists()) return error("Not found");
-        if (!file.isFile()) return error("Not found");
+        if (!file.exists()) return error("");
+        if (!file.isFile()) return error("");
 
         String defBranch = (String) repoMetaData.get("default_branch");
         String url = (String) repoMetaData.get("html_url");
@@ -29,7 +30,15 @@ public abstract class AFileInspector extends ARepositoryInspector {
         if (fReqs.getExpSha256CheckSums() != null) {
             try {
                 boolean checkIsPassed = false;
-                String actSha256 = FileUtils.getSHA256(file.toString());
+                String actSha256;
+
+                if (fReqs.isAllowTrim()) {
+                    String wholeFileContent = FileUtils.readFile(file.toString());
+                    wholeFileContent = wholeFileContent.trim();
+                    actSha256 = StrUtils.getSHA256FromString(wholeFileContent);
+                } else {
+                    actSha256 = FileUtils.getSHA256FromFile(file.toString());
+                }
 
                 for (String expSha256 : fReqs.getExpSha256CheckSums()) {
                     if (actSha256.equals(expSha256)) {

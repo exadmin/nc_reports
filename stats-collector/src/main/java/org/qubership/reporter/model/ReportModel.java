@@ -6,7 +6,6 @@ import org.qubership.reporter.inspectors.InspectorsHolder;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
-import org.qubership.reporter.inspectors.api.files.AFileInspector;
 
 import java.util.*;
 

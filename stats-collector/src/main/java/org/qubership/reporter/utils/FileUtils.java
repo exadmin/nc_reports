@@ -1,16 +1,14 @@
 package org.qubership.reporter.utils;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
 public class FileUtils {
@@ -48,18 +46,11 @@ public class FileUtils {
         Files.write(path, content.getBytes());
     }
 
-    public static String getSHA256(String fileName) throws NoSuchAlgorithmException, IOException {
-        byte[] buffer= new byte[8192];
-        int count;
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileName))) {
-            while ((count = bis.read(buffer)) > 0) {
-                digest.update(buffer, 0, count);
-            }
-        }
 
-        byte[] hash = digest.digest();
-        return Base64.getEncoder().encodeToString(hash);
+    public static String getSHA256FromFile(String fileName) throws NoSuchAlgorithmException, IOException {
+        try (InputStream is = new FileInputStream(fileName)) {
+            return MiscUtils.getSha256FromInputStream(is);
+        }
     }
 
     public static String readFile(String filePath) throws IOException {

@@ -8,6 +8,7 @@ public class FileRequirements {
     String expectedFileName;
     Long expectedMinFileSizeInBytes;
     List<String> expSha256CheckSums;
+    boolean allowTrim;
 
     public FileRequirements(String expectedFileName) {
         this.expectedFileName = expectedFileName;
@@ -36,5 +37,17 @@ public class FileRequirements {
     public List<String> getExpSha256CheckSums() {
         if (expSha256CheckSums == null) return null;
         return Collections.unmodifiableList(expSha256CheckSums);
+    }
+
+    public boolean isAllowTrim() {
+        return allowTrim;
+    }
+
+    /**
+     * If true - then content of file will be read into memory and all white spaces will be removed on the edges.
+     * @param allowTrim
+     */
+    public void setAllowTrim(boolean allowTrim) {
+        this.allowTrim = allowTrim;
     }
 }

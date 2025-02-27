@@ -3,7 +3,6 @@ package org.qubership.reporter.html;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 
 import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
-import static org.qubership.reporter.inspectors.api.ResultSeverity.WARN;
 
 public class HtmlValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp

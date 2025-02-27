@@ -4,14 +4,14 @@ import org.qubership.reporter.inspectors.api.files.AFileInspector;
 import org.qubership.reporter.inspectors.api.files.FileRequirements;
 
 public class CheckApache20License extends AFileInspector {
-    private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v1 = "z8d0m5b2O9McPEK1xHG/dWgUBT6EfBDz6wA0F7xSPTA=";
-    private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v2 = "xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ=";
+    private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v1 = "KD6mzCmXoacNoASeCa35MXu2DKG1Enm2UZa4OmnhmWs="; // suites for most (if trim whitespaces)
+    // private static final String LICENSE_SHA256_BASE64_EXP_VALUE_v1 = "bcDgaNzzpbyOBUIFuFt3IOHUkmW7xkv1FdLPeRl99po="; // for k8s-conformance\LICENSE where braces are wrong
 
     @Override
     protected FileRequirements getFileRequirements() {
         FileRequirements fReqs = new FileRequirements("LICENSE");
+        fReqs.setAllowTrim(true);
         fReqs.addExpectedSha256CheckSum(LICENSE_SHA256_BASE64_EXP_VALUE_v1);
-        fReqs.addExpectedSha256CheckSum(LICENSE_SHA256_BASE64_EXP_VALUE_v2);
 
         return fReqs;
     }

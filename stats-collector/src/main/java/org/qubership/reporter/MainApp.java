@@ -1,7 +1,6 @@
 package org.qubership.reporter;
 
 import org.qubership.reporter.html.HtmlRenderer;
-import org.qubership.reporter.markdown.MarkdownRenderer;
 import org.qubership.reporter.model.ReportModel;
 
 import java.io.File;
