@@ -16,7 +16,7 @@ public class PRCollectCommitMessagesFileInspector extends AGithubWorkflowFileIns
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/AddCommitMsg";
     }
 }

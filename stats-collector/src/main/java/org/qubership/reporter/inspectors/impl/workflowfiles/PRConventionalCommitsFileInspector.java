@@ -16,7 +16,7 @@ public class PRConventionalCommitsFileInspector extends AGithubWorkflowFileInspe
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/ConvCommits";
     }
 }

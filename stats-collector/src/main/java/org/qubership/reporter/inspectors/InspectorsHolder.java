@@ -14,8 +14,6 @@ public class InspectorsHolder {
         // register all necessary inspectors here
         registeredInspectors.add(new CheckApache20License());
         registeredInspectors.add(new ReadmeFileContent());
-        registeredInspectors.add(new TopicAdded());
-
         registeredInspectors.add(new AutomaticPRLabeler());
         registeredInspectors.add(new CDXGenFileInspector());
         registeredInspectors.add(new CLAFileInspector());
@@ -28,6 +26,7 @@ public class InspectorsHolder {
         registeredInspectors.add(new RepoIDInspector());
         registeredInspectors.add(new LastUpdatedTime());
 
+        registeredInspectors.add(new TopicAdded()); // keep it last
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }
 

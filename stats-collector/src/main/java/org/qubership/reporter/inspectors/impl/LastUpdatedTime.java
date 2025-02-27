@@ -23,7 +23,7 @@ public class LastUpdatedTime extends ARepositoryInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "Updated At";
     }
 

@@ -37,7 +37,7 @@ public abstract class ARepositoryInspector {
      * Do not use "ID" value - it is reserved, See ReservedColumns#ID field
      * @return String
      */
-    protected abstract String getMetricName();
+    public abstract String getMetricName();
 
     protected abstract String getMetricDescriptionInMDFormat();
 

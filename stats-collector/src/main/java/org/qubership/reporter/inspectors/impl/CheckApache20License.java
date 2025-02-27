@@ -22,7 +22,7 @@ public class CheckApache20License extends AFileInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "/License";
     }
 

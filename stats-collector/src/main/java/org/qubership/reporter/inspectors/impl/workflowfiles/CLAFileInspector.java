@@ -17,7 +17,7 @@ public class CLAFileInspector extends AGithubWorkflowFileInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/CLA";
     }
 }

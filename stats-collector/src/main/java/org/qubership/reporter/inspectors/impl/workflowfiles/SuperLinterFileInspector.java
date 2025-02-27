@@ -16,7 +16,7 @@ public class SuperLinterFileInspector extends AGithubWorkflowFileInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/SuperLinter";
     }
 }

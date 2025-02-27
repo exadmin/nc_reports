@@ -16,7 +16,7 @@ public class ProfanityFilterFileInspector extends AGithubWorkflowFileInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/ProfanityFilter";
     }
 }

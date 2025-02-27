@@ -16,7 +16,7 @@ public class PRLintTitleFileInspector extends AGithubWorkflowFileInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "WF/Lint-Title";
     }
 }

@@ -23,7 +23,7 @@ public class TopicAdded extends ARepositoryInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return "Topics";
     }
 

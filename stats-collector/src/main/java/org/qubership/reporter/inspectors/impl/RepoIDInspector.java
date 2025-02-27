@@ -21,7 +21,7 @@ public class RepoIDInspector extends ARepositoryInspector {
     }
 
     @Override
-    protected String getMetricName() {
+    public String getMetricName() {
         return ReservedColumns.ID;
     }
 
