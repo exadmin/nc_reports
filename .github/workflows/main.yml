@@ -65,6 +65,7 @@ jobs:
       - name: Do commit back to repo
         run: |
           date=$(date +"%d-%m-%Y-%H-%M-%S")
+          sed -i -e "s/#DATE_SED#/$date/" /tmp/workingdir/netcracker/combined-report.html 
           # cp /tmp/workingdir/netcracker/combined-report.json ./reports-are-here/json/combined-report-$date.json
           cp /tmp/workingdir/netcracker/combined-report.html ./reports-are-here/combined-report-$date.html
           cp /tmp/workingdir/netcracker/combined-report.html ./docs/index.html
