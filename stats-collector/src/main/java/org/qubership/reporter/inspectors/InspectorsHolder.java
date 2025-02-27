@@ -1,9 +1,7 @@
-package org.qubership.reporter.inspectors.api;
+package org.qubership.reporter.inspectors;
 
-import org.qubership.reporter.inspectors.impl.CheckApache20License;
-import org.qubership.reporter.inspectors.impl.ReadmeFileContent;
-import org.qubership.reporter.inspectors.impl.RepoIDInspector;
-import org.qubership.reporter.inspectors.impl.TopicAdded;
+import org.qubership.reporter.inspectors.api.ARepositoryInspector;
+import org.qubership.reporter.inspectors.impl.*;
 import org.qubership.reporter.inspectors.impl.workflowfiles.*;
 
 import java.util.ArrayList;
@@ -28,6 +26,7 @@ public class InspectorsHolder {
         registeredInspectors.add(new ProfanityFilterFileInspector());
         registeredInspectors.add(new SuperLinterFileInspector());
         registeredInspectors.add(new RepoIDInspector());
+        registeredInspectors.add(new LastUpdatedTime());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }

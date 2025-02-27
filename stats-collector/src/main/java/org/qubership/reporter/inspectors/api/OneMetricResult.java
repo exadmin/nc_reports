@@ -5,6 +5,7 @@ public class OneMetricResult {
     private final ResultSeverity severity;
     private final String metricName;
     private String httpReference;
+    private String toolTipForGithubOnly;
 
     public OneMetricResult(String metricName, ResultSeverity severity, String rawValue) {
         this.rawValue = rawValue;
@@ -30,5 +31,13 @@ public class OneMetricResult {
 
     public void setHttpReference(String httpReference) {
         this.httpReference = httpReference;
+    }
+
+    public String getToolTipForGithubOnly() {
+        return toolTipForGithubOnly;
+    }
+
+    public void setToolTipForGithubOnly(String toolTipForGithubOnly) {
+        this.toolTipForGithubOnly = toolTipForGithubOnly;
     }
 }

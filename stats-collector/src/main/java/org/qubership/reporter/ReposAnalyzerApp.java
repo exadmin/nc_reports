@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.InspectorsHolder;
+import org.qubership.reporter.inspectors.InspectorsHolder;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.model.ReportModel;
 import org.qubership.reporter.utils.TheLogger;
