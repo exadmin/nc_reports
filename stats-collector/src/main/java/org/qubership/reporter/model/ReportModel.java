@@ -15,6 +15,9 @@ public class ReportModel {
    private MultiKeyMap<String, OneMetricResult> multiMap = new MultiKeyMap<>(); // key1 & key2 are String, value is OneMetricResult
 
    public void addData(String repoName, Map<String, OneMetricResult> repoData) {
+      repoNames = null;
+      metricNames = null;
+
       for (Map.Entry<String, OneMetricResult> me : repoData.entrySet()) {
          multiMap.put(repoName, me.getKey(), me.getValue());
       }
@@ -23,7 +26,7 @@ public class ReportModel {
    /**
     * Fills columns and rows
     */
-   public void prepareData() {
+   private void prepareData() {
       // store all data into 2D table
       this.repoNames = new ArrayList<>();
       this.metricNames = new ArrayList<>();
@@ -69,10 +72,12 @@ public class ReportModel {
    }
 
    public List<String> getRepoNames() {
+      if (repoNames == null) prepareData();
       return repoNames;
    }
 
    public List<String> getMetricNames() {
+      if (metricNames == null) prepareData();
       return metricNames;
    }
 }

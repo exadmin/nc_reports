@@ -15,7 +15,6 @@ public class MarkdownRenderer {
     }
 
     private String createMarkdawnString(ReportModel theReport) throws Exception {
-        theReport.prepareData();
 
         StringBuilder sb = new StringBuilder();
         // add html content with references to styles.css

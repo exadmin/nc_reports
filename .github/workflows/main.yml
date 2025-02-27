@@ -64,12 +64,12 @@ jobs:
         run: |
           date=$(date +"%d-%m-%Y-%H-%M-%S")
           # cp /tmp/workingdir/netcracker/combined-report.json ./reports-are-here/json/combined-report-$date.json
-          cp /tmp/workingdir/netcracker/combined-report.md ./reports-are-here/combined-report-$date.md
-          cp /tmp/workingdir/netcracker/combined-report.md ./reports-are-here/latest.md
+          cp /tmp/workingdir/netcracker/combined-report.html ./reports-are-here/combined-report-$date.html
+          cp /tmp/workingdir/netcracker/combined-report.md ./docs/index.html
           git config user.name github-actions
           git config user.email github-actions@github.com
           # git add ./reports-are-here/json/combined-report-$date.json
-          git add ./reports-are-here/combined-report-$date.md
-          git add ./reports-are-here/latest.md
-          git commit -m "Report generation at $date"
+          git add ./reports-are-here/combined-report-$date.html
+          git add ./docs/index.html
+          git commit -m "HTML report generation at $date"
           git push
