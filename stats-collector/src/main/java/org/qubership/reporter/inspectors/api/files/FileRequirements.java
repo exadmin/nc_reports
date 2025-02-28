@@ -10,8 +10,15 @@ public class FileRequirements {
     List<String> expSha256CheckSums;
     boolean allowTrim;
 
-    public FileRequirements(String expectedFileName) {
-        this.expectedFileName = expectedFileName;
+    /**
+     * References to the file inside git-repository. The file path is relative to the root of the repository.
+     * If "/" is used in the begining of the path - it will be trimmed.
+     * @param relativeFNameStartingFromRootOfRepository
+     */
+    public FileRequirements(String relativeFNameStartingFromRootOfRepository) {
+        while (relativeFNameStartingFromRootOfRepository.startsWith("/")) relativeFNameStartingFromRootOfRepository = relativeFNameStartingFromRootOfRepository.substring(1);
+
+        this.expectedFileName = relativeFNameStartingFromRootOfRepository;
     }
 
     public void setExpectedMinFileSizeInBytes(Long expectedMinFileSizeInBytes) {

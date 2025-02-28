@@ -14,6 +14,14 @@ import java.util.Map;
 public abstract class AFileInspector extends ARepositoryInspector {
     protected abstract FileRequirements getFileRequirements();
 
+    protected String getReferenceToFileInGitHub(Map<String, Object> repoMetaData) {
+        FileRequirements fReqs = getFileRequirements();
+
+        String defBranch = (String) repoMetaData.get("default_branch");
+        String url = (String) repoMetaData.get("html_url");
+        return url + "/blob/" + defBranch + "/" + fReqs.getExpectedFileName();
+    }
+
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         FileRequirements fReqs = getFileRequirements();
@@ -22,9 +30,7 @@ public abstract class AFileInspector extends ARepositoryInspector {
         if (!file.exists()) return error("");
         if (!file.isFile()) return error("");
 
-        String defBranch = (String) repoMetaData.get("default_branch");
-        String url = (String) repoMetaData.get("html_url");
-        String fileURI = url + "/blob/" + defBranch + "/" + file.getName();
+        String fileURI = getReferenceToFileInGitHub(repoMetaData);
 
         // check sha256 sum
         if (fReqs.getExpSha256CheckSums() != null) {
