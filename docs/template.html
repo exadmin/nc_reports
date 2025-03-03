@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css"
           href="https://cdn.datatables.net/r/ju-1.11.4/jqc-1.11.3,dt-1.10.8/datatables.min.css"/>
 
+    <link rel="stylesheet" type="text/css"
+          href="./css/style.css"/>
+
     <script type="text/javascript"
             src="https://cdn.datatables.net/r/ju-1.11.4/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
 
@@ -17,6 +20,10 @@
                 pageLength: -1
             });
         } );
+
+        $( function() {
+            $( document ).tooltip();
+          } );
     </script>
 </head>
 <body>
@@ -27,7 +34,7 @@
     <!--
     This file 'template.html' is used in runtime to replace all content between comments (DO-NOT-TOUCH..START .. END) with new table
     -->
-    <table id="main-table" class="display" style="width:100%">
+    <table id="main-table" style="width:100%">
         <thead>
         <tr>
             <th>Name</th>
@@ -38,10 +45,10 @@
         </thead>
         <tbody>
         <tr>
-            <td>Tiger Nixon</td>
+            <td title="hello world!">❌ Tiger Nixon</td>
             <td>System Architect</td>
             <td>Edinburgh</td>
-            <td>$320,800</td>
+            <td class="number">$320,800</td>
         </tr>
         <tr>
             <td>Garrett Winters</td>

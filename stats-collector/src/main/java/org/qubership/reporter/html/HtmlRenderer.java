@@ -52,7 +52,7 @@ public class HtmlRenderer {
                     OneMetricResult metricValue = reportModel.getValue(rowName, colName);
 
                     String cellInternalHtml = htmlValueRenderer.getHtml(metricValue);
-                    sb.append("            <td>");
+                    sb.append("            <td class=\"").append(metricValue.getTextAlign()).append("\">");
                     sb.append(cellInternalHtml);
                     sb.append("</td>\n");
                 }

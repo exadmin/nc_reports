@@ -1,0 +1,17 @@
+td.td-left-middle
+{
+    text-align: left;
+    vertical-align: middle;
+}
+
+td.td-center-middle
+{
+    text-align: center;
+    vertical-align: middle;
+}
+
+td.td-right-middle
+{
+    text-align: right;
+    vertical-align: middle;
+}

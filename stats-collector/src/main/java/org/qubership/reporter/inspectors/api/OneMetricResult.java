@@ -6,6 +6,7 @@ public class OneMetricResult {
     private final String metricName;
     private String httpReference;
     private String toolTipForGithubOnly;
+    private TextAlign textAlign;
 
     public OneMetricResult(String metricName, ResultSeverity severity, String rawValue) {
         this.rawValue = rawValue;
@@ -39,5 +40,14 @@ public class OneMetricResult {
 
     public void setToolTipForGithubOnly(String toolTipForGithubOnly) {
         this.toolTipForGithubOnly = toolTipForGithubOnly;
+    }
+
+    public TextAlign getTextAlign() {
+        if (textAlign == null) return TextAlign.LEFT_MIDDLE;
+        return textAlign;
+    }
+
+    public void setTextAlign(TextAlign textAlign) {
+        this.textAlign = textAlign;
     }
 }

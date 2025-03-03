@@ -25,6 +25,7 @@ public class InspectorsHolder {
         registeredInspectors.add(new SuperLinterFileInspector());
         registeredInspectors.add(new RepoIDInspector());
         registeredInspectors.add(new LastUpdatedTime());
+        registeredInspectors.add(new JavaVersion());
 
         registeredInspectors.add(new TopicAdded()); // keep it last
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);

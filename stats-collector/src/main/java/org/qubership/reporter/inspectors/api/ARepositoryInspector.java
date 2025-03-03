@@ -42,7 +42,9 @@ public abstract class ARepositoryInspector {
     protected abstract String getMetricDescriptionInMDFormat();
 
     protected OneMetricResult error(String msg) {
-        return new OneMetricResult(getMetricName(), ResultSeverity.ERROR, msg);
+        OneMetricResult result = new OneMetricResult(getMetricName(), ResultSeverity.ERROR, msg);
+        result.setTextAlign(TextAlign.CENTER_MIDDLE);
+        return result;
     }
 
     protected OneMetricResult ok(String msg) {
