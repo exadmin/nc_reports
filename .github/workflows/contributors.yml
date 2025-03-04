@@ -35,6 +35,7 @@ jobs:
           START_DATE: ${{ env.START_DATE }}
           END_DATE: ${{ env.END_DATE }}
           ORGANIZATION: exadmin
+          REPOSITORY: exadmin/nc_reports
           SPONSOR_INFO: "false"
           LINK_TO_PROFILE: "true"
 
