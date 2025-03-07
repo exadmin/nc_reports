@@ -44,20 +44,13 @@ jobs:
           mkdir -p /tmp/workingdir/netcracker
           mkdir -p /tmp/workingdir/docs
           cp ./../docs/template.html /tmp/workingdir/docs/template.html
+          cp ./../clone_all.sh /tmp/workingdir/netcracker/clone_all.sh
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
+          
           cd /tmp/workingdir/netcracker
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=1" > all_repos_page1.json
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=2" > all_repos_page2.json
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=3" > all_repos_page3.json
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=4" > all_repos_page4.json
-          curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=5" > all_repos_page5.json
-          
-          cat all_repos_page1.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
-          cat all_repos_page2.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
-          cat all_repos_page3.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
-          cat all_repos_page4.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
-          cat all_repos_page5.json | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 --no-run-if-empty git clone
-          
+          chmod + clone_all.sh
+          ./clone_all.sh
+        
           cd /tmp/workingdir
           java -jar stats-collector.jar /tmp/workingdir/netcracker
 
