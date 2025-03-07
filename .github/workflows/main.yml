@@ -48,11 +48,11 @@ jobs:
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           
           cd /tmp/workingdir/netcracker
-          chmod + clone_all.sh
-          ./clone_all.sh
+          sudo chmod + clone_all.sh
+          sudo ./clone_all.sh
         
           cd /tmp/workingdir
-          java -jar stats-collector.jar /tmp/workingdir/netcracker
+          sudo java -jar stats-collector.jar /tmp/workingdir/netcracker
 
       - uses: actions/checkout@v4
       - name: Do commit back to repo
