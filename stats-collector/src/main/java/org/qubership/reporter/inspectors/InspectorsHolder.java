@@ -3,6 +3,7 @@ package org.qubership.reporter.inspectors;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.impl.*;
 import org.qubership.reporter.inspectors.impl.workflowfiles.*;
+import org.qubership.reporter.inspectors.impl.codequality.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +13,8 @@ public class InspectorsHolder {
     private static List<ARepositoryInspector> registeredInspectors = new ArrayList<>();
     static {
         // register all necessary inspectors here
+        registeredInspectors.add(new LastUpdatedTime());
+        registeredInspectors.add(new CodeCoverageBySonar());
         registeredInspectors.add(new CheckApache20License());
         registeredInspectors.add(new ReadmeFileContent());
         registeredInspectors.add(new AutomaticPRLabeler());
@@ -24,7 +27,7 @@ public class InspectorsHolder {
         registeredInspectors.add(new ProfanityFilterFileInspector());
         registeredInspectors.add(new SuperLinterFileInspector());
         registeredInspectors.add(new RepoIDInspector());
-        registeredInspectors.add(new LastUpdatedTime());
+
         registeredInspectors.add(new JavaVersion());
 
         registeredInspectors.add(new TopicAdded()); // keep it last

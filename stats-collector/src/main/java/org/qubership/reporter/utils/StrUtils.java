@@ -11,4 +11,12 @@ public class StrUtils {
             return MiscUtils.getSha256FromInputStream(is);
         }
     }
+
+    public static boolean isEmpty(String str) {
+        return str == null || str.isEmpty();
+    }
+
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
+    }
 }

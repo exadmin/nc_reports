@@ -48,7 +48,6 @@ jobs:
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           
           cd /tmp/workingdir/netcracker
-          ls -la
           sudo chmod +x clone_all.sh
           sudo ./clone_all.sh
         

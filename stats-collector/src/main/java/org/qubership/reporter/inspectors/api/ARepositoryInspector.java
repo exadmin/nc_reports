@@ -11,6 +11,27 @@ import java.util.Map;
  * Please, register any new implementation in InspectorsHolder class.
  */
 public abstract class ARepositoryInspector {
+    /**
+     * Return metric name which is calculated by current inspector. It will be printed in corresponding table column header.
+     * Do not use "ID" value - it is reserved, See ReservedColumns#ID field
+     * @return String
+     */
+    public abstract String getMetricName();
+
+    /**
+     * Returns metric description to be show in the report
+     * @return String description
+     */
+    protected abstract String getMetricDescriptionInMDFormat();
+
+    /**
+     * Inspecion implementation. Result is returned in the container of OneMetricResult.
+     * @param pathToRepository path to cloned repository on the local storage
+     * @param repoMetaData current repository meta-data returned by github.com
+     * @param allReposMetaData all repositories meta-data returned by github.com
+     * @return OneMetricResult instance
+     * @throws Exception
+     */
     protected abstract OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception;
 
     protected final OneMetricResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> allReposMetaData) throws Exception {
@@ -32,14 +53,7 @@ public abstract class ARepositoryInspector {
         return inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);
     }
 
-    /**
-     * Return metric name which is calculated by current inspector. It will be printed in corresponding table column header.
-     * Do not use "ID" value - it is reserved, See ReservedColumns#ID field
-     * @return String
-     */
-    public abstract String getMetricName();
 
-    protected abstract String getMetricDescriptionInMDFormat();
 
     protected OneMetricResult error(String msg) {
         OneMetricResult result = new OneMetricResult(getMetricName(), ResultSeverity.ERROR, msg);
