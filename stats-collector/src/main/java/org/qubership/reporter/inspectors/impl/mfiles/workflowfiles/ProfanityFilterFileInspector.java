@@ -1,4 +1,4 @@
-package org.qubership.reporter.inspectors.impl.workflowfiles;
+package org.qubership.reporter.inspectors.impl.mfiles.workflowfiles;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.files.AGithubWorkflowFileInspector;

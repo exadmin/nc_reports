@@ -1,4 +1,4 @@
-package org.qubership.reporter.inspectors.impl;
+package org.qubership.reporter.inspectors.impl.codequality;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;

@@ -1,4 +1,4 @@
-package org.qubership.reporter.inspectors.impl.workflowfiles;
+package org.qubership.reporter.inspectors.impl.mfiles.workflowfiles;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.files.AGithubWorkflowFileInspector;
@@ -6,20 +6,21 @@ import org.qubership.reporter.model.MetricGroup;
 
 import java.util.List;
 
-public class PrettierFileInspector extends AGithubWorkflowFileInspector {
+public class CLAFileInspector extends AGithubWorkflowFileInspector {
+
     @Override
     protected String getShortFileNamePlacedInGitHubWorkflowFolder() {
-        return "prettier.yaml";
+        return "cla.yaml";
     }
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("f5i6XEAxaHH2oaCwWwwNvrJtOG2MOuwe9qUDats0mVs=");
+        sha256CheckSums.add("2NRyXrE8sP1riS2MyKfLoWjrm0OtQvfweBBOqUqtAfo=");
     }
 
     @Override
     public String getMetricName() {
-        return "WF/Prettier";
+        return "WF/CLA";
     }
 
     @Override

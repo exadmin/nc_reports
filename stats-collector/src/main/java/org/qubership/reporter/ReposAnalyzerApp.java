@@ -71,6 +71,7 @@ public class ReposAnalyzerApp {
         // perform all registered checks
         for (ARepositoryInspector inspector : InspectorsRegistry.getRegisteredInspectors()) {
             OneMetricResult result = inspector.runInspectionFor(repoDir.getAbsolutePath(), metaData);
+
             result.setMetricGroup(inspector.getMetricGroup());
             oneRepoResult.put(result.getMetricName(), result);
         }

@@ -1,9 +1,15 @@
 package org.qubership.reporter.inspectors;
 
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.impl.*;
-import org.qubership.reporter.inspectors.impl.workflowfiles.*;
-import org.qubership.reporter.inspectors.impl.codequality.*;
+import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
+import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
+import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
+import org.qubership.reporter.inspectors.impl.metadata.TopicAdded;
+import org.qubership.reporter.inspectors.impl.mfiles.CheckApache20License;
+import org.qubership.reporter.inspectors.impl.mfiles.ReadmeFileContent;
+import org.qubership.reporter.inspectors.impl.mfiles.workflowfiles.*;
+import org.qubership.reporter.inspectors.impl.summary.ErrorsCountInspector;
+import org.qubership.reporter.inspectors.impl.system.RepoIDInspector;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,6 +35,7 @@ public class InspectorsRegistry {
         registeredInspectors.add(new RepoIDInspector());
 
         registeredInspectors.add(new JavaVersion());
+        registeredInspectors.add(new ErrorsCountInspector());
 
         registeredInspectors.add(new TopicAdded()); // keep it last
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);

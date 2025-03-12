@@ -66,7 +66,7 @@ public class ReportModel {
          rowNumber++;
       }
 
-
+      addTotalScoresColumn();
 
       // make data unmodifiable
       repoNames = Collections.unmodifiableList(repoNames);
@@ -85,5 +85,25 @@ public class ReportModel {
    public List<String> getMetricNames() {
       if (metricNames == null) prepareData();
       return metricNames;
+   }
+
+   // todo: refactor - place to generalized approach
+   private void addTotalScoresColumn() {
+
+      // define virtual column with executive results
+      for (String row : repoNames) {
+         int errCount = 0;
+         for (String metricName : metricNames) {
+            OneMetricResult omResult = getValue(row, metricName);
+            ResultSeverity resultSeverity = omResult.getSeverity();
+            if (resultSeverity.equals(ResultSeverity.ERROR) || resultSeverity.equals(ResultSeverity.WARN)) {
+               errCount++;
+            }
+         }
+
+         OneMetricResult omRes = new OneMetricResult(ReservedColumns.TOTAL_SCORES, ResultSeverity.INFO, "" + errCount);
+         omRes.setMetricGroup(MetricGroupsRegistry.EXECUTIVE_SUMMARY);
+         multiMap.put(row, ReservedColumns.TOTAL_SCORES, omRes);
+      }
    }
 }

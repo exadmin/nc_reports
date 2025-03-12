@@ -1,41 +1,39 @@
-package org.qubership.reporter.inspectors.impl;
+package org.qubership.reporter.inspectors.impl.system;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
+import org.qubership.reporter.inspectors.api.ResultSeverity;
 import org.qubership.reporter.model.MetricGroup;
+import org.qubership.reporter.model.ReservedColumns;
 
 import java.util.List;
 import java.util.Map;
 
-public class TopicAdded extends ARepositoryInspector {
+public class RepoIDInspector extends ARepositoryInspector {
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
-        List<Object> topics = (List<Object>) repoMetaData.get("topics");
-        if (topics != null) {
-            StringBuilder sb = new StringBuilder();
-            for (Object topicName : topics) {
-                sb.append(topicName).append("&nbsp;");
-            }
+        String repoName = (String) repoMetaData.get("name");
+        String url = (String) repoMetaData.get("html_url");
 
-            return info(sb.toString());
-        }
+        OneMetricResult metricResult = new OneMetricResult(ReservedColumns.ID, ResultSeverity.INFO, repoName);
+        metricResult.setHttpReference(url);
 
-        return info("&nbsp;");
+        return metricResult;
     }
 
     @Override
     public String getMetricName() {
-        return "Topics";
+        return ReservedColumns.ID;
     }
 
     @Override
     protected String getMetricDescriptionInMDFormat() {
-        return "Topics - are labels assigned to repositories in the github.com";
+        return "";
     }
 
     @Override
     public MetricGroup getMetricGroup() {
-        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
+        return MetricGroupsRegistry.SYSTEM_METRIC_GROUP;
     }
 }

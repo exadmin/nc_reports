@@ -1,4 +1,4 @@
-package org.qubership.reporter.inspectors.impl;
+package org.qubership.reporter.inspectors.impl.mfiles;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.files.AFileInspector;
