@@ -1,8 +1,10 @@
 package org.qubership.reporter.inspectors.impl;
 
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
+import org.qubership.reporter.model.MetricGroup;
 import org.qubership.reporter.model.ReservedColumns;
 
 import java.util.List;
@@ -28,5 +30,10 @@ public class RepoIDInspector extends ARepositoryInspector {
     @Override
     protected String getMetricDescriptionInMDFormat() {
         return "";
+    }
+
+    @Override
+    public MetricGroup getMetricGroup() {
+        return MetricGroupsRegistry.SYSTEM_METRIC_GROUP;
     }
 }

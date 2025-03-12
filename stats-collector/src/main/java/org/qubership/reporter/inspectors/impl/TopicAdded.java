@@ -1,7 +1,9 @@
 package org.qubership.reporter.inspectors.impl;
 
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
+import org.qubership.reporter.model.MetricGroup;
 
 import java.util.List;
 import java.util.Map;
@@ -30,5 +32,10 @@ public class TopicAdded extends ARepositoryInspector {
     @Override
     protected String getMetricDescriptionInMDFormat() {
         return "Topics - are labels assigned to repositories in the github.com";
+    }
+
+    @Override
+    public MetricGroup getMetricGroup() {
+        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
     }
 }

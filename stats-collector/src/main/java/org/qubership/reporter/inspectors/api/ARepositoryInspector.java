@@ -1,5 +1,6 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.model.MetricGroup;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
@@ -17,6 +18,14 @@ public abstract class ARepositoryInspector {
      * @return String
      */
     public abstract String getMetricName();
+
+
+    /**
+     * Metrics belongs to some group - which defines rendering characteristics
+     * @return String group name. Can't be null
+     * todo: clue with metric itself
+     */
+    public abstract MetricGroup getMetricGroup();
 
     /**
      * Returns metric description to be show in the report

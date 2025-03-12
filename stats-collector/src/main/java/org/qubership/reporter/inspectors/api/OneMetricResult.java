@@ -1,9 +1,12 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.model.MetricGroup;
+
 public class OneMetricResult {
     private final String rawValue;
     private final ResultSeverity severity;
     private final String metricName;
+    private MetricGroup metricGroup;
     private String httpReference;
     private String toolTipForGithubOnly;
     private TextAlign textAlign;
@@ -49,5 +52,13 @@ public class OneMetricResult {
 
     public void setTextAlign(TextAlign textAlign) {
         this.textAlign = textAlign;
+    }
+
+    public MetricGroup getMetricGroup() {
+        return metricGroup;
+    }
+
+    public void setMetricGroup(MetricGroup metricGroup) {
+        this.metricGroup = metricGroup;
     }
 }

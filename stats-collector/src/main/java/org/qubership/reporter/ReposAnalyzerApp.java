@@ -5,7 +5,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.qubership.reporter.inspectors.InspectorsHolder;
+import org.qubership.reporter.inspectors.InspectorsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.model.ReportModel;
@@ -21,7 +21,7 @@ public class ReposAnalyzerApp {
     public static final String REPORT_SHORT_FILE_NAME = "stats-collector-report.json";
 
     // private ObjectMapper mapper;
-    private InspectorsHolder iHolder = new InspectorsHolder();
+    private InspectorsRegistry iHolder = new InspectorsRegistry();
 
     public ReposAnalyzerApp() {
         // mapper = new ObjectMapper(new JsonFactory());
@@ -69,8 +69,9 @@ public class ReposAnalyzerApp {
         // oneRepoResult.put(ReservedColumns.ID, repoDir.getName().toLowerCase());
 
         // perform all registered checks
-        for (ARepositoryInspector inspector : InspectorsHolder.getRegisteredInspectors()) {
+        for (ARepositoryInspector inspector : InspectorsRegistry.getRegisteredInspectors()) {
             OneMetricResult result = inspector.runInspectionFor(repoDir.getAbsolutePath(), metaData);
+            result.setMetricGroup(inspector.getMetricGroup());
             oneRepoResult.put(result.getMetricName(), result);
         }
 

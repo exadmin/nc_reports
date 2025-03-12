@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class InspectorsHolder {
+public class InspectorsRegistry {
     private static List<ARepositoryInspector> registeredInspectors = new ArrayList<>();
     static {
         // register all necessary inspectors here

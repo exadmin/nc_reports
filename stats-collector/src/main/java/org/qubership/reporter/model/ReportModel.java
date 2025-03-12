@@ -2,7 +2,8 @@ package org.qubership.reporter.model;
 
 import org.apache.commons.collections4.keyvalue.MultiKey;
 import org.apache.commons.collections4.map.MultiKeyMap;
-import org.qubership.reporter.inspectors.InspectorsHolder;
+import org.qubership.reporter.inspectors.InspectorsRegistry;
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
@@ -34,7 +35,7 @@ public class ReportModel {
       this.metricNames = new ArrayList<>();
 
       // collect metrics by registered inspectors
-      for (ARepositoryInspector insp : InspectorsHolder.getRegisteredInspectors()) {
+      for (ARepositoryInspector insp : InspectorsRegistry.getRegisteredInspectors()) {
          String metricName = insp.getMetricName();
          if (!metricNames.contains(metricName)) {
             metricNames.add(metricName);
@@ -59,16 +60,13 @@ public class ReportModel {
       // now assign row-nums
       int rowNumber = 1; // virtual row
       for (String row : repoNames) {
-         OneMetricResult omRes = new OneMetricResult(ReservedColumns.NUM, ResultSeverity.INFO, "" + rowNumber++);
+         OneMetricResult omRes = new OneMetricResult(ReservedColumns.NUM, ResultSeverity.INFO, "" + rowNumber);
+         omRes.setMetricGroup(MetricGroupsRegistry.SYSTEM_METRIC_GROUP);
          multiMap.put(row, ReservedColumns.NUM, omRes); // todo: analyze
+         rowNumber++;
       }
 
-      // sort columns by ABC desc and set "ID" first
-      // metricNames.sort(Comparator.naturalOrder());
-      metricNames.remove(ReservedColumns.ID);
-      metricNames.remove(ReservedColumns.NUM);
-      metricNames.add(0, ReservedColumns.ID);
-      metricNames.add(0, ReservedColumns.NUM);
+
 
       // make data unmodifiable
       repoNames = Collections.unmodifiableList(repoNames);

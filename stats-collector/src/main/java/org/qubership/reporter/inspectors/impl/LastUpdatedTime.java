@@ -1,8 +1,10 @@
 package org.qubership.reporter.inspectors.impl;
 
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
+import org.qubership.reporter.model.MetricGroup;
 
 import java.util.List;
 import java.util.Map;
@@ -30,5 +32,10 @@ public class LastUpdatedTime extends ARepositoryInspector {
     @Override
     protected String getMetricDescriptionInMDFormat() {
         return "Returns time when repository was updated last time";
+    }
+
+    @Override
+    public MetricGroup getMetricGroup() {
+        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
     }
 }

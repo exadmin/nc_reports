@@ -1,6 +1,8 @@
 package org.qubership.reporter.inspectors.impl.workflowfiles;
 
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.files.AGithubWorkflowFileInspector;
+import org.qubership.reporter.model.MetricGroup;
 
 import java.util.List;
 
@@ -18,5 +20,10 @@ public class AutomaticPRLabeler extends AGithubWorkflowFileInspector {
     @Override
     public String getMetricName() {
         return "WF/Labeler";
+    }
+
+    @Override
+    public MetricGroup getMetricGroup() {
+        return MetricGroupsRegistry.MANDATORY_FILES_GROUP;
     }
 }

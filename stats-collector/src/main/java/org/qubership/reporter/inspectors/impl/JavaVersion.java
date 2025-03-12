@@ -2,9 +2,11 @@ package org.qubership.reporter.inspectors.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.TextAlign;
+import org.qubership.reporter.model.MetricGroup;
 import org.qubership.reporter.utils.FileUtils;
 
 import java.io.File;
@@ -78,5 +80,10 @@ public class JavaVersion extends ARepositoryInspector {
         }
 
         return null;
+    }
+
+    @Override
+    public MetricGroup getMetricGroup() {
+        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
     }
 }
