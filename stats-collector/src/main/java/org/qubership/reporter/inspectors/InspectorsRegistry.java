@@ -6,6 +6,7 @@ import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
 import org.qubership.reporter.inspectors.impl.metadata.TopicAdded;
 import org.qubership.reporter.inspectors.impl.mfiles.CheckApache20License;
+import org.qubership.reporter.inspectors.impl.mfiles.CodeOwnersInspector;
 import org.qubership.reporter.inspectors.impl.mfiles.ReadmeFileContent;
 import org.qubership.reporter.inspectors.impl.mfiles.workflowfiles.*;
 import org.qubership.reporter.inspectors.impl.summary.ErrorsCountInspector;
@@ -33,7 +34,7 @@ public class InspectorsRegistry {
         registeredInspectors.add(new ProfanityFilterFileInspector());
         registeredInspectors.add(new SuperLinterFileInspector());
         registeredInspectors.add(new RepoIDInspector());
-
+        registeredInspectors.add(new CodeOwnersInspector());
         registeredInspectors.add(new JavaVersion());
         registeredInspectors.add(new ErrorsCountInspector());
 
