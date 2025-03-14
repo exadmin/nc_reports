@@ -62,24 +62,32 @@ public abstract class ARepositoryInspector {
         return inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);
     }
 
-
-
     protected OneMetricResult error(String msg) {
-        OneMetricResult result = new OneMetricResult(getMetricName(), ResultSeverity.ERROR, msg);
-        result.setTextAlign(TextAlign.CENTER_MIDDLE);
-        return result;
+        return error(msg, null);
+    }
+
+    protected OneMetricResult error(String msg, String httpRef) {
+        return createMetricResult(msg, ResultSeverity.ERROR, httpRef);
     }
 
     protected OneMetricResult ok(String msg) {
-        return new OneMetricResult(getMetricName(), ResultSeverity.OK, msg);
+        return createMetricResult(msg, ResultSeverity.OK, null);
     }
 
     protected OneMetricResult warn(String msg) {
-        return new OneMetricResult(getMetricName(), ResultSeverity.WARN, msg);
+        return warn(msg, null);
+    }
+
+    protected OneMetricResult warn(String msg, String httpRef) {
+        return createMetricResult(msg, ResultSeverity.WARN, httpRef);
     }
 
     protected OneMetricResult info(String msg) {
-        return new OneMetricResult(getMetricName(), ResultSeverity.INFO, msg);
+        return info(msg, null);
+    }
+
+    protected OneMetricResult info(String msg, String httpRef) {
+        return createMetricResult(msg, ResultSeverity.INFO, httpRef);
     }
 
     public final OneMetricResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
@@ -88,5 +96,12 @@ public abstract class ARepositoryInspector {
         } catch (Exception ex) {
             return error("Internal error: " + ex);
         }
+    }
+
+    private OneMetricResult createMetricResult(String msg, ResultSeverity severity, String httpRef) {
+        OneMetricResult result = new OneMetricResult(getMetricName(), severity, msg);
+        result.setTextAlign(TextAlign.CENTER_MIDDLE);
+        result.setHttpReference(httpRef);
+        return result;
     }
 }

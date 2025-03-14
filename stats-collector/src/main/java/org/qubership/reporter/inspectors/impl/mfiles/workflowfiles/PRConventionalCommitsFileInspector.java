@@ -26,4 +26,9 @@ public class PRConventionalCommitsFileInspector extends AGithubWorkflowFileInspe
     public MetricGroup getMetricGroup() {
         return MetricGroupsRegistry.MANDATORY_FILES_GROUP;
     }
+
+    @Override
+    protected void addExpectedContentRegExpressions(List<String> strings) {
+
+    }
 }

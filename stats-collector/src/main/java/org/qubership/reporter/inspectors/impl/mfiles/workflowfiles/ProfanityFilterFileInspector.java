@@ -26,4 +26,9 @@ public class ProfanityFilterFileInspector extends AGithubWorkflowFileInspector {
     public MetricGroup getMetricGroup() {
         return MetricGroupsRegistry.MANDATORY_FILES_GROUP;
     }
+
+    @Override
+    protected void addExpectedContentRegExpressions(List<String> strings) {
+
+    }
 }

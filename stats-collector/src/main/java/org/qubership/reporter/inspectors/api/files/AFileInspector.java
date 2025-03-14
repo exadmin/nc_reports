@@ -10,6 +10,8 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public abstract class AFileInspector extends ARepositoryInspector {
     protected abstract FileRequirements getFileRequirements();
@@ -35,28 +37,35 @@ public abstract class AFileInspector extends ARepositoryInspector {
         // check sha256 sum
         if (fReqs.getExpSha256CheckSums() != null) {
             try {
-                boolean checkIsPassed = false;
+
                 String actSha256;
 
+                String wholeFileContent = FileUtils.readFile(file.toString());
+
                 if (fReqs.isAllowTrim()) {
-                    String wholeFileContent = FileUtils.readFile(file.toString());
                     wholeFileContent = wholeFileContent.trim();
                     actSha256 = StrUtils.getSHA256FromString(wholeFileContent);
                 } else {
                     actSha256 = FileUtils.getSHA256FromFile(file.toString());
                 }
 
-                for (String expSha256 : fReqs.getExpSha256CheckSums()) {
-                    if (actSha256.equals(expSha256)) {
-                        checkIsPassed = true;
-                        break;
+                // check file content for expected check-sum
+                {
+                    boolean checkIsPassed = false;
+                    for (String expSha256 : fReqs.getExpSha256CheckSums()) {
+                        if (actSha256.equals(expSha256)) {
+                            checkIsPassed = true;
+                            break;
+                        }
+                    }
+                    if (!checkIsPassed) {
+                        return warn("Unexpected content", fileURI);
                     }
                 }
 
-                if (!checkIsPassed) {
-                    OneMetricResult result = new OneMetricResult(getMetricName(), ResultSeverity.WARN, "Unexpected content");
-                    result.setHttpReference(fileURI);
-                    return result;
+                String errMsg = checkForAllRegExpsOrReturnErrorMsg(wholeFileContent, fReqs.getRegExpressions());
+                if (errMsg != null) {
+                    return error(errMsg, fileURI);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -76,5 +85,16 @@ public abstract class AFileInspector extends ARepositoryInspector {
 
         // seems all checks are passed
         return ok("");
+    }
+
+    private static String checkForAllRegExpsOrReturnErrorMsg(String content, List<Pattern> regExps) {
+        if (regExps == null || regExps.isEmpty()) return null;
+
+        for (Pattern pattern : regExps) {
+            Matcher matcher = pattern.matcher(content);
+            if (!matcher.find()) return "No required content is found by RegExp = '" + pattern + "'";
+        }
+
+        return null;
     }
 }

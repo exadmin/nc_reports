@@ -3,11 +3,13 @@ package org.qubership.reporter.inspectors.api.files;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class FileRequirements {
     String expectedFileName;
     Long expectedMinFileSizeInBytes;
     List<String> expSha256CheckSums;
+    List<Pattern> regExpsCompiled;
     boolean allowTrim;
 
     /**
@@ -33,6 +35,19 @@ public class FileRequirements {
         expSha256CheckSums.add(sha256);
     }
 
+    /**
+     * In case file content must contain some string it can be checked by providing reg-exp
+     * @param regExpStr
+     */
+    public void addExpectationByRegExp(String regExpStr) {
+        if (regExpsCompiled == null) {
+            regExpsCompiled = new ArrayList<>();
+        }
+
+        Pattern pattern = Pattern.compile(regExpStr, Pattern.CASE_INSENSITIVE + Pattern.DOTALL);
+        regExpsCompiled.add(pattern);
+    }
+
     public String getExpectedFileName() {
         return expectedFileName;
     }
@@ -56,5 +71,10 @@ public class FileRequirements {
      */
     public void setAllowTrim(boolean allowTrim) {
         this.allowTrim = allowTrim;
+    }
+
+    public List<Pattern> getRegExpressions() {
+        if (regExpsCompiled == null) return null;
+        return Collections.unmodifiableList(regExpsCompiled);
     }
 }

@@ -8,6 +8,8 @@ public abstract class AGithubWorkflowFileInspector extends AFileInspector {
 
     protected abstract void addExpectedSha256Sums(List<String> sha256CheckSums);
 
+    protected abstract void addExpectedContentRegExpressions(List<String> strings);
+
     @Override
     protected final FileRequirements getFileRequirements() {
         FileRequirements fReqs = new FileRequirements(".github/workflows/" + getShortFileNamePlacedInGitHubWorkflowFolder());
@@ -18,6 +20,14 @@ public abstract class AGithubWorkflowFileInspector extends AFileInspector {
         if (!expSha256Sums.isEmpty()) {
             for (String next : expSha256Sums) {
                 fReqs.addExpectedSha256CheckSum(next);
+            }
+        }
+
+        List<String> lines = new ArrayList<>();
+        addExpectedContentRegExpressions(lines);
+        if (!lines.isEmpty()) {
+            for (String next : lines) {
+                fReqs.addExpectationByRegExp(next);
             }
         }
 

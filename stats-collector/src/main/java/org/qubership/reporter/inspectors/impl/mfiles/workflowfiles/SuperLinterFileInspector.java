@@ -14,7 +14,7 @@ public class SuperLinterFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("sDiYyYY527ERa/+6s7WBaoVt7PxZIXc2DtcIoQ5rR/E=");
+        // sha256CheckSums.add("sDiYyYY527ERa/+6s7WBaoVt7PxZIXc2DtcIoQ5rR/E=");
     }
 
     @Override
@@ -25,5 +25,10 @@ public class SuperLinterFileInspector extends AGithubWorkflowFileInspector {
     @Override
     public MetricGroup getMetricGroup() {
         return MetricGroupsRegistry.MANDATORY_FILES_GROUP;
+    }
+
+    @Override
+    protected void addExpectedContentRegExpressions(List<String> regExps) {
+        regExps.add("\\buses\\s*:\\s*super-linter/super-linter@");
     }
 }
