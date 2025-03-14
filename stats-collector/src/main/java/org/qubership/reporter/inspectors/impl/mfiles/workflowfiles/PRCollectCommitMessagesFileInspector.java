@@ -14,7 +14,7 @@ public class PRCollectCommitMessagesFileInspector extends AGithubWorkflowFileIns
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("Ds4rRTAH2rEcSaAA4QBiYLdeZnOu2DbwzXeHGgfEz/A=");
+        // sha256CheckSums.add("Ds4rRTAH2rEcSaAA4QBiYLdeZnOu2DbwzXeHGgfEz/A=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class PRCollectCommitMessagesFileInspector extends AGithubWorkflowFileIns
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*netcracker/qubership-workflow-hub/actions/pr-add-messages@");
     }
 }

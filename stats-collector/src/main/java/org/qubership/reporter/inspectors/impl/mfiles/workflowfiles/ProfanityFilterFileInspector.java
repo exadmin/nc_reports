@@ -14,7 +14,7 @@ public class ProfanityFilterFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("f8NYnS/VlsMgAOlFkEdF1u7cjajSBzzZDSul2RjQP1I=");
+        // sha256CheckSums.add("f8NYnS/VlsMgAOlFkEdF1u7cjajSBzzZDSul2RjQP1I=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class ProfanityFilterFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*Netcracker/qubership-workflow-hub/.github/workflows/profanityFilter.yaml@");
     }
 }

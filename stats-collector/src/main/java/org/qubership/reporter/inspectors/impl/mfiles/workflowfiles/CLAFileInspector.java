@@ -15,7 +15,7 @@ public class CLAFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("2NRyXrE8sP1riS2MyKfLoWjrm0OtQvfweBBOqUqtAfo=");
+        // sha256CheckSums.add("2NRyXrE8sP1riS2MyKfLoWjrm0OtQvfweBBOqUqtAfo=");
     }
 
     @Override
@@ -30,6 +30,6 @@ public class CLAFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*Netcracker/qubership-workflow-hub/.github/workflows/cla.yaml@");
     }
 }

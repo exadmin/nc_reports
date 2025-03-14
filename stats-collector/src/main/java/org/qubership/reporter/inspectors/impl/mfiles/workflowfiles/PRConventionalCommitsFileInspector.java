@@ -14,7 +14,7 @@ public class PRConventionalCommitsFileInspector extends AGithubWorkflowFileInspe
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("0Z+w5ISm3VQ0ldUBInV8VxwaZlIE9Qh7tQlCaqD2oFQ=");
+        // sha256CheckSums.add("0Z+w5ISm3VQ0ldUBInV8VxwaZlIE9Qh7tQlCaqD2oFQ=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class PRConventionalCommitsFileInspector extends AGithubWorkflowFileInspe
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*webiny/action-conventional-commits@");
     }
 }

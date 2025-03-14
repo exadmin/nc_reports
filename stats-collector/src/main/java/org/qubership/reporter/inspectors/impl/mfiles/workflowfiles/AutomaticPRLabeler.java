@@ -14,7 +14,7 @@ public class AutomaticPRLabeler extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("LXd62wzKhH05wia6N7v4f4Use5q1Uwk0QLDABoyXMLg=");
+        // sha256CheckSums.add("LXd62wzKhH05wia6N7v4f4Use5q1Uwk0QLDABoyXMLg=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class AutomaticPRLabeler extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*Netcracker/qubership-workflow-hub/.github/workflows/auto-labeler.yaml@");
     }
 }

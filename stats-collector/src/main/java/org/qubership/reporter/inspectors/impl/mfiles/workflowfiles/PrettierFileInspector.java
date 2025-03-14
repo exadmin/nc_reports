@@ -14,7 +14,7 @@ public class PrettierFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("f5i6XEAxaHH2oaCwWwwNvrJtOG2MOuwe9qUDats0mVs=");
+        // sha256CheckSums.add("f5i6XEAxaHH2oaCwWwwNvrJtOG2MOuwe9qUDats0mVs=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class PrettierFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*Netcracker/qubership-workflow-hub/.github/workflows/prettierFix.yaml@");
     }
 }

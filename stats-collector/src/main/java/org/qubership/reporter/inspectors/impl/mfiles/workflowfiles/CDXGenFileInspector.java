@@ -14,7 +14,7 @@ public class CDXGenFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("28nGOOhUtjDidPWgYahboIBwuzHVgUkeMUAcDicaD20=");
+        // sha256CheckSums.add("28nGOOhUtjDidPWgYahboIBwuzHVgUkeMUAcDicaD20=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class CDXGenFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*netcracker/qubership-workflow-hub/actions/cdxgen@");
     }
 }

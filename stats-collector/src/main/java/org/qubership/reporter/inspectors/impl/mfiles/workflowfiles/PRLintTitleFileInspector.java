@@ -14,7 +14,7 @@ public class PRLintTitleFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedSha256Sums(List<String> sha256CheckSums) {
-        sha256CheckSums.add("zgC/zLSkfoE5QpLe+EoT16wajIE5fMGn+af3zVCgKNI=");
+        // sha256CheckSums.add("zgC/zLSkfoE5QpLe+EoT16wajIE5fMGn+af3zVCgKNI=");
     }
 
     @Override
@@ -29,6 +29,6 @@ public class PRLintTitleFileInspector extends AGithubWorkflowFileInspector {
 
     @Override
     protected void addExpectedContentRegExpressions(List<String> strings) {
-
+        strings.add("\\buses\\s*:\\s*amannn/action-semantic-pull-request@");
     }
 }
