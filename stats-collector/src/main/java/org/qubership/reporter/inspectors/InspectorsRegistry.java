@@ -4,7 +4,7 @@ import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
-import org.qubership.reporter.inspectors.impl.metadata.TopicAdded;
+import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 import org.qubership.reporter.inspectors.impl.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.mfiles.CodeOwnersInspector;
 import org.qubership.reporter.inspectors.impl.mfiles.ReadmeFileContent;

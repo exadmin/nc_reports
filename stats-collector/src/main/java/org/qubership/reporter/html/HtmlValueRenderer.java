@@ -1,6 +1,7 @@
 package org.qubership.reporter.html;
 
 import org.qubership.reporter.inspectors.api.OneMetricResult;
+import org.qubership.reporter.model.ReservedColumns;
 
 import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
 
@@ -11,7 +12,7 @@ public class HtmlValueRenderer {
     private static final String WARN_PREFIX = "❎&nbsp;";
     private static final String INFO_PREFIX = "";
 
-    public String getHtml(OneMetricResult metricValue) {
+    public String getHtml(OneMetricResult metricValue, String metricName) {
         String mdStr = metricValue.getRawValue();
 
         if (OK.equals(metricValue.getSeverity())) mdStr = OK_PREFIX + mdStr;

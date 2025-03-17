@@ -110,6 +110,8 @@ public class HtmlRenderer {
         List<String> sortedMetricNames = new ArrayList<>(uniqueSet);
         sortedMetricNames.remove(ReservedColumns.ID);
         sortedMetricNames.remove(ReservedColumns.NUM);
+        sortedMetricNames.remove(ReservedColumns.TOPICS);
+        sortedMetricNames.add(0, ReservedColumns.TOPICS);
         sortedMetricNames.add(0, ReservedColumns.ID);
         sortedMetricNames.add(0, ReservedColumns.NUM);
 
@@ -133,7 +135,7 @@ public class HtmlRenderer {
                 for (String colName : sortedMetricNames) {
                     OneMetricResult metricValue = reportModel.getValue(rowName, colName);
 
-                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue);
+                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, colName);
                     sb.append("            <td class=\"").append(metricValue.getTextAlign()).append("\">");
                     sb.append(cellInternalHtml);
                     sb.append("</td>\n");

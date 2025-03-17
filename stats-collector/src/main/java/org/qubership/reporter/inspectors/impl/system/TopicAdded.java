@@ -1,9 +1,10 @@
-package org.qubership.reporter.inspectors.impl.metadata;
+package org.qubership.reporter.inspectors.impl.system;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.model.MetricGroup;
+import org.qubership.reporter.model.ReservedColumns;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class TopicAdded extends ARepositoryInspector {
         if (topics != null) {
             StringBuilder sb = new StringBuilder();
             for (Object topicName : topics) {
-                sb.append(topicName).append("&nbsp;");
+                sb.append(topicName).append("<br>");
             }
 
             return info(sb.toString());
@@ -26,7 +27,7 @@ public class TopicAdded extends ARepositoryInspector {
 
     @Override
     public String getMetricName() {
-        return "Topics";
+        return ReservedColumns.TOPICS;
     }
 
     @Override
@@ -36,6 +37,6 @@ public class TopicAdded extends ARepositoryInspector {
 
     @Override
     public MetricGroup getMetricGroup() {
-        return MetricGroupsRegistry.META_DATA_GROUP;
+        return MetricGroupsRegistry.SYSTEM_METRIC_GROUP;
     }
 }
