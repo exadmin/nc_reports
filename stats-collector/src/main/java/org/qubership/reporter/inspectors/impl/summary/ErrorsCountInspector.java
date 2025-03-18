@@ -12,7 +12,7 @@ import java.util.Map;
 public class ErrorsCountInspector extends ARepositoryInspector {
     @Override
     public String getMetricName() {
-        return ReservedColumns.TOTAL_SCORES;
+        return ReservedColumns.ERRORS_COUNT_THIS_WEEK;
     }
 
     @Override

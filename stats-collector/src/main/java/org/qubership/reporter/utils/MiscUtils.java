@@ -22,4 +22,8 @@ public class MiscUtils {
         byte[] hash = digest.digest();
         return Base64.getEncoder().encodeToString(hash);
     }
+
+    public static String createComplexKey(String repoName, String metricName) {
+        return "[" + repoName + "]:[" + metricName + "]";
+    }
 }

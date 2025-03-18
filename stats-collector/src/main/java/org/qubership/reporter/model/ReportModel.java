@@ -2,7 +2,6 @@ package org.qubership.reporter.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -13,6 +12,7 @@ import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
+import org.qubership.reporter.utils.MiscUtils;
 
 import java.io.File;
 import java.util.*;
@@ -112,9 +112,9 @@ public class ReportModel {
             }
          }
 
-         OneMetricResult omRes = new OneMetricResult(ReservedColumns.TOTAL_SCORES, ResultSeverity.INFO, "" + errCount);
+         OneMetricResult omRes = new OneMetricResult(ReservedColumns.ERRORS_COUNT_THIS_WEEK, ResultSeverity.INFO, "" + errCount);
          omRes.setMetricGroup(MetricGroupsRegistry.EXECUTIVE_SUMMARY);
-         multiMap.put(row, ReservedColumns.TOTAL_SCORES, omRes);
+         multiMap.put(row, ReservedColumns.ERRORS_COUNT_THIS_WEEK, omRes);
       }
    }
 
@@ -127,7 +127,7 @@ public class ReportModel {
          String metricName = me.getKey().getKey(1); // metric
          String rawValue   = me.getValue().getRawValue();     // value
 
-         String newFatKey = "[" + repoName + "]:[" + metricName + "]";
+         String newFatKey = MiscUtils.createComplexKey(repoName, metricName);
          newMap.put(newFatKey, rawValue);
       }
 

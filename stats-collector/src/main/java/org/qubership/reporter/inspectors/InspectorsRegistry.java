@@ -4,6 +4,7 @@ import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
+import org.qubership.reporter.inspectors.impl.summary.ErrorsDeltaInspector;
 import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 import org.qubership.reporter.inspectors.impl.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.mfiles.CodeOwnersInspector;
@@ -37,8 +38,9 @@ public class InspectorsRegistry {
         registeredInspectors.add(new CodeOwnersInspector());
         registeredInspectors.add(new JavaVersion());
         registeredInspectors.add(new ErrorsCountInspector());
+        registeredInspectors.add(new TopicAdded());
+        registeredInspectors.add(new ErrorsDeltaInspector());
 
-        registeredInspectors.add(new TopicAdded()); // keep it last
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }
 
