@@ -47,6 +47,8 @@ jobs:
           cp ./../clone_all.sh /tmp/workingdir/netcracker/clone_all.sh
           cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
           
+          mkdir -p ./reports-are-here/data
+          mkdir -p /tmp/workingdir/netcracker/data
           cp -r ./reports-are-here/data /tmp/workingdir/netcracker/data
           
           cd /tmp/workingdir/netcracker
@@ -60,8 +62,7 @@ jobs:
       - name: Do commit back to repo
         run: |
           date=$(date +"%d-%m-%Y-%H-%M-%S")
-          sed -i -e "s/#GEN_DATE#/$date/g" /tmp/workingdir/netcracker/combined-report.html 
-          mkdir -p ./reports-are-here/data
+          sed -i -e "s/#GEN_DATE#/$date/g" /tmp/workingdir/netcracker/combined-report.html           
           cp /tmp/workingdir/netcracker/persisted-data.json ./reports-are-here/data/persisted-data-$date.json
           cp /tmp/workingdir/netcracker/combined-report.html ./reports-are-here/combined-report-$date.html
           cp /tmp/workingdir/netcracker/combined-report.html ./docs/index.html

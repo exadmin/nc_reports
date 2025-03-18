@@ -1,7 +1,6 @@
 package org.qubership.reporter.html;
 
 import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.model.ReservedColumns;
 
 import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
 

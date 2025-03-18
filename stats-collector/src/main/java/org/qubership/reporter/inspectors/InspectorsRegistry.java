@@ -4,14 +4,14 @@ import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
-import org.qubership.reporter.inspectors.impl.summary.ErrorsDeltaInspector;
-import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 import org.qubership.reporter.inspectors.impl.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.mfiles.CodeOwnersInspector;
 import org.qubership.reporter.inspectors.impl.mfiles.ReadmeFileContent;
 import org.qubership.reporter.inspectors.impl.mfiles.workflowfiles.*;
 import org.qubership.reporter.inspectors.impl.summary.ErrorsCountInspector;
+import org.qubership.reporter.inspectors.impl.summary.ErrorsDeltaInspector;
 import org.qubership.reporter.inspectors.impl.system.RepoIDInspector;
+import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 
 import java.util.ArrayList;
 import java.util.Collections;
