@@ -1,5 +1,11 @@
 package org.qubership.reporter.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.apache.commons.collections4.keyvalue.MultiKey;
 import org.apache.commons.collections4.map.MultiKeyMap;
 import org.qubership.reporter.inspectors.InspectorsRegistry;
@@ -8,13 +14,18 @@ import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
 
+import java.io.File;
 import java.util.*;
 
 public class ReportModel {
    // rowID -> Map<Key, Value>
    // private Map<String, Map<String, String>> data = new HashMap<>();
+   @JsonIgnore
    private List<String> repoNames;
+
+   @JsonIgnore
    private List<String> metricNames;
+
    private MultiKeyMap<String, OneMetricResult> multiMap = new MultiKeyMap<>(); // key1 & key2 are String, value is OneMetricResult
 
    public void addData(String repoName, Map<String, OneMetricResult> repoData) {
@@ -105,5 +116,24 @@ public class ReportModel {
          omRes.setMetricGroup(MetricGroupsRegistry.EXECUTIVE_SUMMARY);
          multiMap.put(row, ReservedColumns.TOTAL_SCORES, omRes);
       }
+   }
+
+   public void saveToFile(String fileName) throws Exception {
+      Map<String, String> newMap = new HashMap<>();
+
+
+      for (Map.Entry<MultiKey<? extends String>, OneMetricResult> me : multiMap.entrySet()) {
+         String repoName   = me.getKey().getKey(0); // repo
+         String metricName = me.getKey().getKey(1); // metric
+         String rawValue   = me.getValue().getRawValue();     // value
+
+         String newFatKey = "[" + repoName + "]:[" + metricName + "]";
+         newMap.put(newFatKey, rawValue);
+      }
+
+      ObjectMapper mapper = new ObjectMapper(new JsonFactory());
+      mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+      mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+      mapper.writeValue(new File(fileName), newMap);
    }
 }

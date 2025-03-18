@@ -18,5 +18,8 @@ public class MainApp {
         String outputFileName = args[0] + File.separator + "combined-report.html";
         htmlRenderer.createHtmlFile(report, outputFileName);
 
+        String dataFile = args[0] + File.separator + "persisted-data.json";
+        report.saveToFile(dataFile);
+
     }
 }
