@@ -35,12 +35,13 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Build with Maven
-        working-directory: ./stats-collector
-        run: mvn -B package --file pom.xml
+        run: |
+          cd ./stats-collector
+          mvn -B package --file pom.xml
 
       - name: Run reports
-        working-directory: ./stats-collector
         run: |
+          cd ./stats-collector
           mkdir -p /tmp/workingdir/netcracker
           mkdir -p /tmp/workingdir/docs
           cp ./../docs/template.html /tmp/workingdir/docs/template.html
