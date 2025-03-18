@@ -21,10 +21,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -57,81 +54,84 @@ public class ErrorsDeltaInspector extends ARepositoryInspector {
         if (oldMap == null) {
             // list existed reports
             Path startPath = Paths.get(pathToRepository + "./../data");
-            List<Path> reportFiles = null;
+            TheLogger.debug("Looking for previous reports data at " + startPath);
+            List<Path> reportFiles = Collections.emptyList();
             try (Stream<Path> files = Files.list(startPath)) {
-               reportFiles = files.filter(Files::isRegularFile).filter(path -> path.toString().endsWith(".json"))
-                        .collect(Collectors.toList());
+                reportFiles = files.filter(Files::isRegularFile).filter(path -> path.toString().endsWith(".json")).collect(Collectors.toList());
             } catch (IOException ioex) {
                 TheLogger.error("Error while loading prev reports data", ioex);
                 oldMap = new HashMap<>();
             }
 
+            TheLogger.debug("Found " + reportFiles.size() + " *.json files");
+
             // create map of file-name to date
-            if (reportFiles != null) {
-                Map<String, String> name2DateMap = new HashMap<>();
+            Map<String, String> name2DateMap = new HashMap<>();
 
-                for (Path next : reportFiles) {
-                    String shortFileName = next.getFileName().toString();
-                    Matcher matcher = REG_EXP.matcher(shortFileName);
-                    if (matcher.find()) {
-                        String dateStr = matcher.group(1);
-                        name2DateMap.put(shortFileName, dateStr);
+            for (Path next : reportFiles) {
+                String shortFileName = next.getFileName().toString();
+                Matcher matcher = REG_EXP.matcher(shortFileName);
+                if (matcher.find()) {
+                    String dateStr = matcher.group(1);
+                    name2DateMap.put(shortFileName, dateStr);
+                }
+            }
+
+            // here we shoold have non empty map
+            LocalDateTime currentDateTime = LocalDateTime.now();
+            LocalDateTime weekAgo = currentDateTime.minusWeeks(1);
+            final Date targetDate = DateUtils.toDate(weekAgo.format(DATE_FORMATTER));
+
+            // todo: compare map with dateAsStr
+            String selectedFileBefore = null;
+            String selectedFileAfter = null;
+
+            long timeDeltaForFileBefore = Long.MAX_VALUE;
+            long timeDeltaForFileAfter = Long.MAX_VALUE;
+
+
+            for (Map.Entry<String, String> me : name2DateMap.entrySet()) {
+                String fileName = me.getKey();
+                String fileDateStr = me.getValue();
+                Date fileDate = DateUtils.toDate(fileDateStr);
+
+                long timeDelta = Math.abs(fileDate.getTime() - targetDate.getTime());
+
+                if (fileDate.before(targetDate)) {
+                    if (timeDelta < timeDeltaForFileBefore) {
+                        selectedFileBefore = fileName;
+                        timeDeltaForFileBefore = timeDelta;
+                    }
+                } else {
+                    if (timeDelta < timeDeltaForFileAfter) {
+                        selectedFileAfter = fileName;
+                        timeDeltaForFileAfter = timeDelta;
                     }
                 }
+            }
 
-                // here we shoold have non empty map
-                LocalDateTime currentDateTime = LocalDateTime.now();
-                LocalDateTime weekAgo = currentDateTime.minusWeeks(1);
-                final Date targetDate = DateUtils.toDate(weekAgo.format(DATE_FORMATTER));
+            TheLogger.debug("Selecting " + selectedFileBefore + " as file-before requested date");
+            TheLogger.debug("Selecting " + selectedFileAfter + " as file-after requested date");
 
-                // todo: compare map with dateAsStr
-                String selectedFileBefore = null;
-                String selectedFileAfter = null;
+            String selectedFile = selectedFileBefore;
 
-                long timeDeltaForFileBefore = Long.MAX_VALUE;
-                long timeDeltaForFileAfter = Long.MAX_VALUE;
+            // if there were no files a week ago - select oldest one
+            if (selectedFileBefore == null) selectedFile = selectedFileAfter;
 
+            // load file which was selected as
+            if (selectedFile != null) {
+                try {
+                    TypeReference<Map<String, String>> typeRef = new TypeReference<>() {
+                    };
 
-                for (Map.Entry<String, String> me : name2DateMap.entrySet()) {
-                    String fileName = me.getKey();
-                    String fileDateStr = me.getValue();
-                    Date fileDate = DateUtils.toDate(fileDateStr);
-
-                    long timeDelta = Math.abs(fileDate.getTime() - targetDate.getTime());
-
-                    if (fileDate.before(targetDate)) {
-                        if (timeDelta < timeDeltaForFileBefore) {
-                            selectedFileBefore = fileName;
-                            timeDeltaForFileBefore = timeDelta;
-                        }
-                    } else {
-                        if (timeDelta < timeDeltaForFileAfter) {
-                            selectedFileAfter = fileName;
-                            timeDeltaForFileAfter = timeDelta;
-                        }
-                    }
+                    ObjectMapper mapper = new ObjectMapper(new JsonFactory());
+                    mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+                    mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+                    oldMap = mapper.readValue(new File(startPath + File.separator + selectedFile), typeRef);
+                } catch (Exception ex) {
+                    TheLogger.error("Error while loading json format from " + selectedFile, ex);
+                    oldMap = new HashMap<>();
                 }
-
-                String selectedFile = selectedFileBefore;
-
-                // if there were no files a week ago - select oldest one
-                if (selectedFileBefore == null) selectedFile = selectedFileAfter;
-
-                // load file which was selected as
-                if (selectedFile != null) {
-                    try {
-                        TypeReference<Map<String, String>> typeRef = new TypeReference<>() {};
-
-                        ObjectMapper mapper = new ObjectMapper(new JsonFactory());
-                        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-                        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-                        oldMap = mapper.readValue(new File(startPath + File.separator + selectedFile), typeRef);
-                    } catch (Exception ex) {
-                        TheLogger.error("Error while loading json format from " + selectedFile, ex);
-                        oldMap = new HashMap<>();
-                    }
-                }
-
             }
         }
 
