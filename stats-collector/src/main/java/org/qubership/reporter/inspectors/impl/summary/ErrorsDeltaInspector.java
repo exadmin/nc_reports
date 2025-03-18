@@ -53,7 +53,7 @@ public class ErrorsDeltaInspector extends ARepositoryInspector {
         // load persisted data from previous reports
         if (oldMap == null) {
             // list existed reports
-            Path startPath = Paths.get(pathToRepository + "./../data");
+            Path startPath = Paths.get(pathToRepository + "/../data");
             TheLogger.debug("Looking for previous reports data at " + startPath);
             List<Path> reportFiles = Collections.emptyList();
             try (Stream<Path> files = Files.list(startPath)) {
