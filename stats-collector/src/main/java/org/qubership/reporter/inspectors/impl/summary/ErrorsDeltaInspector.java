@@ -52,6 +52,8 @@ public class ErrorsDeltaInspector extends ARepositoryInspector {
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         // load persisted data from previous reports
         if (oldMap == null) {
+            oldMap = Collections.emptyMap(); // if no assigment will be done later - the oldMap will never be null any way.
+
             // list existed reports
             Path startPath = Paths.get(pathToRepository + "/../data");
             TheLogger.debug("Looking for previous reports data at " + startPath);

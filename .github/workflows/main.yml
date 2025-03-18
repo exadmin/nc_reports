@@ -50,7 +50,7 @@ jobs:
           
           mkdir -p ./../reports-are-here/data
           mkdir -p /tmp/workingdir/netcracker/data
-          cp -r ./../reports-are-here/data /tmp/workingdir/netcracker/data
+          cp -r ./../reports-are-here/data/. /tmp/workingdir/netcracker/data
           
           cd /tmp/workingdir/netcracker
           sudo chmod +x clone_all.sh

@@ -5,7 +5,7 @@ i=0
 
 while true; do
     file="all_repos_page$i.json"
-    echo "Processig file $file"
+    echo "Processing file $file"
 
     curl "https://api.github.com/orgs/Netcracker/repos?per_page=50&page=$i" > "$file"
 
