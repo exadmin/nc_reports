@@ -8,7 +8,8 @@ import java.util.regex.Pattern;
 public class FileRequirements {
     Long expectedMinFileSizeInBytes;
     List<String> expSha256CheckSums;
-    List<Pattern> regExpsCompiled;
+    List<Pattern> expectedContentRegExpCompiled;
+    List<Pattern> restrictedContentRegExpCompiled;
     List<String> oneOfFilePaths;
     boolean allowTrim;
 
@@ -41,12 +42,23 @@ public class FileRequirements {
      * @param regExpStr
      */
     public void addExpectationByRegExp(String regExpStr) {
-        if (regExpsCompiled == null) {
-            regExpsCompiled = new ArrayList<>();
+        if (expectedContentRegExpCompiled == null) {
+            expectedContentRegExpCompiled = new ArrayList<>();
         }
 
-        Pattern pattern = Pattern.compile(regExpStr, Pattern.CASE_INSENSITIVE + Pattern.DOTALL);
-        regExpsCompiled.add(pattern);
+        Pattern pattern = Pattern.compile(regExpStr);
+        expectedContentRegExpCompiled.add(pattern);
+    }
+
+    public void addRestrictedContentRegExp(String regExpStr, Integer compileFlags) {
+        if (restrictedContentRegExpCompiled == null) {
+            restrictedContentRegExpCompiled = new ArrayList<>();
+        }
+
+        if (compileFlags == null) compileFlags = 0;
+
+        Pattern pattern = Pattern.compile(regExpStr, compileFlags);
+        restrictedContentRegExpCompiled.add(pattern);
     }
 
     public Long getExpectedMinFileSizeInBytes() {
@@ -70,9 +82,14 @@ public class FileRequirements {
         this.allowTrim = allowTrim;
     }
 
-    public List<Pattern> getRegExpressions() {
-        if (regExpsCompiled == null) return null;
-        return Collections.unmodifiableList(regExpsCompiled);
+    public List<Pattern> getExpectedContentRegExps() {
+        if (expectedContentRegExpCompiled == null) return null;
+        return Collections.unmodifiableList(expectedContentRegExpCompiled);
+    }
+
+    public List<Pattern> getRestrictedContentRegExps() {
+        if (restrictedContentRegExpCompiled == null) return null;
+        return Collections.unmodifiableList(restrictedContentRegExpCompiled);
     }
 
     public void addOneOfFilePath(String filePath) {

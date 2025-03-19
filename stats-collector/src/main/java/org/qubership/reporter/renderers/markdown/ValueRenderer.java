@@ -1,17 +1,17 @@
-package org.qubership.reporter.html;
+package org.qubership.reporter.renderers.markdown;
 
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 
 import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
 
-public class HtmlValueRenderer {
+public class ValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp
     private static final String OK_PREFIX = "✅&nbsp;";
     private static final String ERROR_PREFIX = "❌&nbsp;";
     private static final String WARN_PREFIX = "❎&nbsp;";
     private static final String INFO_PREFIX = "";
 
-    public String getHtml(OneMetricResult metricValue, String metricName) {
+    public String getMd(OneMetricResult metricValue) {
         String mdStr = metricValue.getRawValue();
 
         if (OK.equals(metricValue.getSeverity())) mdStr = OK_PREFIX + mdStr;
@@ -20,7 +20,7 @@ public class HtmlValueRenderer {
         if (WARN.equals(metricValue.getSeverity())) mdStr = WARN_PREFIX + mdStr;
 
         if (metricValue.getHttpReference() != null) {
-            return "<a href=\"" + metricValue.getHttpReference() + "\">" + mdStr + "</a>";
+            return "[" + mdStr + "](" +  metricValue.getHttpReference() + ")";
         }
 
         return mdStr;

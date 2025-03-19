@@ -15,6 +15,9 @@ public class OneMetricResult {
         this.rawValue = rawValue;
         this.severity = severity;
         this.metricName = metricName;
+
+        // all error & ok messages let's align by center
+        if (!severity.equals(ResultSeverity.INFO)) textAlign = TextAlign.CENTER_MIDDLE;
     }
 
     public String getRawValue() {

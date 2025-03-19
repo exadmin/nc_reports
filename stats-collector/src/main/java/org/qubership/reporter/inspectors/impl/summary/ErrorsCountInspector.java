@@ -27,6 +27,7 @@ public class ErrorsCountInspector extends ARepositoryInspector {
 
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        // see org.qubership.reporter.model.ReportModel.addTotalScoresColumn()
         return info("tbd");
     }
 }

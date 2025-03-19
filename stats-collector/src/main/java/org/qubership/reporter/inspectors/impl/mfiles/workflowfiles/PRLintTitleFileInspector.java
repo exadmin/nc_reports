@@ -1,7 +1,6 @@
 package org.qubership.reporter.inspectors.impl.mfiles.workflowfiles;
 
 import org.qubership.reporter.inspectors.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.files.AGithubWorkflowFileInspector;
 import org.qubership.reporter.model.MetricGroup;
 
 import java.util.List;
@@ -28,7 +27,7 @@ public class PRLintTitleFileInspector extends AGithubWorkflowFileInspector {
     }
 
     @Override
-    protected void addExpectedContentRegExpressions(List<String> strings) {
-        strings.add("\\buses\\s*:\\s*amannn/action-semantic-pull-request@");
+    protected void addExpectedContentRegExps(List<String> regExps) {
+        regExps.add("\\buses\\s*:\\s*amannn/action-semantic-pull-request@");
     }
 }

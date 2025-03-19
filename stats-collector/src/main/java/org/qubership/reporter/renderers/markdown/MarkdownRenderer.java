@@ -1,4 +1,4 @@
-package org.qubership.reporter.markdown;
+package org.qubership.reporter.renderers.markdown;
 
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.model.ReportModel;

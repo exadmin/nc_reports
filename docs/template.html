@@ -37,9 +37,14 @@
     <!-- JavaScript End -->
 
     <script type="text/javascript" charset="utf-8">
-        $( function() {
-            $( document ).tooltip();
-          } );
+        $(function() {
+          $(document).tooltip({
+            content: function() {
+              // Keep this code - to force JQueryUI render <br> as a new line!
+              return $(this).prop('title');
+            }
+          });
+        });
 
         $( function() {
             $( "#tabs" ).tabs();

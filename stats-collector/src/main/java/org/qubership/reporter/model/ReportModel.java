@@ -12,6 +12,7 @@ import org.qubership.reporter.inspectors.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
 import org.qubership.reporter.inspectors.api.OneMetricResult;
 import org.qubership.reporter.inspectors.api.ResultSeverity;
+import org.qubership.reporter.utils.FileUtils;
 import org.qubership.reporter.utils.MiscUtils;
 
 import java.io.File;
@@ -107,7 +108,7 @@ public class ReportModel {
          for (String metricName : metricNames) {
             OneMetricResult omResult = getValue(row, metricName);
             ResultSeverity resultSeverity = omResult.getSeverity();
-            if (resultSeverity.equals(ResultSeverity.ERROR) || resultSeverity.equals(ResultSeverity.WARN)) {
+            if (resultSeverity.equals(ResultSeverity.ERROR) || resultSeverity.equals(ResultSeverity.WARN) || resultSeverity.equals(ResultSeverity.SECURITY_ISSUE)) {
                errCount++;
             }
          }
@@ -135,5 +136,42 @@ public class ReportModel {
       mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
       mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
       mapper.writeValue(new File(fileName), newMap);
+   }
+
+   /**
+    * Allows to create CSV-file with "REPO NAME, TOPICS" data
+    * @param fileName
+    */
+   public void saveReposToFileForDebugAims(String fileName) {
+      try {
+
+         Map<String, String> repo2Topic = new HashMap<>();
+
+         List<String> repoNames = new ArrayList<>();
+         for (Map.Entry<MultiKey<? extends String>, OneMetricResult> me : multiMap.entrySet()) {
+            String name = me.getKey().getKey(0); // repo
+            String metricName = me.getKey().getKey(1); // metric
+            String rawValue   = me.getValue().getRawValue();     // value
+
+            if (ReservedColumns.TOPICS.equals(metricName)) {
+               rawValue = rawValue.replaceAll("<br>", " ");
+               repo2Topic.put(name, rawValue);
+            }
+
+            if (!repoNames.contains(name)) repoNames.add(name);
+         }
+
+         Collections.sort(repoNames);
+         StringBuilder sb = new StringBuilder();
+         sb.append("Repository, Topics\n");
+
+         for (String name : repoNames) {
+            sb.append(name).append(",").append(repo2Topic.get(name)).append("\n");
+         }
+
+         FileUtils.saveToFile(sb.toString(), fileName);
+      } catch (Exception ex) {
+         ex.printStackTrace();
+      }
    }
 }

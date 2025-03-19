@@ -23,7 +23,7 @@ public abstract class AFileInspector extends ARepositoryInspector {
     }
 
     @Override
-    protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData)  {
+    protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) {
         FileRequirements fReqs = getFileRequirements();
         String filePathToAnalyze = null;
         File file = null;
@@ -44,43 +44,40 @@ public abstract class AFileInspector extends ARepositoryInspector {
         // start analyzing
         String fileURI = getReferenceToFileInGitHub(repoMetaData, filePathToAnalyze);
 
-        // check sha256 sum
-        if (fReqs.getExpSha256CheckSums() != null) {
-            try {
+        try {
+            String wholeFileContent = FileUtils.readFile(file.toString());
+            if (fReqs.isAllowTrim()) wholeFileContent = wholeFileContent.trim();
 
-                String actSha256;
-
-                String wholeFileContent = FileUtils.readFile(file.toString());
-
-                if (fReqs.isAllowTrim()) {
-                    wholeFileContent = wholeFileContent.trim();
-                    actSha256 = StrUtils.getSHA256FromString(wholeFileContent);
-                } else {
-                    actSha256 = FileUtils.getSHA256FromFile(file.toString());
-                }
+            // check sha256 sum
+            if (fReqs.getExpSha256CheckSums() != null) {
+                String actSha256 = StrUtils.getSHA256FromString(wholeFileContent);
 
                 // check file content for expected check-sum
-                {
-                    boolean checkIsPassed = false;
-                    for (String expSha256 : fReqs.getExpSha256CheckSums()) {
-                        if (actSha256.equals(expSha256)) {
-                            checkIsPassed = true;
-                            break;
-                        }
-                    }
-                    if (!checkIsPassed) {
-                        return warn("Unexpected content", fileURI);
+                boolean checkIsPassed = false;
+                for (String expSha256 : fReqs.getExpSha256CheckSums()) {
+                    if (actSha256.equals(expSha256)) {
+                        checkIsPassed = true;
+                        break;
                     }
                 }
-
-                String errMsg = checkForAllRegExpsOrReturnErrorMsg(wholeFileContent, fReqs.getRegExpressions());
-                if (errMsg != null) {
-                    return error(errMsg, fileURI);
+                if (!checkIsPassed) {
+                    return warn("Unexpected content", fileURI);
                 }
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                return error("Error: " + ex);
             }
+
+            String errMsg = checkForAllRegExpsOrReturnErrorMsg(wholeFileContent, fReqs.getExpectedContentRegExps());
+            if (errMsg != null) {
+                return error(errMsg, fileURI);
+            }
+
+            errMsg = checkForRestrictedContentAndReturnErrMsg(wholeFileContent, fReqs.getRestrictedContentRegExps());
+            if (errMsg != null) {
+                return secError(errMsg, fileURI);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return error("Error: " + ex);
         }
 
         // check minimum size of the file
@@ -103,6 +100,17 @@ public abstract class AFileInspector extends ARepositoryInspector {
         for (Pattern pattern : regExps) {
             Matcher matcher = pattern.matcher(content);
             if (!matcher.find()) return "No required content is found by RegExp = '" + pattern + "'";
+        }
+
+        return null;
+    }
+
+    private static String checkForRestrictedContentAndReturnErrMsg(String content, List<Pattern> regExps) {
+        if (regExps == null || regExps.isEmpty()) return null;
+
+        for (Pattern pattern : regExps) {
+            Matcher matcher = pattern.matcher(content);
+            if (matcher.find()) return "Restricted pattern: [" + pattern + "]";
         }
 
         return null;

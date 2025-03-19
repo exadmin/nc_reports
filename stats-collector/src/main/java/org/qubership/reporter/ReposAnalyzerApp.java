@@ -52,6 +52,7 @@ public class ReposAnalyzerApp {
 
         for (File nextFile : files) {
             if (nextFile.isDirectory()) {
+                if ("data".equals(nextFile.getName())) continue; // we use this folder to store prev-reports, see main.yml // todo: change it
                 Map<String, OneMetricResult> oneRepoData = processRepoDir(nextFile, metaData);
                 report.addData(nextFile.getName(), oneRepoData);
             }

@@ -1,6 +1,6 @@
 package org.qubership.reporter;
 
-import org.qubership.reporter.html.HtmlRenderer;
+import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.model.ReportModel;
 
 import java.io.File;
@@ -21,5 +21,6 @@ public class MainApp {
         String dataFile = args[0] + File.separator + "persisted-data.json";
         report.saveToFile(dataFile);
 
+        // report.saveReposToFileForDebugAims("z:\\all_repos.csv");
     }
 }

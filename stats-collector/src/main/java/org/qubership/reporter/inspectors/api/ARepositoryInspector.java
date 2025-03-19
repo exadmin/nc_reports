@@ -90,6 +90,14 @@ public abstract class ARepositoryInspector {
         return createMetricResult(msg, ResultSeverity.INFO, httpRef);
     }
 
+    protected OneMetricResult secError(String msg) {
+        return secError(msg, null);
+    }
+
+    protected OneMetricResult secError(String msg, String httpRef) {
+        return createMetricResult(msg, ResultSeverity.SECURITY_ISSUE, httpRef);
+    }
+
     public final OneMetricResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
         try {
             return inspectRepoFolder(pathToRepository, metaData);

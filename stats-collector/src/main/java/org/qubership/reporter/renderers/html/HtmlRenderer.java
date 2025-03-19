@@ -1,4 +1,4 @@
-package org.qubership.reporter.html;
+package org.qubership.reporter.renderers.html;
 
 import org.qubership.reporter.inspectors.InspectorsRegistry;
 import org.qubership.reporter.inspectors.api.ARepositoryInspector;
@@ -130,13 +130,15 @@ public class HtmlRenderer {
         // table data generating start
         {
             sb.append("    <tbody>\n");
-            for (String rowName : reportModel.getRepoNames()) {
+            for (String repoName : reportModel.getRepoNames()) {
                 sb.append("        <tr>\n");
-                for (String colName : sortedMetricNames) {
-                    OneMetricResult metricValue = reportModel.getValue(rowName, colName);
+                for (String metricName : sortedMetricNames) {
+                    OneMetricResult metricValue = reportModel.getValue(repoName, metricName);
 
-                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, colName);
-                    sb.append("            <td class=\"").append(metricValue.getTextAlign()).append("\">");
+                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, metricName);
+                    String cellTitle = htmlValueRenderer.getTitle(repoName, metricName, metricValue);
+
+                    sb.append("            <td title=\"" + cellTitle + "\" class=\"").append(metricValue.getTextAlign()).append("\">");
                     sb.append(cellInternalHtml);
                     sb.append("</td>\n");
                 }

@@ -1,7 +1,11 @@
 package org.qubership.reporter.inspectors.api;
 
 public enum ResultSeverity {
-    OK("OK:"), ERROR("ERROR:"), INFO("INFO:"), WARN("WARN:");
+    OK("OK:"),
+    ERROR("ERROR:"),
+    INFO("INFO:"),
+    WARN("WARN:"),
+    SECURITY_ISSUE("SECURITY:");
 
     private final String asString;
 
