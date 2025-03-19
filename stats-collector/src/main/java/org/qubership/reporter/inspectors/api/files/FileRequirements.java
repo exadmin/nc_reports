@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class FileRequirements {
-    String expectedFileName;
     Long expectedMinFileSizeInBytes;
     List<String> expSha256CheckSums;
     List<Pattern> regExpsCompiled;
+    List<String> oneOfFilePaths;
     boolean allowTrim;
+
+    public FileRequirements() {
+    }
 
     /**
      * References to the file inside git-repository. The file path is relative to the root of the repository.
@@ -18,9 +21,7 @@ public class FileRequirements {
      * @param relativeFNameStartingFromRootOfRepository
      */
     public FileRequirements(String relativeFNameStartingFromRootOfRepository) {
-        while (relativeFNameStartingFromRootOfRepository.startsWith("/")) relativeFNameStartingFromRootOfRepository = relativeFNameStartingFromRootOfRepository.substring(1);
-
-        this.expectedFileName = relativeFNameStartingFromRootOfRepository;
+        addOneOfFilePath(relativeFNameStartingFromRootOfRepository);
     }
 
     public void setExpectedMinFileSizeInBytes(Long expectedMinFileSizeInBytes) {
@@ -48,10 +49,6 @@ public class FileRequirements {
         regExpsCompiled.add(pattern);
     }
 
-    public String getExpectedFileName() {
-        return expectedFileName;
-    }
-
     public Long getExpectedMinFileSizeInBytes() {
         return expectedMinFileSizeInBytes;
     }
@@ -76,5 +73,17 @@ public class FileRequirements {
     public List<Pattern> getRegExpressions() {
         if (regExpsCompiled == null) return null;
         return Collections.unmodifiableList(regExpsCompiled);
+    }
+
+    public void addOneOfFilePath(String filePath) {
+        if (oneOfFilePaths == null) oneOfFilePaths = new ArrayList<>();
+
+        while (filePath.startsWith("/")) filePath = filePath.substring(1);
+        oneOfFilePaths.add(filePath);
+    }
+
+    public List<String> getOneOfFilePaths() {
+        if (oneOfFilePaths == null) return null;
+        return Collections.unmodifiableList(oneOfFilePaths);
     }
 }

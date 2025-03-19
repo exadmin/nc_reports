@@ -8,7 +8,12 @@ import org.qubership.reporter.model.MetricGroup;
 public class CodeOwnersInspector extends AFileInspector {
     @Override
     protected FileRequirements getFileRequirements() {
-        return new FileRequirements(".github/CODEOWNERS");
+        FileRequirements fReqs = new FileRequirements();
+        fReqs.addOneOfFilePath(".github/CODEOWNERS");
+        fReqs.addOneOfFilePath("CODEOWNERS");
+        fReqs.addOneOfFilePath("docs/CODEOWNERS");
+
+        return fReqs;
     }
 
     @Override

@@ -16,23 +16,33 @@ import java.util.regex.Pattern;
 public abstract class AFileInspector extends ARepositoryInspector {
     protected abstract FileRequirements getFileRequirements();
 
-    protected String getReferenceToFileInGitHub(Map<String, Object> repoMetaData) {
-        FileRequirements fReqs = getFileRequirements();
-
+    protected static String getReferenceToFileInGitHub(Map<String, Object> repoMetaData, String filePath) {
         String defBranch = (String) repoMetaData.get("default_branch");
         String url = (String) repoMetaData.get("html_url");
-        return url + "/blob/" + defBranch + "/" + fReqs.getExpectedFileName();
+        return url + "/blob/" + defBranch + "/" + filePath;
     }
 
     @Override
-    protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+    protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData)  {
         FileRequirements fReqs = getFileRequirements();
+        String filePathToAnalyze = null;
+        File file = null;
 
-        File file = Paths.get(pathToRepository, fReqs.getExpectedFileName()).toFile();
-        if (!file.exists()) return error("");
-        if (!file.isFile()) return error("");
+        // if fReq contains multiple references to files - then select first existed one
+        if (!fReqs.getOneOfFilePaths().isEmpty()) {
+            for (String nextPath : fReqs.getOneOfFilePaths()) {
+                file = Paths.get(pathToRepository, nextPath).toFile();
+                if (file.exists() && file.isFile()) {
+                    filePathToAnalyze = nextPath;
+                    break;
+                }
+            }
+        }
 
-        String fileURI = getReferenceToFileInGitHub(repoMetaData);
+        if (filePathToAnalyze == null) return error("");
+
+        // start analyzing
+        String fileURI = getReferenceToFileInGitHub(repoMetaData, filePathToAnalyze);
 
         // check sha256 sum
         if (fReqs.getExpSha256CheckSums() != null) {
