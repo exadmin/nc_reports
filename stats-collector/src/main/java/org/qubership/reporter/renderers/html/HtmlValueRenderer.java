@@ -1,10 +1,11 @@
 package org.qubership.reporter.renderers.html;
 
-import org.qubership.reporter.inspectors.api.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.utils.StrUtils;
 
-import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
+import static org.qubership.reporter.inspectors.api.model.result.ResultSeverity.*;
 
 public class HtmlValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp
@@ -14,7 +15,7 @@ public class HtmlValueRenderer {
     private static final String INFO_PREFIX = "";
     private static final String SECURITY_PREFIX = "&#128561;&nbsp;";
 
-    public String getHtml(OneMetricResult metricValue, String metricName) {
+    public String getHtml(OneMetricResult metricValue, Metric metric) {
         String mdStr = metricValue.getRawValue();
 
         if (OK.equals(metricValue.getSeverity())) mdStr = OK_PREFIX;
@@ -30,12 +31,12 @@ public class HtmlValueRenderer {
         return mdStr;
     }
 
-    public String getTitle(String repoName, String metricName, OneMetricResult metricValue) {
+    public String getTitle(String repoName, Metric metric, OneMetricResult metricValue) {
         String rawValue = escapeHtml4(metricValue.getRawValue());
         if (StrUtils.isEmpty(rawValue)) return "";
 
         repoName = escapeHtml4(repoName);
-        metricName = escapeHtml4(metricName);
+        String metricName = escapeHtml4(metric.getVisualName());
 
 
         String title = "<p class='my-tooltip'>Metric    : <b>" + metricName + "</b><br>" +

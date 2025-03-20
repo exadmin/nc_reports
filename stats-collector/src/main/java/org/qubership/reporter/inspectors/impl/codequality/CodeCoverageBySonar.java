@@ -11,10 +11,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.qubership.reporter.inspectors.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.model.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.utils.FileUtils;
 import org.qubership.reporter.utils.StrUtils;
 import org.qubership.reporter.utils.TheLogger;
@@ -25,22 +25,13 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CodeCoverageBySonar extends ARepositoryInspector {
+public class CodeCoverageBySonar extends AbstractRepositoryInspector {
     private static final int HTTP_CALL_TIMEOUT_SEC = 5;
 
     @Override
-    public String getMetricName() {
-        return "Sonar Code Coverage";
-    }
-
-    @Override
-    protected String getMetricDescriptionInMDFormat() {
-        return "Returns coverage metric from Sonar Cloud service for the component";
-    }
-
-    @Override
-    public MetricGroup getMetricGroup() {
-        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
+    public Metric getMetric() {
+        return newMetric("Sonar Code Coverage", "Sonar Code Coverage", MetricGroupsRegistry.CODE_QUALITY_GROUP)
+                .setDescription("Returns coverage metric from Sonar Cloud service for the component");
     }
 
     @Override

@@ -1,15 +1,14 @@
 package org.qubership.reporter.inspectors.impl.codequality;
 
-import org.qubership.reporter.inspectors.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.inspectors.api.ResultSeverity;
-import org.qubership.reporter.model.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 
 import java.util.List;
 import java.util.Map;
 
-public class LastUpdatedTime extends ARepositoryInspector {
+public class LastUpdatedTime extends AbstractRepositoryInspector {
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         final String rawValue = (String) repoMetaData.get("updated_at");
@@ -18,24 +17,13 @@ public class LastUpdatedTime extends ARepositoryInspector {
         String dateStr = rawValue.substring(0, tInddex);
         String timeStr = rawValue.substring(tInddex + 1, rawValue.length() - 1);
 
-        OneMetricResult metricResult = new OneMetricResult(getMetricName(), ResultSeverity.INFO, dateStr);
-        metricResult.setToolTipForGithubOnly(dateStr + " " + timeStr);
-
-        return metricResult;
+        return info(dateStr);
+        // metricResult.setToolTipForGithubOnly(dateStr + " " + timeStr);
     }
 
     @Override
-    public String getMetricName() {
-        return "Updated At";
-    }
-
-    @Override
-    protected String getMetricDescriptionInMDFormat() {
-        return "Returns time when repository was updated last time";
-    }
-
-    @Override
-    public MetricGroup getMetricGroup() {
-        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
+    public Metric getMetric() {
+        return newMetric("Updated At", "Updated At", MetricGroupsRegistry.CODE_QUALITY_GROUP)
+                .setDescription("Returns time when repository was updated last time");
     }
 }

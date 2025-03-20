@@ -2,11 +2,11 @@ package org.qubership.reporter.inspectors.impl.codequality;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import org.qubership.reporter.inspectors.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.inspectors.api.TextAlign;
-import org.qubership.reporter.model.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.TextAlign;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,9 +18,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class JavaVersion extends ARepositoryInspector {
+public class JavaVersion extends AbstractRepositoryInspector {
     private static final String SUFFIX = File.separator + "pom.xml";
     private static final XmlMapper xmlMapper = new XmlMapper();
+
+    @Override
+    public Metric getMetric() {
+        return newMetric("JavaVersion", "Java Version", MetricGroupsRegistry.CODE_QUALITY_GROUP)
+                .setDescription("Scans all pom.xml files and collects java.version property values");
+    }
 
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
@@ -61,16 +67,6 @@ public class JavaVersion extends ARepositoryInspector {
         return res;
     }
 
-    @Override
-    public String getMetricName() {
-        return "JavaVersion";
-    }
-
-    @Override
-    protected String getMetricDescriptionInMDFormat() {
-        return "Scans all pom.xml files and collects java.version property values";
-    }
-
     private static String getStringValue(Map<String, Object> xmlMap, String propertyNameInPropertiesSection) {
         Map<String, Object> propertiesXmlMap = (Map<String, Object>) xmlMap.get("properties");
         if (propertiesXmlMap != null) {
@@ -79,10 +75,5 @@ public class JavaVersion extends ARepositoryInspector {
         }
 
         return null;
-    }
-
-    @Override
-    public MetricGroup getMetricGroup() {
-        return MetricGroupsRegistry.CODE_QUALITY_GROUP;
     }
 }

@@ -1,8 +1,8 @@
 package org.qubership.reporter.renderers.markdown;
 
-import org.qubership.reporter.inspectors.api.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 
-import static org.qubership.reporter.inspectors.api.ResultSeverity.*;
+import static org.qubership.reporter.inspectors.api.model.result.ResultSeverity.*;
 
 public class ValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp

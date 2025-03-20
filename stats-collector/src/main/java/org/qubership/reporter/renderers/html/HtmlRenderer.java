@@ -1,11 +1,9 @@
 package org.qubership.reporter.renderers.html;
 
-import org.qubership.reporter.inspectors.InspectorsRegistry;
-import org.qubership.reporter.inspectors.api.ARepositoryInspector;
-import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.model.MetricGroup;
-import org.qubership.reporter.model.ReportModel;
-import org.qubership.reporter.model.ReservedColumns;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.utils.FileUtils;
 import org.qubership.reporter.utils.StrUtils;
 
@@ -34,7 +32,7 @@ public class HtmlRenderer {
     private String generateJsContent(ReportModel reportModel) {
         StringBuilder sb = new StringBuilder();
 
-        List<MetricGroup> mGroups = getGroupNamesToRender(InspectorsRegistry.getRegisteredInspectors());
+        List<MetricGroup> mGroups = getGroupNamesToRender(reportModel);
 
 
         int i = 1;
@@ -61,7 +59,7 @@ public class HtmlRenderer {
 
         // render tabs first
         // then render content inside tabs
-        final List<MetricGroup> mGroups = getGroupNamesToRender(InspectorsRegistry.getRegisteredInspectors());
+        final List<MetricGroup> mGroups = getGroupNamesToRender(reportModel);
 
         sb.append("<div id=\"tabs\">\n");
         {
@@ -78,7 +76,8 @@ public class HtmlRenderer {
             int i = 1;
             for (MetricGroup group : mGroups) {
                 sb.append("<div id=\"tabs-").append(i).append("\">\n");
-                String tableHtml = generateTableHtmlByGroup(reportModel, group, i);
+
+                String tableHtml = generateTableHtmlByGroups(reportModel, group, i);
                 sb.append(tableHtml);
                 sb.append("</div>\n");
                 i++;
@@ -89,38 +88,29 @@ public class HtmlRenderer {
         return sb.toString();
     }
 
-    private String generateTableHtmlByGroup(ReportModel reportModel, MetricGroup group, int tableNum) {
+    private String generateTableHtmlByGroups(ReportModel reportModel, MetricGroup group, int tableNum) {
         StringBuilder sb = new StringBuilder();
         sb.append("<table id=\"table-").append(tableNum).append("\" class=\"display\" style=\"width:100%\">\n");
 
         // define metrics set which belongs to the requested group
-        Set<String> uniqueSet = new HashSet<>();
-
-        for (String repoName : reportModel.getRepoNames()) {
-            for (String metricName : reportModel.getMetricNames()) {
-                OneMetricResult metricResult = reportModel.getValue(repoName, metricName);
-
-                if (metricResult.getMetricGroup().isSystem() || group.equals(metricResult.getMetricGroup())) {
-                    uniqueSet.add(metricName);
-                }
+        List<Metric> allMetrics = new ArrayList<>(reportModel.getMetrics());
+        allMetrics.sort((m1, m2) -> {
+            int result = m1.getRenderingOrderWeight() - m2.getRenderingOrderWeight();
+            if (result == 0) {
+                m1.getVisualName().compareTo(m2.getVisualName());
             }
-        }
 
-        // re-sort metric names - to have system at the very begining
-        List<String> sortedMetricNames = new ArrayList<>(uniqueSet);
-        sortedMetricNames.remove(ReservedColumns.ID);
-        sortedMetricNames.remove(ReservedColumns.NUM);
-        sortedMetricNames.remove(ReservedColumns.TOPICS);
-        sortedMetricNames.add(0, ReservedColumns.TOPICS);
-        sortedMetricNames.add(0, ReservedColumns.ID);
-        sortedMetricNames.add(0, ReservedColumns.NUM);
+            return result;
+        });
 
         // table headers generating start
         {
             sb.append("    <thead>\n");
             sb.append("    <tr>\n");
-            for (String metricName : sortedMetricNames) {
-                sb.append("        <th>").append(metricName).append("</th>\n");
+            for (Metric metric : allMetrics) {
+                if (group.equals(metric.getGroup()) || metric.isRenderOnEachReportTab()) {
+                    sb.append("        <th>").append(metric.getVisualName()).append("</th>\n");
+                }
             }
             sb.append("    </tr>\n");
             sb.append("    </thead>\n");
@@ -130,13 +120,15 @@ public class HtmlRenderer {
         // table data generating start
         {
             sb.append("    <tbody>\n");
-            for (String repoName : reportModel.getRepoNames()) {
+            for (String repoName : reportModel.getRepositoryNames()) {
                 sb.append("        <tr>\n");
-                for (String metricName : sortedMetricNames) {
-                    OneMetricResult metricValue = reportModel.getValue(repoName, metricName);
+                for (Metric metric : allMetrics) {
+                    if (!group.equals(metric.getGroup()) && !metric.isRenderOnEachReportTab()) continue;
 
-                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, metricName);
-                    String cellTitle = htmlValueRenderer.getTitle(repoName, metricName, metricValue);
+                    OneMetricResult metricValue = reportModel.getValue(repoName, metric.getPersistenceId());
+
+                    String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, metric);
+                    String cellTitle = htmlValueRenderer.getTitle(repoName, metric, metricValue);
 
                     sb.append("            <td title=\"" + cellTitle + "\" class=\"").append(metricValue.getTextAlign()).append("\">");
                     sb.append(cellInternalHtml);
@@ -153,16 +145,16 @@ public class HtmlRenderer {
         return sb.toString();
     }
 
-    private List<MetricGroup> getGroupNamesToRender(final List<ARepositoryInspector> allInspectors) {
-        Set<MetricGroup> uniqueSet = new HashSet<>();
+    private List<MetricGroup> getGroupNamesToRender(ReportModel reportModel) {
+        Set<MetricGroup> metricGroupsToRender = new HashSet<>();
 
-        for (ARepositoryInspector inspector : allInspectors) {
-            if (!inspector.getMetricGroup().isSystem()) {
-                uniqueSet.add(inspector.getMetricGroup());
-            }
+        for (Metric metric : reportModel.getMetrics()) {
+            MetricGroup metricGroup = metric.getGroup();
+            if (!metricGroup.isDoNotProduceTabOnTheReport())
+                metricGroupsToRender.add(metricGroup);
         }
 
-        List<MetricGroup> list = new ArrayList<>(uniqueSet);
+        List<MetricGroup> list = new ArrayList<>(metricGroupsToRender);
         list.sort(Comparator.comparingInt(MetricGroup::getOrder));
 
         return list;

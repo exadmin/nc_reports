@@ -1,7 +1,8 @@
 package org.qubership.reporter.renderers.markdown;
 
-import org.qubership.reporter.inspectors.api.OneMetricResult;
-import org.qubership.reporter.model.ReportModel;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.ReportModel;
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.utils.DateUtils;
 import org.qubership.reporter.utils.FileUtils;
 
@@ -34,21 +35,21 @@ public class MarkdownRenderer {
         sb.append("<div class=\"table-wrapper\" markdown=\"block\">\n");
         sb.append("\n"); // note: empty line between div and markdown content is required
 
-        for (String colName : theReport.getMetricNames()) {
-            sb.append("| ").append(colName).append(" ");
+        for (Metric metric : theReport.getMetrics()) {
+            sb.append("| ").append(metric.getVisualName()).append(" ");
         }
         sb.append("|\n");
 
         // print horizontal delimiter
-        for (String colName : theReport.getMetricNames()) {
+        for (Metric metric : theReport.getMetrics()) {
             sb.append("|:----");
         }
         sb.append("|\n");
 
 
-        for (String rowName : theReport.getRepoNames()) {
-            for (String colName : theReport.getMetricNames()) {
-                OneMetricResult metricValue = theReport.getValue(rowName, colName);
+        for (String rowName : theReport.getRepositoryNames()) {
+            for (Metric metric : theReport.getMetrics()) {
+                OneMetricResult metricValue = theReport.getValue(rowName, metric.getPersistenceId());
 
                 String mdStr = valueRenderer.getMd(metricValue);
                 sb.append("| ").append(mdStr);
