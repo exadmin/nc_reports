@@ -1,6 +1,7 @@
 package org.qubership.reporter;
 
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
+import org.qubership.reporter.renderers.db.HSQLDBRenderer;
 import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.renderers.json.JsonRenderer;
 import org.qubership.reporter.utils.JDBCUtils;
@@ -8,14 +9,15 @@ import org.qubership.reporter.utils.JDBCUtils;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) throws Exception{
         // Initializing DB
-        Connection jdbcConn = null;
-        try {
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-            jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:./reports-are-here/data/db/hsqldb", "SA", "");
+        Class.forName("org.hsqldb.jdbc.JDBCDriver");
+
+        try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:./reports-are-here/data/db/hsqldb", "SA", "")) {
+            jdbcConn.setSchema("PUBLIC");
 
             // Run analyze and report creation
             RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
@@ -31,10 +33,11 @@ public class MainApp {
             JsonRenderer jsonRenderer = new JsonRenderer();
             jsonRenderer.saveToFile(report, jsonDataFileName);
 
+            // Save current results into HSQL DB
+            HSQLDBRenderer hsqldbRenderer = new HSQLDBRenderer();
+            hsqldbRenderer.saveToDB(jdbcConn, report);
         } catch (Exception ex) {
             ex.printStackTrace();
-        } finally {
-            JDBCUtils.close(jdbcConn);
         }
 
         // report.saveReposToFileForDebugAims("z:\\all_repos.csv");

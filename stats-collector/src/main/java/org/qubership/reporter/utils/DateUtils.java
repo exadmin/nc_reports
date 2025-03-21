@@ -11,7 +11,7 @@ public class DateUtils {
 
     public static String getCurrentDateTimeStamp() {
         return LocalDateTime.now()
-                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")); // keep this format - as it's used during work with SQL DB
     }
 
     public static Date toDate(String speciallyFormattedStr) {

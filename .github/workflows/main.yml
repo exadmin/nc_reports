@@ -67,10 +67,13 @@ jobs:
           cp /tmp/workingdir/netcracker/persisted-data.json ./reports-are-here/data/persisted-data-$date.json
           cp /tmp/workingdir/netcracker/combined-report.html ./reports-are-here/combined-report-$date.html
           cp /tmp/workingdir/netcracker/combined-report.html ./docs/index.html
+          cp /tmp/workingdir/netcracker/data/db/. ./reports-are-here/data/db
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add ./reports-are-here/data/persisted-data-$date.json
           git add ./reports-are-here/combined-report-$date.html
           git add ./docs/index.html
+          git add ./reports-are-here/data/db/hsqldb.script
+          git add ./reports-are-here/data/db/hsqldb.properties
           git commit -m "HTML report generation at $date"
           git push
