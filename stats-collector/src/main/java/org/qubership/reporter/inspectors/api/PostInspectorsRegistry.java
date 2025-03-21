@@ -1,6 +1,7 @@
 package org.qubership.reporter.inspectors.api;
 
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsCountInspector;
+import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsDeltaInspector;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.SortRepositoriesByABC;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class PostInspectorsRegistry {
     private static final List<AbstractPostInspector> registeredInspectors = new ArrayList<>();
     static {
         registeredInspectors.add(new ErrorsCountInspector());
+        registeredInspectors.add(new ErrorsDeltaInspector());
         registeredInspectors.add(new SortRepositoriesByABC());
     }
 

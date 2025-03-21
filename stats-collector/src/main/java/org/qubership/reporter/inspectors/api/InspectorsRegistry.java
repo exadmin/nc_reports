@@ -3,6 +3,7 @@ package org.qubership.reporter.inspectors.api;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
+import org.qubership.reporter.inspectors.impl.codequality.OpenedPRsInspector;
 import org.qubership.reporter.inspectors.impl.files.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.files.mfiles.CodeOwnersInspectorRequired;
 import org.qubership.reporter.inspectors.impl.files.mfiles.ReadmeRequiredFileContent;
@@ -24,7 +25,7 @@ public class InspectorsRegistry {
         registeredInspectors.add(new CheckApache20License());
         registeredInspectors.add(new ReadmeRequiredFileContent());
         registeredInspectors.add(new AutomaticPRLabeler());
-        registeredInspectors.add(new CDXGenRequiredFileInspector());
+        // registeredInspectors.add(new CDXGenRequiredFileInspector()); // discussed with Roman P - excluded currently
         registeredInspectors.add(new CLARequiredFileInspector());
         registeredInspectors.add(new PRCollectCommitMessagesRequiredFileInspector());
         registeredInspectors.add(new PRConventionalCommitsRequiredFileInspector());
@@ -37,7 +38,9 @@ public class InspectorsRegistry {
         registeredInspectors.add(new JavaVersion());
 
         registeredInspectors.add(new TopicAdded());
-        registeredInspectors.add(new ErrorsDeltaInspector());
+
+
+        registeredInspectors.add(new OpenedPRsInspector());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }

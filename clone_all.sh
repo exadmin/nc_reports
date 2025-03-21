@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download all existed repositories using paging approach (github does not work stable without paging)
-i=0
+i=1
 
 while true; do
     file="all_repos_page$i.json"

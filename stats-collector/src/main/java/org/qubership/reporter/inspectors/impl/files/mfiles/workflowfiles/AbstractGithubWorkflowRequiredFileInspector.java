@@ -47,9 +47,9 @@ public abstract class AbstractGithubWorkflowRequiredFileInspector extends Abstra
         {
             List<String> lines = new ArrayList<>();
             addExpectedContentRegExps(lines);
-                for (String next : lines) {
-                    fReqs.addExpectationByRegExp(next);
-                }
+            for (String next : lines) {
+                fReqs.addExpectationByRegExp(next);
+            }
         }
 
         {

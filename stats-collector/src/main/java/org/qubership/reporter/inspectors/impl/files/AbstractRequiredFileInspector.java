@@ -13,14 +13,10 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.qubership.reporter.utils.RepoUtils.getReferenceToFileInGitHub;
+
 public abstract class AbstractRequiredFileInspector extends AbstractRepositoryInspector {
     protected abstract RequiredFileExpectations getFileRequirements();
-
-    protected static String getReferenceToFileInGitHub(Map<String, Object> repoMetaData, String filePath) {
-        String defBranch = (String) repoMetaData.get("default_branch");
-        String url = (String) repoMetaData.get("html_url");
-        return url + "/blob/" + defBranch + "/" + filePath;
-    }
 
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) {
@@ -65,12 +61,12 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
                 }
             }
 
-            String errMsg = checkForAllRegExpsOrReturnErrorMsg(wholeFileContent, fReqs.getExpectedContentRegExps());
+            String errMsg = checkForExpectedContentOrReturnErrorMsg(wholeFileContent, fReqs.getExpectedContentRegExps(), repoMetaData);
             if (errMsg != null) {
                 return error(errMsg, fileURI);
             }
 
-            errMsg = checkForRestrictedContentAndReturnErrMsg(wholeFileContent, fReqs.getRestrictedContentRegExps());
+            errMsg = checkForRestrictedContentAndReturnErrMsg(wholeFileContent, fReqs.getRestrictedContentRegExps(), repoMetaData);
             if (errMsg != null) {
                 return secError(errMsg, fileURI);
             }
@@ -94,7 +90,7 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
         return ok("");
     }
 
-    private static String checkForAllRegExpsOrReturnErrorMsg(String content, List<Pattern> regExps) {
+    protected String checkForExpectedContentOrReturnErrorMsg(String content, List<Pattern> regExps, Map<String, Object> repoMetaData) {
         if (regExps == null || regExps.isEmpty()) return null;
 
         for (Pattern pattern : regExps) {
@@ -105,7 +101,7 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
         return null;
     }
 
-    private static String checkForRestrictedContentAndReturnErrMsg(String content, List<Pattern> regExps) {
+    protected String checkForRestrictedContentAndReturnErrMsg(String content, List<Pattern> regExps, Map<String, Object> repoMetaData) {
         if (regExps == null || regExps.isEmpty()) return null;
 
         for (Pattern pattern : regExps) {

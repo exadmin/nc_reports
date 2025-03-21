@@ -2,8 +2,11 @@ package org.qubership.reporter.inspectors.impl.files.mfiles.workflowfiles;
 
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.utils.RepoUtils;
 
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 public class CLARequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
@@ -23,5 +26,13 @@ public class CLARequiredFileInspector extends AbstractGithubWorkflowRequiredFile
     @Override
     protected void addExpectedContentRegExps(List<String> regExps) {
         regExps.add("\\buses\\s*:\\s*Netcracker/qubership-workflow-hub/.github/workflows/cla.yaml@");
+    }
+
+    @Override
+    protected String checkForExpectedContentOrReturnErrorMsg(String content, List<Pattern> regExps, Map<String, Object> repoMetaData) {
+        String repoName = RepoUtils.getRepositoryName(repoMetaData);
+        if ("qubership-workflow-hub".equals(repoName)) return null;
+
+        return super.checkForExpectedContentOrReturnErrorMsg(content, regExps, repoMetaData);
     }
 }

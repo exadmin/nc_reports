@@ -1,26 +1,41 @@
 package org.qubership.reporter;
 
-import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
+import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.renderers.json.JsonRenderer;
+import org.qubership.reporter.utils.JDBCUtils;
 
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class MainApp {
     public static void main(String[] args) throws Exception{
-        // Run analyze and report creation
-        RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
-        ReportModel report = analyzer.analyzeAllIn(args[0]);
+        // Initializing DB
+        Connection jdbcConn = null;
+        try {
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+            jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:./reports-are-here/data/db/hsqldb", "SA", "");
 
-        // Render results into html format
-        String htmlReportFileName = args[0] + File.separator + "combined-report.html";
-        HtmlRenderer htmlRenderer = new HtmlRenderer();
-        htmlRenderer.createHtmlFile(report, htmlReportFileName);
+            // Run analyze and report creation
+            RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
+            ReportModel report = analyzer.analyzeAllIn(args[0]);
 
-        // Save current results as json data file
-        String jsonDataFileName = args[0] + File.separator + "persisted-data.json";
-        JsonRenderer jsonRenderer = new JsonRenderer();
-        jsonRenderer.saveToFile(report, jsonDataFileName);
+            // Render results into html format
+            String htmlReportFileName = args[0] + File.separator + "combined-report.html";
+            HtmlRenderer htmlRenderer = new HtmlRenderer();
+            htmlRenderer.createHtmlFile(report, htmlReportFileName);
+
+            // Save current results as json data file
+            String jsonDataFileName = args[0] + File.separator + "persisted-data.json";
+            JsonRenderer jsonRenderer = new JsonRenderer();
+            jsonRenderer.saveToFile(report, jsonDataFileName);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            JDBCUtils.close(jdbcConn);
+        }
 
         // report.saveReposToFileForDebugAims("z:\\all_repos.csv");
     }

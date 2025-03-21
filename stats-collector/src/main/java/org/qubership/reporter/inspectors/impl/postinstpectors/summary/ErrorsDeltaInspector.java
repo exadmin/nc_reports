@@ -5,10 +5,13 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.qubership.reporter.inspectors.api.AbstractPostInspector;
+import org.qubership.reporter.inspectors.api.PostInspectorsRegistry;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.utils.DateUtils;
 import org.qubership.reporter.utils.MiscUtils;
 import org.qubership.reporter.utils.TheLogger;
@@ -26,11 +29,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ErrorsDeltaInspector extends AbstractRepositoryInspector {
+public class ErrorsDeltaInspector extends AbstractPostInspector {
     private static final Pattern REG_EXP = Pattern.compile("\\bpersisted-data-(\\d\\d-\\d\\d-\\d\\d\\d\\d-\\d\\d-\\d\\d-\\d\\d)\\.json");
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
 
     private static Map<String, String> oldMap;
+
 
     @Override
     public Metric getMetric() {
@@ -39,6 +43,10 @@ public class ErrorsDeltaInspector extends AbstractRepositoryInspector {
     }
 
     @Override
+    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData) {
+
+    }
+
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         // load persisted data from previous reports
         if (oldMap == null) {
