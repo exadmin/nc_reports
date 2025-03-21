@@ -16,7 +16,7 @@ public class MainApp {
         // Initializing DB
         Class.forName("org.hsqldb.jdbc.JDBCDriver");
 
-        try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:./reports-are-here/data/db/hsqldb", "SA", "")) {
+        try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + args[0] +"./data/db/hsqldb", "SA", "")) {
             jdbcConn.setSchema("PUBLIC");
 
             // Run analyze and report creation
