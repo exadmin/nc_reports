@@ -44,7 +44,7 @@ public class MainApp {
 
             // Save current results into HSQL DB
             HSQLDBRenderer hsqldbRenderer = new HSQLDBRenderer();
-            hsqldbRenderer.saveToDB(jdbcConn, report);
+            hsqldbRenderer.saveToDB(jdbcConn, report, null);
             jdbcConn.commit();
         } catch (Exception ex) {
             ex.printStackTrace();
