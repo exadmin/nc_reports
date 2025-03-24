@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated
 public class SonarMetricAsInfoText extends AbstractPostInspector {
     private static final String CODE_COVERAGE_ID = new CodeCoverageBySonar().getMetric().getPersistenceId();
 

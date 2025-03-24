@@ -35,7 +35,7 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
             }
         }
 
-        if (filePathToAnalyze == null) return error("");
+        if (filePathToAnalyze == null) return error("", null, "File not found");
 
         // start analyzing
         String fileURI = getReferenceToFileInGitHub(repoMetaData, filePathToAnalyze);
@@ -57,31 +57,32 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
                     }
                 }
                 if (!checkIsPassed) {
-                    return warn("Unexpected content", fileURI);
+                    return warn("", fileURI, "Unexpected content");
                 }
             }
 
             String errMsg = checkForExpectedContentOrReturnErrorMsg(wholeFileContent, fReqs.getExpectedContentRegExps(), repoMetaData);
             if (errMsg != null) {
-                return error(errMsg, fileURI);
+                return error("", fileURI, errMsg);
             }
 
             errMsg = checkForRestrictedContentAndReturnErrMsg(wholeFileContent, fReqs.getRestrictedContentRegExps(), repoMetaData);
             if (errMsg != null) {
-                return secError(errMsg, fileURI);
+                return secError("", fileURI, errMsg);
             }
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            return error("Error: " + ex);
+            return error("", null, "Error: " + ex);
         }
 
         // check minimum size of the file
         if (fReqs.getMinFileSizeInBytes() != null) {
             long actFileSize = file.length();
             if (actFileSize < fReqs.getMinFileSizeInBytes()) {
-                OneMetricResult result = new OneMetricResult(getMetric(), ResultSeverity.ERROR, "Too small");
+                OneMetricResult result = new OneMetricResult(getMetric(), ResultSeverity.ERROR, "");
                 result.setHttpReference(fileURI);
+                result.setTitleText("Too small");
                 return result;
             }
         }

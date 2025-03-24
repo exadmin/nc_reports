@@ -6,6 +6,7 @@ import org.qubership.reporter.utils.StrUtils;
 
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;
 import static org.qubership.reporter.inspectors.api.model.result.ResultSeverity.*;
+import static org.qubership.reporter.utils.StrUtils.notNull;
 
 public class HtmlValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp
@@ -16,13 +17,13 @@ public class HtmlValueRenderer {
     private static final String SECURITY_PREFIX = "&#128561;&nbsp;";
 
     public String getHtml(OneMetricResult metricValue, Metric metric) {
-        String mdStr = metricValue.getRawValue();
+        String mdStr = escapeHtml4(metricValue.getRawValue());
 
-        if (OK.equals(metricValue.getSeverity())) mdStr = OK_PREFIX;
-        if (ERROR.equals(metricValue.getSeverity())) mdStr = ERROR_PREFIX;
-        if (INFO.equals(metricValue.getSeverity())) mdStr = INFO_PREFIX + mdStr;
-        if (WARN.equals(metricValue.getSeverity())) mdStr = WARN_PREFIX;
-        if (SECURITY_ISSUE.equals(metricValue.getSeverity())) mdStr = SECURITY_PREFIX;
+        if (OK.equals(metricValue.getSeverity())) mdStr = OK_PREFIX + notNull(mdStr);
+        if (ERROR.equals(metricValue.getSeverity())) mdStr = ERROR_PREFIX + notNull(mdStr);
+        if (INFO.equals(metricValue.getSeverity())) mdStr = INFO_PREFIX + notNull(mdStr);
+        if (WARN.equals(metricValue.getSeverity())) mdStr = WARN_PREFIX + notNull(mdStr);
+        if (SECURITY_ISSUE.equals(metricValue.getSeverity())) mdStr = SECURITY_PREFIX + notNull(mdStr);
 
         if (metricValue.getHttpReference() != null) {
             return "<a href=\"" + metricValue.getHttpReference() + "\">" + mdStr + "</a>";
@@ -32,8 +33,8 @@ public class HtmlValueRenderer {
     }
 
     public String getTitle(String repoName, Metric metric, OneMetricResult metricValue) {
-        String rawValue = escapeHtml4(metricValue.getRawValue());
-        if (StrUtils.isEmpty(rawValue)) return "";
+        String titleText = escapeHtml4(metricValue.getTitleText());
+        if (StrUtils.isEmpty(titleText)) return "";
 
         repoName = escapeHtml4(repoName);
         String metricName = escapeHtml4(metric.getVisualName());
@@ -42,7 +43,7 @@ public class HtmlValueRenderer {
         String title = "<p class='my-tooltip'>Metric    : <b>" + metricName + "</b><br>" +
                                              "Repository: <b>" + repoName + "</b><br>" +
                                              "<br>" +
-                                             "Message   : <b>" + rawValue + "</b>" +
+                                             "Message   : <b>" + notNull(titleText) + "</b>" +
                                              "</p>";
 
         return title;

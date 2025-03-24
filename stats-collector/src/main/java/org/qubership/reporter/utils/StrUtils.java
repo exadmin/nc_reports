@@ -41,4 +41,14 @@ public class StrUtils {
 
         return sb.toString();
     }
+
+    /**
+     * Returns original string or empty string for null value
+     * @param str String
+     * @return
+     */
+    public static String notNull(String str) {
+        if (str == null) return "";
+        return str;
+    }
 }

@@ -5,16 +5,13 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
 import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
+import org.qubership.reporter.utils.HttpUtils;
 import org.qubership.reporter.utils.RepoUtils;
 import org.qubership.reporter.utils.StrUtils;
 
@@ -23,7 +20,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class CodeCoverageBySonar extends AbstractRepositoryInspector {
-    private static final int HTTP_CALL_TIMEOUT_SEC = 5;
+
 
     @Override
     public Metric getMetric() {
@@ -40,15 +37,12 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
         }
 
         // otherwise doing call to sonar-cloud
-        String value = getMetricValueFromSonarCloud(prjKey, "coverage");
-        if (value.startsWith("Error:")) {
-            return error(value);
+        OneMetricResult omResult = getMetricValueFromSonarCloud(prjKey, "coverage");
+        if (!ResultSeverity.ERROR.equals(omResult.getSeverity())) {
+            omResult.setHttpReference("https://sonarcloud.io/summary/overall?id=" + prjKey + "&branch=main");
         }
 
-        OneMetricResult result = ok(value);
-        result.setHttpReference("https://sonarcloud.io/summary/overall?id=" + prjKey + "&branch=main");
-
-        return result;
+        return omResult;
     }
 
     private static final Pattern REGEXP_PRJ_KEY = Pattern.compile("\\bDsonar\\.projectKey\\s*=\\s*([^\\s]+)\\b", Pattern.CASE_INSENSITIVE);
@@ -57,56 +51,56 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
         return "Netcracker_" + RepoUtils.getRepositoryName(repoMetaData); // very simple approach
     }
 
-    private static String getMetricValueFromSonarCloud(String sonarComponentName, String metricsCommaSeparated) {
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(HTTP_CALL_TIMEOUT_SEC * 1000).build();
+    private OneMetricResult getMetricValueFromSonarCloud(String sonarComponentName, String metricsCommaSeparated) {
+        String url = "https://sonarcloud.io/api/measures/component?component="+ sonarComponentName + "&metricKeys=" + metricsCommaSeparated;
+        return HttpUtils.doGet(url, new HttpUtils.IResponseHandler<>() {
+            @Override
+            protected OneMetricResult onSuccess(CloseableHttpResponse httpResponse, String responseBody) throws Exception {
+                ObjectMapper mapper = new ObjectMapper(new JsonFactory());
+                mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+                mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+                TypeReference<Map<String, Object>> type = new TypeReference<>() {};
 
-        // Create an instance of HttpClient
-        try (CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
-            // Create an HTTP GET request
-            HttpGet request = new HttpGet("https://sonarcloud.io/api/measures/component?component="+ sonarComponentName + "&metricKeys=" + metricsCommaSeparated);
+                Map<String, Object> data = mapper.readValue(responseBody, type);
 
-            // Execute the request
-            try (CloseableHttpResponse response = httpClient.execute(request)) {
-                // Get the status code
-                int statusCode = response.getStatusLine().getStatusCode();
-                if (statusCode == 200) {
+                Map<String, Object> componentData = (Map<String, Object>) data.get("component");
+                if (componentData == null) return createError("Error: parsing response. Component is absent.");
 
-                    // Get the response body
-                    String responseBody = EntityUtils.toString(response.getEntity());
+                List measuresData = (List) componentData.get("measures");
+                if (measuresData == null) return createError("Error: parsing response. Measures are absent.");
 
-                    ObjectMapper mapper = new ObjectMapper(new JsonFactory());
-                    mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-                    mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-                    TypeReference<Map<String, Object>> type = new TypeReference<>() {};
+                for (Object next : measuresData) {
+                    Map<String, Object> measure = (Map<String, Object>) next;
+                    String key = (String) measure.get("metric");
+                    if ("coverage".equals(key)) {
+                        String value = (String) measure.get("value");
+                        if (StrUtils.isEmpty(value))
+                            return createError("Error: parsing response. No 'value' for coverage metric");
 
-                    Map<String, Object> data = mapper.readValue(responseBody, type);
-
-                    Map<String, Object> componentData = (Map<String, Object>) data.get("component");
-                    if (componentData == null) return "Error: parsing response. Component is absent.";
-
-                    List measuresData = (List) componentData.get("measures");
-                    if (measuresData == null) return "Error: parsing response. Measures are absent.";
-
-                    for (Object next : measuresData) {
-                        Map<String, Object> measure = (Map<String, Object>) next;
-                        String key = (String) measure.get("metric");
-                        if ("coverage".equals(key)) {
-                            String value = (String) measure.get("value");
-                            if (StrUtils.isEmpty(value))
-                                return "Error: parsing response. No 'value' for coverage metric";
-
-                            return value + "%";
-                        }
+                        // todo: select severity based on the value rate
+                        OneMetricResult omResult = new OneMetricResult(getMetric(), ResultSeverity.OK, value + "%");
+                        return omResult;
                     }
-
-                    return "Error: No 'coverage' metric is returned in response.";
-                } else {
-                    return "Error: HTTP_CODE = " + statusCode;
                 }
+
+                return createError("Error: No 'coverage' metric is returned in response.");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "Error: " + e.toString();
-        }
+
+            @Override
+            protected OneMetricResult onError(int statusCode, CloseableHttpResponse httpResponse) throws Exception {
+                return createError("Error: HTTP_CODE = " + statusCode);
+            }
+
+            @Override
+            protected OneMetricResult onException(Exception ex) {
+                return createError("Error: " + ex.toString());
+            }
+
+            private OneMetricResult createError(String titleText) {
+                OneMetricResult omResult = new OneMetricResult(getMetric(), ResultSeverity.ERROR, null);
+                omResult.setTitleText(titleText);
+                return omResult;
+            }
+        });
     }
 }

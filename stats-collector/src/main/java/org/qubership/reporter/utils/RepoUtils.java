@@ -12,4 +12,8 @@ public class RepoUtils {
         String url = (String) repoMetaData.get("html_url");
         return url + "/blob/" + defBranch + "/" + filePath;
     }
+
+    public static String getPullsURL(Map<String, Object> repoMetaData) {
+        return (String) repoMetaData.get("pulls_url");
+    }
 }

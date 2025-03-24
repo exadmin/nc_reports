@@ -16,10 +16,11 @@ public abstract class AbstractInspector {
 
     // Auxiliary methods below
 
-    protected OneMetricResult createMetricResult(String msg, ResultSeverity severity, String httpRef, TextAlign textAlign) {
+    protected OneMetricResult createMetricResult(String msg, ResultSeverity severity, String httpRef, TextAlign textAlign, String titleText) {
         OneMetricResult result = new OneMetricResult(getMetric(), severity, msg);
         result.setTextAlign(textAlign);
         result.setHttpReference(httpRef);
+        result.setTitleText(titleText);
         return result;
     }
 
@@ -28,39 +29,69 @@ public abstract class AbstractInspector {
         return metric;
     }
 
+    // ERROR AUX API
     protected OneMetricResult error(String msg) {
         return error(msg, null);
     }
 
     protected OneMetricResult error(String msg, String httpRef) {
-        return createMetricResult(msg, ResultSeverity.ERROR, httpRef, TextAlign.CENTER_MIDDLE);
+        return createMetricResult(msg, ResultSeverity.ERROR, httpRef, TextAlign.CENTER_MIDDLE, null);
     }
 
+    protected OneMetricResult error(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.ERROR, httpRef, TextAlign.CENTER_MIDDLE, titleText);
+    }
+
+    // OK AUX API
     protected OneMetricResult ok(String msg) {
-        return createMetricResult(msg, ResultSeverity.OK, null, TextAlign.CENTER_MIDDLE);
+        return ok(msg, null, null);
     }
 
+    protected OneMetricResult ok(String msg, String httpRef) {
+        return ok(msg, httpRef, null);
+    }
+
+    protected OneMetricResult ok(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.OK, httpRef, TextAlign.CENTER_MIDDLE, titleText);
+    }
+
+    // WARN AUX API
     protected OneMetricResult warn(String msg) {
         return warn(msg, null);
     }
 
     protected OneMetricResult warn(String msg, String httpRef) {
-        return createMetricResult(msg, ResultSeverity.WARN, httpRef, TextAlign.CENTER_MIDDLE);
+        return warn(msg, httpRef, null);
     }
 
+    protected OneMetricResult warn(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.WARN, httpRef, TextAlign.CENTER_MIDDLE, titleText);
+    }
+
+    // INFO AUX API
     protected OneMetricResult info(String msg) {
         return info(msg, null);
     }
 
     protected OneMetricResult info(String msg, String httpRef) {
-        return createMetricResult(msg, ResultSeverity.INFO, httpRef, TextAlign.LEFT_MIDDLE);
+        return info(msg, httpRef, null);
     }
+
+    protected OneMetricResult info(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.INFO, httpRef, TextAlign.LEFT_MIDDLE, titleText);
+    }
+
+    // Security Error AUX API
 
     protected OneMetricResult secError(String msg) {
         return secError(msg, null);
     }
 
     protected OneMetricResult secError(String msg, String httpRef) {
-        return createMetricResult(msg, ResultSeverity.SECURITY_ISSUE, httpRef, TextAlign.CENTER_MIDDLE);
+        return secError(msg, httpRef, null);
+    }
+
+    protected OneMetricResult secError(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.SECURITY_ISSUE, httpRef, TextAlign.CENTER_MIDDLE, titleText);
     }
 }
