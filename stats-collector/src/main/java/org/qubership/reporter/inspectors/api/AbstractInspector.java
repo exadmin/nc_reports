@@ -1,10 +1,10 @@
 package org.qubership.reporter.inspectors.api;
 
-import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
-import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
 import org.qubership.reporter.inspectors.api.model.TextAlign;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
 
 public abstract class AbstractInspector {
     /**

@@ -1,9 +1,9 @@
 package org.qubership.reporter.inspectors.impl.postinstpectors.summary;
 
+import org.qubership.reporter.inspectors.api.AbstractPostInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
-import org.qubership.reporter.inspectors.api.AbstractPostInspector;
 
 import java.util.Comparator;
 import java.util.List;

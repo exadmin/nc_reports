@@ -1,8 +1,8 @@
 package org.qubership.reporter.renderers.html;
 
-import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.utils.FileUtils;
 import org.qubership.reporter.utils.StrUtils;

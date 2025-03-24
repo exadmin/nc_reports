@@ -1,7 +1,7 @@
 package org.qubership.reporter.renderers.html;
 
-import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.utils.StrUtils;
 
 import static org.apache.commons.lang3.StringEscapeUtils.escapeHtml4;

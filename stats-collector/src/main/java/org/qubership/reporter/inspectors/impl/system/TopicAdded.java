@@ -1,8 +1,8 @@
 package org.qubership.reporter.inspectors.impl.system;
 
+import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 
 import java.util.List;

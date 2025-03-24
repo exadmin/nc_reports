@@ -8,7 +8,6 @@ import org.qubership.reporter.inspectors.impl.files.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.files.mfiles.CodeOwnersInspectorRequired;
 import org.qubership.reporter.inspectors.impl.files.mfiles.ReadmeRequiredFileContent;
 import org.qubership.reporter.inspectors.impl.files.mfiles.workflowfiles.*;
-import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsDeltaInspector;
 import org.qubership.reporter.inspectors.impl.system.RepoIDInspector;
 import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 

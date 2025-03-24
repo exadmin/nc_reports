@@ -2,11 +2,11 @@ package org.qubership.reporter.inspectors.impl.codequality;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.model.TextAlign;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
-import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
-import org.qubership.reporter.inspectors.api.model.TextAlign;
 
 import java.io.File;
 import java.io.FileInputStream;

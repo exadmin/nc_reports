@@ -1,9 +1,9 @@
 package org.qubership.reporter.inspectors.api;
 
-import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
 import org.qubership.reporter.inspectors.api.model.metric.MetricType;
+import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 
 import java.util.List;
 import java.util.Map;

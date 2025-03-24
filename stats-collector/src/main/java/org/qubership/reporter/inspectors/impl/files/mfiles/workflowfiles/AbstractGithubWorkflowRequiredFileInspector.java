@@ -1,8 +1,8 @@
 package org.qubership.reporter.inspectors.impl.files.mfiles.workflowfiles;
 
+import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.impl.files.AbstractRequiredFileInspector;
 import org.qubership.reporter.inspectors.impl.files.RequiredFileExpectations;
-import org.qubership.reporter.inspectors.api.model.metric.Metric;
 
 import java.util.ArrayList;
 import java.util.HashMap;

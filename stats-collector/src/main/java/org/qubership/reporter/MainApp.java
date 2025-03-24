@@ -4,13 +4,11 @@ import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.renderers.db.HSQLDBRenderer;
 import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.renderers.json.JsonRenderer;
-import org.qubership.reporter.utils.JDBCUtils;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) throws Exception{
@@ -27,7 +25,7 @@ public class MainApp {
 
         String dbFile = args[1];
         {
-            File file = new File(dbFile);
+            File file = new File(dbFile + ".script");
             long size = file.length();
             TheLogger.debug("Database file size before is = " + size);
         }
@@ -61,7 +59,7 @@ public class MainApp {
         // here we have closed the connection and need to wait - until hsqldb flushed the data
         Thread.sleep(1000);
 
-        File file = new File(dbFile);
+        File file = new File(dbFile + ".script");
         long size = file.length();
         TheLogger.debug("Database file size after is = " + size);
     }

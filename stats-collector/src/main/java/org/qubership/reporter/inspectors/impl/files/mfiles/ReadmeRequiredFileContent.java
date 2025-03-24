@@ -2,9 +2,9 @@ package org.qubership.reporter.inspectors.impl.files.mfiles;
 
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.inspectors.api.model.metric.MetricType;
 import org.qubership.reporter.inspectors.impl.files.AbstractRequiredFileInspector;
 import org.qubership.reporter.inspectors.impl.files.RequiredFileExpectations;
-import org.qubership.reporter.inspectors.api.model.metric.MetricType;
 
 public class ReadmeRequiredFileContent extends AbstractRequiredFileInspector {
 

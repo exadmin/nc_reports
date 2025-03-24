@@ -5,12 +5,12 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.qubership.reporter.inspectors.api.InspectorsRegistry;
+import org.qubership.reporter.inspectors.api.AbstractPostInspector;
 import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.InspectorsRegistry;
+import org.qubership.reporter.inspectors.api.PostInspectorsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
-import org.qubership.reporter.inspectors.api.AbstractPostInspector;
-import org.qubership.reporter.inspectors.api.PostInspectorsRegistry;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
