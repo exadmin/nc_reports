@@ -21,6 +21,9 @@ public class MainApp {
             TheLogger.error("Unexpected number of parameters. java -jar xxx.jar $PATH_TO_DIR_WITH_REPOS$ $PATH_TO_HSQLDB_FILE$");
         }
 
+        TheLogger.debug("Repositories directory = " + args[0]);
+        TheLogger.debug("Database file = " + args[1]);
+
         String dbFile = args[1];
 
         try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + dbFile + ";ifexists=false", "SA", "")) {
@@ -44,6 +47,7 @@ public class MainApp {
             // Save current results into HSQL DB
             HSQLDBRenderer hsqldbRenderer = new HSQLDBRenderer();
             hsqldbRenderer.saveToDB(jdbcConn, report);
+            jdbcConn.commit();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
