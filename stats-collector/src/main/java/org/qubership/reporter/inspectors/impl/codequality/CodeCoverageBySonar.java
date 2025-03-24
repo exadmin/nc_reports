@@ -15,14 +15,11 @@ import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
-import org.qubership.reporter.utils.FileUtils;
+import org.qubership.reporter.utils.RepoUtils;
 import org.qubership.reporter.utils.StrUtils;
-import org.qubership.reporter.utils.TheLogger;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CodeCoverageBySonar extends AbstractRepositoryInspector {
@@ -30,14 +27,14 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
 
     @Override
     public Metric getMetric() {
-        return newMetric("Sonar Code Coverage", "Sonar Code Coverage", MetricGroupsRegistry.CODE_QUALITY_GROUP)
+        return newMetric("Sonar Code Coverage", "Code Coverage Status", MetricGroupsRegistry.CODE_QUALITY_GROUP)
                 .setDescription("Returns coverage metric from Sonar Cloud service for the component");
     }
 
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         // define if sonar-call is registered in some github-action
-        String prjKey = findSonarProjectKeyValue(pathToRepository);
+        String prjKey = findSonarProjectKeyValue(pathToRepository, repoMetaData);
         if (StrUtils.isEmpty(prjKey)) {
             return error("Not registered");
         }
@@ -56,30 +53,8 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
 
     private static final Pattern REGEXP_PRJ_KEY = Pattern.compile("\\bDsonar\\.projectKey\\s*=\\s*([^\\s]+)\\b", Pattern.CASE_INSENSITIVE);
 
-    private static String findSonarProjectKeyValue(String pathToRepository) {
-        // find all *.yml files in the ./workflow directory and fetch special key
-        List<String> yamlFiles = FileUtils.findAllFilesRecursively(pathToRepository + "/.github/workflows", new FileUtils.FileAcceptor() {
-            @Override
-            public boolean testFileByName(String shortFileName) {
-                return shortFileName.endsWith(".yml");
-            }
-        });
-
-        for (String nextFile : yamlFiles) {
-            try {
-                String fileBody = FileUtils.readFile(nextFile);
-                Matcher matcher = REGEXP_PRJ_KEY.matcher(fileBody);
-                if (matcher.find()) {
-                    String foundValue = matcher.group(1);
-                    if (StrUtils.isNotEmpty(foundValue)) return foundValue;
-                }
-            } catch (IOException ex) {
-                TheLogger.error("Error while reading file " + nextFile, ex);
-                // continue
-            }
-        }
-
-        return null;
+    private static String findSonarProjectKeyValue(String pathToRepository, Map<String, Object> repoMetaData) {
+        return "Netcracker_" + RepoUtils.getRepositoryName(repoMetaData); // very simple approach
     }
 
     private static String getMetricValueFromSonarCloud(String sonarComponentName, String metricsCommaSeparated) {
