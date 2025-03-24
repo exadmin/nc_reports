@@ -1,0 +1,362 @@
+/*C2*/SET SCHEMA PUBLIC
+SET SCHEMA "PUBLIC"
+ALTER TABLE NC_REPORTS ADD COLUMN "Updated At" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "Sonar Code Coverage" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "/License" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "/README" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/Labeler" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/CLA" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/AddCommitMsg" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/ConvCommits" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/Lint-Title" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/Prettier" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/ProfanityFilter" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "WF/SuperLinter" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "ID" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "Code Owners" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "JavaVersion" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "Topics" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "OpenedPRs" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "Errors Count" VARCHAR(255)
+ALTER TABLE NC_REPORTS ADD COLUMN "#" VARCHAR(255)
+INSERT INTO NC_REPORTS VALUES(0,'2025-03-24 09:36:42.000000','.github','2025-03-21','Not registered','','','','','','','','','','','.github','','','','no data yet','10','1')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(1,'2025-03-24 09:36:42.000000','KubeMarine','2025-03-21','Not registered','','','','','','','','','','','KubeMarine','','','administration<br>devops<br>helm<br>k8sstream<br>kubernetes<br>','no data yet','11','2')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(2,'2025-03-24 09:36:42.000000','base-images-module-base','2024-12-12','Not registered','','Too small','','','','','','','','','base-images-module-base','','','base-image<br>','no data yet','12','3')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(3,'2025-03-24 09:36:42.000000','cassandra-exporter','2025-03-05','Not registered','','','','','','','','','','','cassandra-exporter','','1.8','','no data yet','12','4')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(4,'2025-03-24 09:36:42.000000','cla-storage','2025-03-21','Not registered','','Too small','','','','','','','','','cla-storage','','','','no data yet','13','5')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(5,'2025-03-24 09:36:42.000000','gatekeeper-library','2023-09-27','Not registered','','','','','','','','','','','gatekeeper-library','','','','no data yet','11','6')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(6,'2025-03-24 09:36:42.000000','get-package-ids','2024-12-19','Not registered','','Too small','','','','','','','','','get-package-ids','','','','no data yet','12','7')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(7,'2025-03-24 09:36:42.000000','k8s-conformance','2022-10-11','Not registered','Unexpected content','','','','','','','','','','k8s-conformance','','','','no data yet','13','8')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(8,'2025-03-24 09:36:42.000000','microservice-restclient','2025-03-07','Not registered','','Too small','','','','','','','','','microservice-restclient','','','','no data yet','12','9')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(9,'2025-03-24 09:36:42.000000','pg_hint_plan','2024-01-03','Not registered','','','','','','','','','','','pg_hint_plan','','','','no data yet','12','10')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(10,'2025-03-24 09:36:42.000000','pgskipper-backup-daemon','2025-03-19','Not registered','','Too small','','','','','','','','','pgskipper-backup-daemon','','','','no data yet','12','11')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(11,'2025-03-24 09:36:42.000000','pgskipper-dbaas-adapter','2025-03-11','Not registered','','Too small','','','','','','','','','pgskipper-dbaas-adapter','','','','no data yet','12','12')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(12,'2025-03-24 09:36:42.000000','pgskipper-monitoring-agent','2025-02-21','Not registered','','Too small','','','','','','','','','pgskipper-monitoring-agent','','','','no data yet','12','13')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(13,'2025-03-24 09:36:42.000000','pgskipper-operator','2025-03-13','Not registered','','','','','','','','','','','pgskipper-operator','','','','no data yet','11','14')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(14,'2025-03-24 09:36:42.000000','pgskipper-operator-core','2025-01-28','Not registered','','Too small','','','','','','','','','pgskipper-operator-core','','','','no data yet','12','15')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(15,'2025-03-24 09:36:42.000000','pgskipper-patroni','2025-03-20','Not registered','','Too small','','','','','','','','','pgskipper-patroni','','','','no data yet','12','16')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(16,'2025-03-24 09:36:42.000000','pgskipper-pgbackrest-sidecar','2025-03-20','Not registered','','Too small','','','','','','','','','pgskipper-pgbackrest-sidecar','','','','no data yet','12','17')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(17,'2025-03-24 09:36:42.000000','pgskipper-replication-controller','2025-02-21','Not registered','','Too small','','','','','','','','','pgskipper-replication-controller','','','','no data yet','12','18')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(18,'2025-03-24 09:36:42.000000','pgskipper-upgrade','2025-03-20','Not registered','','Too small','','','','','','','','','pgskipper-upgrade','','','','no data yet','12','19')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(19,'2025-03-24 09:36:42.000000','qubership-apihub','2025-03-24','Not registered','','','','','','','','','','','qubership-apihub','','','apihub<br>','no data yet','11','20')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(20,'2025-03-24 09:36:42.000000','qubership-apihub-agent','2024-12-24','Not registered','','Too small','','','','','','','','','qubership-apihub-agent','','','apihub<br>','no data yet','12','21')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(21,'2025-03-24 09:36:42.000000','qubership-apihub-api-data-model','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-api-data-model','','','apihub<br>frontend<br>','no data yet','12','22')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(22,'2025-03-24 09:36:42.000000','qubership-apihub-api-diff','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-api-diff','','','apihub<br>frontend<br>','no data yet','11','23')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(23,'2025-03-24 09:36:42.000000','qubership-apihub-api-doc-viewer','2025-03-21','Not registered','','','','','','','','','','','qubership-apihub-api-doc-viewer','','','apihub<br>frontend<br>','no data yet','11','24')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(24,'2025-03-24 09:36:42.000000','qubership-apihub-api-processor','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-api-processor','','','apihub<br>broadcast-pilot<br>frontend<br>','no data yet','12','25')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(25,'2025-03-24 09:36:42.000000','qubership-apihub-api-unifier','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-api-unifier','','','apihub<br>frontend<br>','no data yet','11','26')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(26,'2025-03-24 09:36:42.000000','qubership-apihub-api-visitor','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-api-visitor','','','apihub<br>frontend<br>','no data yet','12','27')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(27,'2025-03-24 09:36:42.000000','qubership-apihub-apispec-view','2025-03-21','Not registered','','Too small','','','','','','','','','qubership-apihub-apispec-view','','','apihub<br>frontend<br>','no data yet','12','28')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(28,'2025-03-24 09:36:42.000000','qubership-apihub-backend','2025-03-21','Not registered','','','','','','','','','','','qubership-apihub-backend','','','apihub<br>broadcast-pilot<br>','no data yet','11','29')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(29,'2025-03-24 09:36:42.000000','qubership-apihub-build-task-consumer','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-build-task-consumer','','','apihub<br>frontend<br>','no data yet','11','30')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(30,'2025-03-24 09:36:42.000000','qubership-apihub-ci','2025-03-21','Not registered','','Too small','','','','','','','','','qubership-apihub-ci','','','apihub<br>','no data yet','12','31')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(31,'2025-03-24 09:36:42.000000','qubership-apihub-class-view','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-class-view','','','apihub<br>frontend<br>','no data yet','12','32')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(32,'2025-03-24 09:36:42.000000','qubership-apihub-compatibility-suites','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-compatibility-suites','','','apihub<br>frontend<br>','no data yet','11','33')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(33,'2025-03-24 09:36:42.000000','qubership-apihub-graphapi','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-graphapi','','','apihub<br>frontend<br>','no data yet','11','34')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(34,'2025-03-24 09:36:42.000000','qubership-apihub-http-spec','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-http-spec','','','apihub<br>frontend<br>','no data yet','11','35')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(35,'2025-03-24 09:36:42.000000','qubership-apihub-jest-chrome-in-docker-environment','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-jest-chrome-in-docker-environment','','','apihub<br>frontend<br>','no data yet','11','36')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(36,'2025-03-24 09:36:42.000000','qubership-apihub-json-crawl','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-json-crawl','','','apihub<br>frontend<br>','no data yet','11','37')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(37,'2025-03-24 09:36:42.000000','qubership-apihub-nodejs-dev-image','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-nodejs-dev-image','','','apihub<br>frontend<br>','no data yet','12','38')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(38,'2025-03-24 09:36:42.000000','qubership-apihub-npm-gitflow','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-npm-gitflow','','','apihub<br>frontend<br>','no data yet','12','39')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(39,'2025-03-24 09:36:42.000000','qubership-apihub-postman-collections','2025-03-21','Not registered','','','','','','','','','','','qubership-apihub-postman-collections','','','apihub<br>','no data yet','11','40')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(40,'2025-03-24 09:36:42.000000','qubership-apihub-protobufjs-research','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-protobufjs-research','','','apihub<br>frontend<br>','no data yet','11','41')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(41,'2025-03-24 09:36:42.000000','qubership-apihub-rest-playground','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-apihub-rest-playground','','','apihub<br>frontend<br>','no data yet','12','42')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(42,'2025-03-24 09:36:42.000000','qubership-apihub-sniffer-agent','2024-12-25','Not registered','','Too small','','','','','','','','','qubership-apihub-sniffer-agent','','','apihub<br>','no data yet','12','43')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(43,'2025-03-24 09:36:42.000000','qubership-apihub-test-service','2024-12-28','Not registered','','Too small','','','','','','','','','qubership-apihub-test-service','','','apihub<br>','no data yet','12','44')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(44,'2025-03-24 09:36:42.000000','qubership-apihub-traffic-analyzer','2024-12-24','Not registered','','Too small','','','','','','','','','qubership-apihub-traffic-analyzer','','','apihub<br>','no data yet','12','45')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(45,'2025-03-24 09:36:42.000000','qubership-apihub-ui','2025-03-21','Not registered','','','','','','','','','','','qubership-apihub-ui','','','apihub<br>broadcast-pilot<br>frontend<br>','no data yet','11','46')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(46,'2025-03-24 09:36:42.000000','qubership-apihub-ui-tests','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-ui-tests','','','apihub<br>frontend<br>','no data yet','11','47')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(47,'2025-03-24 09:36:42.000000','qubership-apihub-vscode','2025-03-18','Not registered','','','','','','','','','','','qubership-apihub-vscode','','','apihub<br>frontend<br>','no data yet','12','48')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(48,'2025-03-24 09:36:42.000000','qubership-backup-daemon','2025-03-07','Not registered','','','','','','','','','','','qubership-backup-daemon','','','saqs<br>','no data yet','11','49')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(49,'2025-03-24 09:36:42.000000','qubership-cloud-passport-cli','2025-02-04','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-cloud-passport-cli','','','','no data yet','9','50')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(50,'2025-03-24 09:36:42.000000','qubership-colly','2025-03-19','Not registered','','','','','','','','','','','qubership-colly','','21','broadcast-pilot<br>','no data yet','4','51')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(51,'2025-03-24 09:36:42.000000','qubership-consul','2025-02-28','Not registered','','','','','','','','','','','qubership-consul','','','consul<br>saqs<br>','no data yet','11','52')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(52,'2025-03-24 09:36:42.000000','qubership-consul-acl-configurator','2025-02-18','Not registered','','','','','','','','','','','qubership-consul-acl-configurator','','','consul<br>saqs<br>','no data yet','11','53')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(53,'2025-03-24 09:36:42.000000','qubership-consul-backup-daemon','2025-01-28','Not registered','','','','','','','','','','','qubership-consul-backup-daemon','','','consul<br>saqs<br>','no data yet','11','54')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(54,'2025-03-24 09:36:42.000000','qubership-core-arquillian-cube-extension','2025-03-22','Not registered','','Too small','','','','','','','','','qubership-core-arquillian-cube-extension','','','core<br>java<br>lib<br>','no data yet','11','55')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(55,'2025-03-24 09:36:42.000000','qubership-core-base-images','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-core-base-images','','','base-image<br>core<br>','no data yet','7','56')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(56,'2025-03-24 09:36:42.000000','qubership-core-blue-green-state-monitor','2025-03-19','Not registered','','','','','','','','','','','qubership-core-blue-green-state-monitor','','17','core<br>java<br>lib<br>','no data yet','11','57')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(57,'2025-03-24 09:36:42.000000','qubership-core-blue-green-state-monitor-quarkus','2025-03-19','Not registered','','','','','','','','','','','qubership-core-blue-green-state-monitor-quarkus','','17','core<br>java<br>lib<br>','no data yet','11','58')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(58,'2025-03-24 09:36:42.000000','qubership-core-commons','2024-12-30','Not registered','','Too small','','','','','','','','','qubership-core-commons','','','','no data yet','12','59')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(59,'2025-03-24 09:36:42.000000','qubership-core-context-propagation','2025-03-22','Not registered','','','','','','','','','','','qubership-core-context-propagation','','17','core<br>java<br>lib<br>','no data yet','10','60')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(60,'2025-03-24 09:36:42.000000','qubership-core-context-propagation-quarkus','2025-03-19','Not registered','','','','','','','','','','','qubership-core-context-propagation-quarkus','','17','core<br>java<br>lib<br>','no data yet','11','61')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(61,'2025-03-24 09:36:42.000000','qubership-core-control-plane','2025-03-13','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-core-control-plane','','','core<br>go<br>service-mesh<br>','no data yet','9','62')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(62,'2025-03-24 09:36:42.000000','qubership-core-error-handling','2025-03-20','Not registered','','','','','','','','','','','qubership-core-error-handling','','17','core<br>java<br>lib<br>','no data yet','11','63')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(63,'2025-03-24 09:36:42.000000','qubership-core-ingress-gateway','2025-03-13','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-core-ingress-gateway','','','core<br>envoy<br>service-mesh<br>','no data yet','9','64')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(64,'2025-03-24 09:36:42.000000','qubership-core-lib-go','2025-03-24','Not registered','','','','','','','','','','','qubership-core-lib-go','','','core<br>go<br>lib<br>','no data yet','11','65')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(65,'2025-03-24 09:36:42.000000','qubership-core-lib-go-actuator-common','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-actuator-common','','','core<br>go<br>lib<br>','no data yet','13','66')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(66,'2025-03-24 09:36:42.000000','qubership-core-lib-go-bg-kafka','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-bg-kafka','','','core<br>go<br>lib<br>','no data yet','13','67')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(67,'2025-03-24 09:36:42.000000','qubership-core-lib-go-bg-state-monitor','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-bg-state-monitor','','','core<br>go<br>lib<br>','no data yet','13','68')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(68,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-arangodb-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-arangodb-client','','','core<br>go<br>lib<br>','no data yet','13','69')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(69,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-base-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-base-client','','','core<br>go<br>lib<br>','no data yet','13','70')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(70,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-cassandra-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-cassandra-client','','','core<br>go<br>lib<br>','no data yet','13','71')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(71,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-clickhouse-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-clickhouse-client','','','core<br>go<br>lib<br>','no data yet','13','72')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(72,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-mongo-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-mongo-client','','','core<br>go<br>lib<br>','no data yet','13','73')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(73,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-opensearch-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-opensearch-client','','','core<br>go<br>lib<br>','no data yet','13','74')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(74,'2025-03-24 09:36:42.000000','qubership-core-lib-go-dbaas-postgres-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-dbaas-postgres-client','','','core<br>go<br>lib<br>','no data yet','13','75')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(75,'2025-03-24 09:36:42.000000','qubership-core-lib-go-error-handling','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-error-handling','','','core<br>go<br>lib<br>','no data yet','13','76')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(76,'2025-03-24 09:36:42.000000','qubership-core-lib-go-fiber-server-utils','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-fiber-server-utils','','','core<br>go<br>lib<br>','no data yet','13','77')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(77,'2025-03-24 09:36:42.000000','qubership-core-lib-go-maas-bg-segmentio','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-maas-bg-segmentio','','','core<br>go<br>lib<br>','no data yet','13','78')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(78,'2025-03-24 09:36:42.000000','qubership-core-lib-go-maas-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-maas-client','','','core<br>go<br>lib<br>','no data yet','13','79')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(79,'2025-03-24 09:36:42.000000','qubership-core-lib-go-maas-core','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-maas-core','','','core<br>go<br>lib<br>','no data yet','13','80')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(80,'2025-03-24 09:36:42.000000','qubership-core-lib-go-maas-segmentio','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-maas-segmentio','','','core<br>go<br>lib<br>','no data yet','13','81')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(81,'2025-03-24 09:36:42.000000','qubership-core-lib-go-mux-server-utils','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-mux-server-utils','','','core<br>go<br>lib<br>','no data yet','13','82')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(82,'2025-03-24 09:36:42.000000','qubership-core-lib-go-paas-mediation-client','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-paas-mediation-client','','','core<br>go<br>lib<br>','no data yet','13','83')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(83,'2025-03-24 09:36:42.000000','qubership-core-lib-go-rest-utils','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-rest-utils','','','core<br>go<br>lib<br>','no data yet','13','84')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(84,'2025-03-24 09:36:42.000000','qubership-core-lib-go-stomp-websocket','2025-03-17','Not registered','','','','','','','','','','','qubership-core-lib-go-stomp-websocket','','','core<br>go<br>lib<br>','no data yet','13','85')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(85,'2025-03-24 09:36:42.000000','qubership-core-maas-agent','2025-03-07','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-core-maas-agent','','','','no data yet','9','86')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(86,'2025-03-24 09:36:42.000000','qubership-core-microservice-dependencies','2025-03-22','Not registered','','Too small','','','','','','','','','qubership-core-microservice-dependencies','','','core<br>java<br>lib<br>','no data yet','11','87')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(87,'2025-03-24 09:36:42.000000','qubership-core-microservice-framework','2025-03-22','Not registered','','Too small','','','','','','','','','qubership-core-microservice-framework','','','core<br>java<br>lib<br>','no data yet','11','88')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(88,'2025-03-24 09:36:42.000000','qubership-core-microservice-framework-extensions','2025-03-20','Not registered','','','','','','','','','','','qubership-core-microservice-framework-extensions','','Not specified','core<br>java<br>lib<br>','no data yet','12','89')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(89,'2025-03-24 09:36:42.000000','qubership-core-mongo-evolution','2025-03-20','Not registered','','','','','','','','','','','qubership-core-mongo-evolution','','17','core<br>java<br>lib<br>','no data yet','11','90')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(90,'2025-03-24 09:36:42.000000','qubership-core-process-orchestrator','2025-03-22','Not registered','','','','','','','','','','','qubership-core-process-orchestrator','','21','core<br>java<br>lib<br>','no data yet','10','91')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(91,'2025-03-24 09:36:42.000000','qubership-core-quarkus-extensions','2025-03-20','Not registered','','','','','','','','','','','qubership-core-quarkus-extensions','','17','core<br>java<br>lib<br>','no data yet','11','92')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(92,'2025-03-24 09:36:42.000000','qubership-core-rest-libraries','2025-03-20','Not registered','','','','','','','','','','','qubership-core-rest-libraries','','17','core<br>java<br>lib<br>','no data yet','11','93')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(93,'2025-03-24 09:36:42.000000','qubership-core-restclient','2025-03-20','Not registered','','','','','','','','','','','qubership-core-restclient','','Not specified','core<br>java<br>lib<br>','no data yet','12','94')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(94,'2025-03-24 09:36:42.000000','qubership-core-springboot-starter','2025-03-22','Not registered','','Too small','','','','','','','','','qubership-core-springboot-starter','','','core<br>java<br>lib<br>','no data yet','11','95')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(95,'2025-03-24 09:36:42.000000','qubership-core-utils','2025-03-19','Not registered','','','','','','','','','','','qubership-core-utils','','Not specified','broadcast-pilot<br>core<br>java<br>lib<br>','no data yet','12','96')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(96,'2025-03-24 09:36:42.000000','qubership-cql-driver','2025-02-12','Not registered','','Too small','','','','','','','','','qubership-cql-driver','','','','no data yet','13','97')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(97,'2025-03-24 09:36:42.000000','qubership-credential-manager','2025-03-18','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','','qubership-credential-manager','','','','no data yet','10','98')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(98,'2025-03-24 09:36:42.000000','qubership-dbaas','2025-03-20','Not registered','','','','','','','','','','','qubership-dbaas','','21','core<br>dbaas<br>','no data yet','10','99')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(99,'2025-03-24 09:36:42.000000','qubership-dbaas-adapter-core','2025-03-18','Not registered','','Too small','','','','','','','','','qubership-dbaas-adapter-core','','','','no data yet','12','100')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(100,'2025-03-24 09:36:42.000000','qubership-dbaas-client','2025-03-20','Not registered','','','','','','','','','','','qubership-dbaas-client','','8','core<br>dbaas<br>java<br>lib<br>','no data yet','11','101')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(101,'2025-03-24 09:36:42.000000','qubership-deployment-status-provisioner','2025-02-18','Not registered','','','','','','','','','','','qubership-deployment-status-provisioner','','','saqs<br>','no data yet','12','102')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(102,'2025-03-24 09:36:42.000000','qubership-diag-proxy','2025-03-14','Not registered','','','','','','','','','','','qubership-diag-proxy','','','observability<br>proxy<br>','no data yet','10','103')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(103,'2025-03-24 09:36:42.000000','qubership-disaster-recovery-daemon','2025-02-03','Not registered','','','','','','','','','','','qubership-disaster-recovery-daemon','','','saqs<br>','no data yet','11','104')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(104,'2025-03-24 09:36:42.000000','qubership-docker-integration-tests','2025-02-27','Not registered','','','','','','','','','','','qubership-docker-integration-tests','','','saqs<br>','no data yet','11','105')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(105,'2025-03-24 09:36:42.000000','qubership-docker-opensearch','2025-02-28','Not registered','','Too small','','','','','','','','','qubership-docker-opensearch','','11','opensearch<br>saqs<br>','no data yet','12','106')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(106,'2025-03-24 09:36:42.000000','qubership-env-checker','2025-03-21','Not registered','Unexpected content','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','','','','Restricted pattern: [\bpull_request_target\s*:]','qubership-env-checker','','','observability<br>','no data yet','8','107')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(107,'2025-03-24 09:36:42.000000','qubership-envgene','2025-03-12','Not registered','','','','','','','','','','','qubership-envgene','','Not specified','','no data yet','12','108')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(108,'2025-03-24 09:36:42.000000','qubership-envgene-instance','2025-02-05','Not registered','','Too small','','','','','','','','','qubership-envgene-instance','','','','no data yet','12','109')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(109,'2025-03-24 09:36:42.000000','qubership-envgene-template','2025-02-20','Not registered','','Too small','','','','','','','','','qubership-envgene-template','','Not specified','','no data yet','13','110')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(110,'2025-03-24 09:36:42.000000','qubership-external-logging-installer','2025-03-24','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-external-logging-installer','','','logging<br>observability<br>','no data yet','9','111')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(111,'2025-03-24 09:36:42.000000','qubership-fluent-pipeline-tests','2025-03-14','Not registered','','','','','','','','','','','qubership-fluent-pipeline-tests','','','logging<br>observability<br>testing<br>','no data yet','10','112')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(112,'2025-03-24 09:36:42.000000','qubership-fluentd','2025-03-18','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-fluentd','','','logging<br>observability<br>','no data yet','8','113')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(113,'2025-03-24 09:36:42.000000','qubership-git-system-follower','2025-03-23','Not registered','','','','','','','','','','','qubership-git-system-follower','','','','no data yet','11','114')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(114,'2025-03-24 09:36:42.000000','qubership-grafana-plugins-init','2025-03-14','Not registered','','','','','','','','','','','qubership-grafana-plugins-init','','','monitoring<br>observability<br>','no data yet','10','115')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(115,'2025-03-24 09:36:42.000000','qubership-grafana-reporter','2025-03-14','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-grafana-reporter','','','monitoring<br>observability<br>','no data yet','8','116')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(116,'2025-03-24 09:36:42.000000','qubership-graphite-remote-adapter','2025-03-14','Not registered','','','','','','','','','','','qubership-graphite-remote-adapter','','','monitoring<br>observability<br>','no data yet','10','117')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(117,'2025-03-24 09:36:42.000000','qubership-graylog-archiving-plugin','2025-03-14','Not registered','','','','','','','','','','','qubership-graylog-archiving-plugin','','1.8','logging<br>observability<br>plugin<br>','no data yet','10','118')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(118,'2025-03-24 09:36:42.000000','qubership-graylog-obfuscation-plugin','2025-03-19','Not registered','','','','','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-graylog-obfuscation-plugin','','1.8','logging<br>observability<br>plugin<br>','no data yet','7','119')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(119,'2025-03-24 09:36:42.000000','qubership-hive-metastore','2025-02-28','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','','qubership-hive-metastore','','','','no data yet','11','120')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(120,'2025-03-24 09:36:42.000000','qubership-integration-catalog-library','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-catalog-library','','21','broadcast-pilot<br>qip<br>','no data yet','7','121')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(121,'2025-03-24 09:36:42.000000','qubership-integration-checkstyle','2025-03-17','Not registered','','Too small','','','','','','','','','qubership-integration-checkstyle','','Not specified','qip<br>','no data yet','13','122')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(122,'2025-03-24 09:36:42.000000','qubership-integration-designtime-catalog','2025-03-18','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-designtime-catalog','','Not specified','broadcast-pilot<br>qip<br>','no data yet','8','123')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(123,'2025-03-24 09:36:42.000000','qubership-integration-engine','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-engine','','Not specified','broadcast-pilot<br>qip<br>','no data yet','9','124')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(124,'2025-03-24 09:36:42.000000','qubership-integration-platform','2025-03-20','Not registered','','','','','','','','','','','qubership-integration-platform','','','broadcast-pilot<br>qip<br>','no data yet','11','125')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(125,'2025-03-24 09:36:42.000000','qubership-integration-runtime-catalog','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-runtime-catalog','','Not specified','broadcast-pilot<br>qip<br>','no data yet','8','126')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(126,'2025-03-24 09:36:42.000000','qubership-integration-sessions-management','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-sessions-management','','Not specified','broadcast-pilot<br>qip<br>','no data yet','8','127')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(127,'2025-03-24 09:36:42.000000','qubership-integration-variables-management','2025-03-20','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-integration-variables-management','','Not specified','broadcast-pilot<br>qip<br>','no data yet','9','128')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(128,'2025-03-24 09:36:42.000000','qubership-inventory-tool-cli','2025-03-14','Not registered','','','','','','','','','','','qubership-inventory-tool-cli','','Not specified','observability<br>','no data yet','11','129')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(129,'2025-03-24 09:36:42.000000','qubership-inventory-tool-core','2025-03-17','Not registered','Unexpected content','Too small','','','','','','','','','qubership-inventory-tool-core','','Not specified','observability<br>','no data yet','13','130')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(130,'2025-03-24 09:36:42.000000','qubership-jaeger','2025-03-19','Not registered','','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-jaeger','','','broadcast-pilot<br>observability<br>tracing<br>','no data yet','9','131')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(131,'2025-03-24 09:36:42.000000','qubership-kube-events-generator','2025-03-14','Not registered','','','','','','','','','','','qubership-kube-events-generator','','','logging<br>observability<br>testing<br>','no data yet','10','132')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(132,'2025-03-24 09:36:42.000000','qubership-kube-events-reader','2025-03-20','Not registered','','','','','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-kube-events-reader','','','logging<br>observability<br>','no data yet','8','133')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(133,'2025-03-24 09:36:42.000000','qubership-landscape-config','2025-02-19','Not registered','','','','','','','','','','','qubership-landscape-config','','','','no data yet','11','134')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(134,'2025-03-24 09:36:42.000000','qubership-landscape-config-processor','2025-02-19','Not registered','','','','','','','','','','','qubership-landscape-config-processor','','11','','no data yet','11','135')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(135,'2025-03-24 09:36:42.000000','qubership-log-exporter','2025-03-14','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-log-exporter','','','logging<br>observability<br>','no data yet','8','136')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(136,'2025-03-24 09:36:42.000000','qubership-log-generator','2025-03-20','Not registered','','','','','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-log-generator','','Not specified','logging<br>observability<br>','no data yet','9','137')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(137,'2025-03-24 09:36:42.000000','qubership-logging-operator','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-logging-operator','','','logging<br>observability<br>','no data yet','8','138')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(138,'2025-03-24 09:36:42.000000','qubership-maas','2025-03-22','Not registered','','Too small','','','','','','','','','qubership-maas','','','core<br>maas<br>','no data yet','11','139')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(139,'2025-03-24 09:36:42.000000','qubership-maas-client','2025-03-20','Not registered','','','','','','','','','','','qubership-maas-client','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','140')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(140,'2025-03-24 09:36:42.000000','qubership-maas-client-quarkus','2025-03-20','Not registered','','','','','','','','','','','qubership-maas-client-quarkus','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','141')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(141,'2025-03-24 09:36:42.000000','qubership-maas-client-spring','2025-03-20','Not registered','','','','','','','','','','','qubership-maas-client-spring','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','142')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(142,'2025-03-24 09:36:42.000000','qubership-maas-declarative-client-commons','2025-03-19','Not registered','','','','','','','','','','','qubership-maas-declarative-client-commons','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','143')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(143,'2025-03-24 09:36:42.000000','qubership-maas-declarative-client-quarkus','2025-03-20','Not registered','','','','','','','','','','','qubership-maas-declarative-client-quarkus','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','144')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(144,'2025-03-24 09:36:42.000000','qubership-maas-declarative-client-spring','2025-03-19','Not registered','','','','','','','','','','','qubership-maas-declarative-client-spring','','17','core<br>java<br>lib<br>maas<br>','no data yet','11','145')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(145,'2025-03-24 09:36:42.000000','qubership-mistral','2025-01-27','Not registered','Unexpected content','','','','','','','','','','qubership-mistral','','','','no data yet','13','146')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(146,'2025-03-24 09:36:42.000000','qubership-mongodb-driver','2025-02-22','Not registered','','','','','','','','','','','qubership-mongodb-driver','','','','no data yet','12','147')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(147,'2025-03-24 09:36:42.000000','qubership-monitoring-operator','2025-03-24','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-monitoring-operator','','','monitoring<br>observability<br>','no data yet','8','148')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(148,'2025-03-24 09:36:42.000000','qubership-network-latency-exporter','2025-03-14','Not registered','','','','','','','','','','','qubership-network-latency-exporter','','','monitoring<br>observability<br>','no data yet','10','149')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(149,'2025-03-24 09:36:42.000000','qubership-nifi','2025-03-20','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','','qubership-nifi','','Internal error: java.lang.ClassCastException: class java.lang.String cannot be cast to class java.util.Map (java.lang.String and java.util.Map are in module java.base of loader ''bootstrap'')','','no data yet','8','150')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(150,'2025-03-24 09:36:42.000000','qubership-nifi-registry','2025-03-18','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','','qubership-nifi-registry','','8','','no data yet','7','151')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(151,'2025-03-24 09:36:42.000000','qubership-nosqldb-operator-core','2025-03-03','Not registered','','Too small','','','','','','','','','qubership-nosqldb-operator-core','','','','no data yet','13','152')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(152,'2025-03-24 09:36:42.000000','qubership-observability-examples','2025-03-14','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-observability-examples','','','examples<br>observability<br>','no data yet','9','153')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(153,'2025-03-24 09:36:42.000000','qubership-observability-operator','2025-03-19','Not registered','','Too small','','','','','','','','','qubership-observability-operator','','','observability<br>','no data yet','12','154')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(154,'2025-03-24 09:36:42.000000','qubership-open-telemetry-collector','2025-03-14','Not registered','','','','','','','','','','','qubership-open-telemetry-collector','','','observability<br>','no data yet','10','155')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(155,'2025-03-24 09:36:42.000000','qubership-opensearch','2025-03-05','Not registered','','','','','','','','','','','qubership-opensearch','','','opensearch<br>saqs<br>','no data yet','11','156')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(156,'2025-03-24 09:36:42.000000','qubership-opensearch-curator','2025-01-28','Not registered','','','','','','','','','','','qubership-opensearch-curator','','','opensearch<br>saqs<br>','no data yet','11','157')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(157,'2025-03-24 09:36:42.000000','qubership-opensearch-dbaas-adapter','2025-03-13','Not registered','','','','','','','','','','','qubership-opensearch-dbaas-adapter','','','opensearch<br>saqs<br>','no data yet','11','158')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(158,'2025-03-24 09:36:42.000000','qubership-opensearch-monitoring','2025-02-03','Not registered','','','','','','','','','','','qubership-opensearch-monitoring','','','opensearch<br>saqs<br>','no data yet','11','159')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(159,'2025-03-24 09:36:42.000000','qubership-pipelines-common-python-library','2025-02-21','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','','','','','','qubership-pipelines-common-python-library','','','','no data yet','8','160')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(160,'2025-03-24 09:36:42.000000','qubership-profiler-agent','2025-03-20','Not registered','','','','','','','','','','','qubership-profiler-agent','','1.8','broadcast-pilot<br>observability<br>profiler<br>','no data yet','8','161')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(161,'2025-03-24 09:36:42.000000','qubership-prometheus-adapter-operator','2025-03-14','Not registered','','','','','','','','','','','qubership-prometheus-adapter-operator','','','monitoring<br>observability<br>','no data yet','10','162')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(162,'2025-03-24 09:36:42.000000','qubership-query-exporter','2025-02-21','Not registered','','Too small','','','','','','','','','qubership-query-exporter','','','','no data yet','12','163')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(163,'2025-03-24 09:36:42.000000','qubership-renovate-config','2024-12-20','Not registered','','Too small','','','','','','','','','qubership-renovate-config','','','','no data yet','13','164')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(164,'2025-03-24 09:36:42.000000','qubership-repo-template','2025-03-04','Not registered','','Too small','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-repo-template','','','','no data yet','9','165')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(165,'2025-03-24 09:36:42.000000','qubership-tcp-duplicator','2025-03-14','Not registered','','','','','','','','','','','qubership-tcp-duplicator','','','logging<br>observability<br>','no data yet','10','166')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(166,'2025-03-24 09:36:42.000000','qubership-test-pipelines','2025-03-20','Not registered','','','','','','','','','','','qubership-test-pipelines','','','','no data yet','13','167')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(167,'2025-03-24 09:36:42.000000','qubership-version-exporter','2025-03-14','Not registered','','','','','','','','','','','qubership-version-exporter','','','monitoring<br>observability<br>','no data yet','10','168')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(168,'2025-03-24 09:36:42.000000','qubership-workflow-hub','2025-03-24','Not registered','','','','Restricted pattern: [\bpull_request_target\s*:]','','Restricted pattern: [\bpull_request_target\s*:]','Restricted pattern: [\bpull_request_target\s*:]','','','No required content is found by RegExp = ''\buses\s*:\s*super-linter/super-linter@''','qubership-workflow-hub','','','','no data yet','7','169')
+COMMIT
+INSERT INTO NC_REPORTS VALUES(169,'2025-03-24 09:36:42.000000','robot-shop','2025-03-14','Not registered','','','','','','','','','','','robot-shop','','Not specified','example<br>observability<br>','no data yet','11','170')
+COMMIT
+DISCONNECT
