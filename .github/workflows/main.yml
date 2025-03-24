@@ -60,6 +60,8 @@ jobs:
           cd $TMP_DIR
           sudo java -jar stats-collector.jar $TMP_DIR/netcracker $CURRENT_DIR/reports-are-here/data/db/hsqldb
           
+          cd $CURRENT_DIR
+          
           date=$(date +"%d-%m-%Y-%H-%M-%S")
           sed -i -e "s/#GEN_DATE#/$date/g" $TMP_DIR/netcracker/combined-report.html           
           cp $TMP_DIR/netcracker/persisted-data.json $CURRENT_DIR/reports-are-here/data/persisted-data-$date.json
