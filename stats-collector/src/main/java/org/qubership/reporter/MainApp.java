@@ -24,7 +24,13 @@ public class MainApp {
         TheLogger.debug("Repositories directory = " + args[0]);
         TheLogger.debug("Database file = " + args[1]);
 
+
         String dbFile = args[1];
+        {
+            File file = new File(dbFile);
+            long size = file.length();
+            TheLogger.debug("Database file size before is = " + size);
+        }
 
         try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + dbFile + ";ifexists=false", "SA", "")) {
             jdbcConn.setSchema("PUBLIC");
@@ -54,5 +60,9 @@ public class MainApp {
 
         // here we have closed the connection and need to wait - until hsqldb flushed the data
         Thread.sleep(1000);
+
+        File file = new File(dbFile);
+        long size = file.length();
+        TheLogger.debug("Database file size after is = " + size);
     }
 }
