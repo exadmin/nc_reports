@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HSQLDBRenderer {
@@ -69,8 +70,8 @@ public class HSQLDBRenderer {
                 TheLogger.debug("Adding batch");
             }
 
-            pstm.executeBatch();
-            TheLogger.debug("Executing batch");
+            int[] result = pstm.executeBatch();
+            TheLogger.debug("Batch execution result = " + Arrays.toString(result));
         }
 
     }

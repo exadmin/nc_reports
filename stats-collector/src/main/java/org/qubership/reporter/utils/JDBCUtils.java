@@ -50,6 +50,7 @@ public class JDBCUtils {
                 }
             }
 
+            TheLogger.debug("Executing DML = " + sqlQuery);
             pstm.execute();
 
             try (ResultSet resultSet = pstm.getResultSet()) {
@@ -68,6 +69,7 @@ public class JDBCUtils {
 
     public static void executeDDL(Connection jdbcConnection, String sql) {
         try (Statement ddlStm = jdbcConnection.createStatement()) {
+            TheLogger.debug("Executing DDL = " + sql);
             ddlStm.execute(sql);
         } catch (SQLException sqlEx) {
             throw new IllegalStateException(sqlEx);

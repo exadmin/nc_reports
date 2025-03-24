@@ -75,8 +75,8 @@ jobs:
           git add $CURRENT_DIR/reports-are-here/data/persisted-data-$date.json
           git add $CURRENT_DIR/reports-are-here/combined-report-$date.html
           git add $CURRENT_DIR/docs/index.html
-          git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.script
-          git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.properties
+          git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.*
+          # git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.properties
           
           git commit -m "HTML report generation at $date"
           git push
