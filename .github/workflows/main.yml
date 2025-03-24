@@ -59,12 +59,7 @@ jobs:
         
           cd $TMP_DIR
           sudo java -jar stats-collector.jar $TMP_DIR/netcracker $CURRENT_DIR/reports-are-here/data/db/hsqldb
-
-      - uses: actions/checkout@v4
-      - name: Do commit back to repo
-        run: |
-          CURRENT_DIR=$(pwd)
-          TMP_DIR="/tmp/workingdir"
+          
           date=$(date +"%d-%m-%Y-%H-%M-%S")
           sed -i -e "s/#GEN_DATE#/$date/g" $TMP_DIR/netcracker/combined-report.html           
           cp $TMP_DIR/netcracker/persisted-data.json $CURRENT_DIR/reports-are-here/data/persisted-data-$date.json
@@ -83,3 +78,4 @@ jobs:
           
           git commit -m "HTML report generation at $date"
           git push
+          
