@@ -56,22 +56,17 @@ public class HSQLDBRenderer {
                 pstm.setString(1, dateStr);
                 pstm.setString(2, repoName);
 
-                TheLogger.debug("SQL QUERY = " + sql);
-
                 int bindIndex = 3;
                 for (Metric metric : report.getMetrics()) {
                     String value = report.getValue(repoName, metric.getPersistenceId()).getRawValue();
-                    TheLogger.debug("Assign bind index = " + bindIndex + ", raw-str-value = " +  value);
                     pstm.setString(bindIndex, value);
                     bindIndex++;
                 }
 
                 pstm.addBatch();
-                TheLogger.debug("Adding batch");
             }
 
-            int[] result = pstm.executeBatch();
-            TheLogger.debug("Batch execution result = " + Arrays.toString(result));
+            pstm.executeBatch();
         }
 
     }
