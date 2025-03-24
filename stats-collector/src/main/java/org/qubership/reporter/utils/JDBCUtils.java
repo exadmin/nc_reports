@@ -1,9 +1,6 @@
 package org.qubership.reporter.utils;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -68,5 +65,13 @@ public class JDBCUtils {
         }
 
         return result;
+    }
+
+    public static void executeDDL(Connection jdbcConnection, String sql) {
+        try (Statement ddlStm = jdbcConnection.createStatement()) {
+            ddlStm.execute(sql);
+        } catch (SQLException sqlEx) {
+            throw new IllegalStateException(sqlEx);
+        }
     }
 }

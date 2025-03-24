@@ -5,6 +5,7 @@ import org.qubership.reporter.renderers.db.HSQLDBRenderer;
 import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.renderers.json.JsonRenderer;
 import org.qubership.reporter.utils.JDBCUtils;
+import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
 import java.sql.Connection;
@@ -16,8 +17,15 @@ public class MainApp {
         // Initializing DB
         Class.forName("org.hsqldb.jdbc.JDBCDriver");
 
-        try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + args[0] +"./data/db/hsqldb", "SA", "")) {
+        if (args.length != 2) {
+            TheLogger.error("Unexpected number of parameters. java -jar xxx.jar $PATH_TO_DIR_WITH_REPOS$ $PATH_TO_HSQLDB_FILE$");
+        }
+
+        String dbFile = args[1];
+
+        try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + dbFile + ";ifexists=false", "SA", "")) {
             jdbcConn.setSchema("PUBLIC");
+            jdbcConn.setAutoCommit(true);
 
             // Run analyze and report creation
             RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
@@ -39,7 +47,5 @@ public class MainApp {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        // report.saveReposToFileForDebugAims("z:\\all_repos.csv");
     }
 }

@@ -41,39 +41,42 @@ jobs:
 
       - name: Run reports
         run: |
+          CURRENT_DIR=$(pwd)
+          TMP_DIR="/tmp/workingdir"
+          
           cd ./stats-collector
           mkdir -p /tmp/workingdir/netcracker
           mkdir -p /tmp/workingdir/docs
-          cp ./../docs/template.html /tmp/workingdir/docs/template.html
-          cp ./../clone_all.sh /tmp/workingdir/netcracker/clone_all.sh
-          cp ./target/stats-collector.jar /tmp/workingdir/stats-collector.jar
-          
-          mkdir -p ./../reports-are-here/data
           mkdir -p /tmp/workingdir/netcracker/data
-          cp -r ./../reports-are-here/data/. /tmp/workingdir/netcracker/data
           
-          cd /tmp/workingdir/netcracker
+          cp $CURRENT_DIR/docs/template.html $TMP_DIR/docs/template.html
+          cp $CURRENT_DIR/clone_all.sh $TMP_DIR/netcracker/clone_all.sh
+          cp $CURRENT_DIR/stats-collector/target/stats-collector.jar $TMP_DIR/stats-collector.jar
+          
+          cd $TMP_DIR/netcracker
           sudo chmod +x clone_all.sh
           sudo ./clone_all.sh
         
-          cd /tmp/workingdir
-          sudo java -jar stats-collector.jar /tmp/workingdir/netcracker
+          cd $TMP_DIR
+          sudo java -jar stats-collector.jar $TMP_DIR/netcracker $CURRENT_DIR/reports-are-here/data/db/hsqldb
 
       - uses: actions/checkout@v4
       - name: Do commit back to repo
         run: |
           date=$(date +"%d-%m-%Y-%H-%M-%S")
-          sed -i -e "s/#GEN_DATE#/$date/g" /tmp/workingdir/netcracker/combined-report.html           
-          cp /tmp/workingdir/netcracker/persisted-data.json ./reports-are-here/data/persisted-data-$date.json
-          cp /tmp/workingdir/netcracker/combined-report.html ./reports-are-here/combined-report-$date.html
-          cp /tmp/workingdir/netcracker/combined-report.html ./docs/index.html
-          cp -r /tmp/workingdir/netcracker/data/db/. ./reports-are-here/data/db
+          sed -i -e "s/#GEN_DATE#/$date/g" $TMP_DIR/netcracker/combined-report.html           
+          cp $TMP_DIR/netcracker/persisted-data.json $CURRENT_DIR/reports-are-here/data/persisted-data-$date.json
+          cp $TMP_DIR/netcracker/combined-report.html $CURRENT_DIR/reports-are-here/combined-report-$date.html
+          cp $TMP_DIR/netcracker/combined-report.html $CURRENT_DIR/docs/index.html
+
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add ./reports-are-here/data/persisted-data-$date.json
-          git add ./reports-are-here/combined-report-$date.html
-          git add ./docs/index.html
-          git add ./reports-are-here/data/db/hsqldb.script
-          git add ./reports-are-here/data/db/hsqldb.properties
+          
+          git add $CURRENT_DIR/reports-are-here/data/persisted-data-$date.json
+          git add $CURRENT_DIR/reports-are-here/combined-report-$date.html
+          git add $CURRENT_DIR/docs/index.html
+          git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.script
+          git add $CURRENT_DIR/reports-are-here/data/db/hsqldb.properties
+          
           git commit -m "HTML report generation at $date"
           git push
