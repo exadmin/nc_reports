@@ -51,5 +51,8 @@ public class MainApp {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
+        // here we have closed the connection and need to wait - until hsqldb flushed the data
+        Thread.sleep(1000);
     }
 }
