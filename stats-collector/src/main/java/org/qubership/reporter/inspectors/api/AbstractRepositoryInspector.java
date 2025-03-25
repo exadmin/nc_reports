@@ -4,8 +4,10 @@ import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Defines base abstraction of inspection implementation.
@@ -46,7 +48,13 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
         try {
             return inspectRepoFolder(pathToRepository, metaData);
         } catch (Exception ex) {
-            return error("Internal error: " + ex);
+            return error("Internal error: " + ex + ", " +stackTraceToString(ex));
         }
+    }
+
+    public static String stackTraceToString(Throwable throwable) {
+        return Arrays.stream(throwable.getStackTrace())
+                .map(StackTraceElement::toString)
+                .collect(Collectors.joining("\n"));
     }
 }
