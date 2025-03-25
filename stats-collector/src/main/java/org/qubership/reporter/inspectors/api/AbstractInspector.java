@@ -25,8 +25,7 @@ public abstract class AbstractInspector {
     }
 
     protected Metric newMetric(String persistenceId, String visualName, MetricGroup group) {
-        Metric metric = new Metric(persistenceId, visualName, group);
-        return metric;
+        return new Metric(persistenceId, visualName, group);
     }
 
     // ERROR AUX API

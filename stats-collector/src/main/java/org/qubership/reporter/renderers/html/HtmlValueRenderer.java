@@ -40,12 +40,10 @@ public class HtmlValueRenderer {
         String metricName = escapeHtml4(metric.getVisualName());
 
 
-        String title = "<p class='my-tooltip'>Metric    : <b>" + metricName + "</b><br>" +
+        return  "<p class='my-tooltip'>Metric    : <b>" + metricName + "</b><br>" +
                                              "Repository: <b>" + repoName + "</b><br>" +
                                              "<br>" +
                                              "Message   : <b>" + notNull(titleText) + "</b>" +
                                              "</p>";
-
-        return title;
     }
 }

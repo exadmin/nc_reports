@@ -5,7 +5,7 @@ public enum TextAlign {
     CENTER_MIDDLE("td-center-middle"),
     RIGHT_MIDDLE("td-right-middle");
 
-    private String htmlClass;
+    final private String htmlClass;
 
     TextAlign(String htmlClass) {
         this.htmlClass = htmlClass;

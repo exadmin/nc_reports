@@ -36,7 +36,7 @@ public class OpenedPRsInspector extends AbstractRepositoryInspector {
                 TypeReference<List<Map<String, Object>>> type = new TypeReference<>() {};
 
                 List<Map<String, Object>> data = mapper.readValue(responseBody, type);
-                Integer numberOfOpenedPRs = data.size();
+                int numberOfOpenedPRs = data.size();
 
                 ResultSeverity severity = ResultSeverity.WARN;
                 if (numberOfOpenedPRs == 0) severity = ResultSeverity.OK;

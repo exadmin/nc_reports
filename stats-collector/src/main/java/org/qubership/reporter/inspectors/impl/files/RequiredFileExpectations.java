@@ -38,7 +38,7 @@ public class RequiredFileExpectations {
     }
 
     /**
-     * In case file content must contain some string it can be checked by providing reg-exp
+     * In case file content must contain some string it can be checked by providing regexp
      * @param regExpStr
      */
     public void addExpectationByRegExp(String regExpStr) {

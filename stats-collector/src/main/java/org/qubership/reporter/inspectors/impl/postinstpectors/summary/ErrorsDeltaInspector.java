@@ -76,7 +76,7 @@ public class ErrorsDeltaInspector extends AbstractPostInspector {
                 }
             }
 
-            // here we shoold have non empty map
+            // here we shoold have nonempty map
             LocalDateTime currentDateTime = LocalDateTime.now();
             LocalDateTime weekAgo = currentDateTime.minusWeeks(1);
             final Date targetDate = DateUtils.toDate(weekAgo.format(DATE_FORMATTER));

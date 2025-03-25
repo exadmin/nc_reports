@@ -39,11 +39,12 @@ public class HtmlRenderer {
         sb.append("<script type=\"text/javascript\" charset=\"utf-8\">\n");
         {
             for (MetricGroup groupName : mGroups) {
-                sb.append("$(document).ready(function() {\n" +
-                        "            $('#table-" + i + "').dataTable({\n" +
-                        "                pageLength: -1\n" +
-                        "            });\n" +
-                        "        } );\n");
+                sb.append("$(document).ready(function() {\n" + "            $('#table-")
+                        .append(i)
+                        .append("').dataTable({\n")
+                        .append("                pageLength: -1\n")
+                        .append("            });\n")
+                        .append("        } );\n");
 
                 i++;
             }
@@ -97,7 +98,7 @@ public class HtmlRenderer {
         allMetrics.sort((m1, m2) -> {
             int result = m1.getRenderingOrderWeight() - m2.getRenderingOrderWeight();
             if (result == 0) {
-                m1.getVisualName().compareTo(m2.getVisualName());
+                return m1.getVisualName().compareTo(m2.getVisualName());
             }
 
             return result;
@@ -130,7 +131,11 @@ public class HtmlRenderer {
                     String cellInternalHtml = htmlValueRenderer.getHtml(metricValue, metric);
                     String cellTitle = htmlValueRenderer.getTitle(repoName, metric, metricValue);
 
-                    sb.append("            <td title=\"" + cellTitle + "\" class=\"").append(metricValue.getTextAlign()).append("\">");
+                    sb.append("            <td title=\"")
+                            .append(cellTitle)
+                            .append("\" class=\"")
+                            .append(metricValue.getTextAlign())
+                            .append("\">");
                     sb.append(cellInternalHtml);
                     sb.append("</td>\n");
                 }

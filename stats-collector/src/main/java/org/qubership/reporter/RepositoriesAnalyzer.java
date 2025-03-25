@@ -22,8 +22,6 @@ import java.util.Map;
 public class RepositoriesAnalyzer {
     public static final String REPORT_SHORT_FILE_NAME = "stats-collector-report.json";
 
-    private InspectorsRegistry iHolder = new InspectorsRegistry();
-
     public RepositoriesAnalyzer() {
     }
 
@@ -86,21 +84,22 @@ public class RepositoriesAnalyzer {
         File dir = new File(allReposRootDir);
         File[] files = dir.listFiles();
 
-        ObjectMapper mapper = new ObjectMapper(new JsonFactory());
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        TypeReference<List<Map<String, Object>>> type = new TypeReference<>() {
-        };
+        final List<Map<String, Object>> resultList = new ArrayList<>(320);
 
-        List<Map<String, Object>> resultList = new ArrayList<>(320);
+        if (files != null) {
+            ObjectMapper mapper = new ObjectMapper(new JsonFactory());
+            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+            TypeReference<List<Map<String, Object>>> type = new TypeReference<>() {};
 
-        for (File file : files) {
-            if (file.isFile()) {
-                String fileName = file.getName();
-                if (fileName.startsWith("all_repos_page") && fileName.endsWith(".json")) {
-                    List<Map<String, Object>> fileData = mapper.readValue(file, type);
+            for (File file : files) {
+                if (file.isFile()) {
+                    String fileName = file.getName();
+                    if (fileName.startsWith("all_repos_page") && fileName.endsWith(".json")) {
+                        List<Map<String, Object>> fileData = mapper.readValue(file, type);
 
-                    resultList.addAll(fileData);
+                        resultList.addAll(fileData);
+                    }
                 }
             }
         }

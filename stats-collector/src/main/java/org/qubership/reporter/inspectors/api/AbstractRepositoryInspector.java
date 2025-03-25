@@ -16,8 +16,8 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
      * Inspecion implementation. Result is returned in the container of OneMetricResult.
      *
      * @param pathToRepository path to cloned repository on the local storage
-     * @param repoMetaData     current repository meta-data returned by github.com
-     * @param allReposMetaData all repositories meta-data returned by github.com
+     * @param repoMetaData     current repository meta-data returned by gitHub.com
+     * @param allReposMetaData all repositories meta-data returned by gitHub.com
      * @return OneMetricResult instance
      * @throws Exception
      */

@@ -29,7 +29,7 @@ public class MarkdownRenderer {
 
 
         // render report
-        sb.append("# Report on " + DateUtils.getCurrentDateTimeStamp() + "\n");
+        sb.append("# Report on ").append(DateUtils.getCurrentDateTimeStamp()).append("\n");
         sb.append("\n");
 
         sb.append("<div class=\"table-wrapper\" markdown=\"block\">\n");

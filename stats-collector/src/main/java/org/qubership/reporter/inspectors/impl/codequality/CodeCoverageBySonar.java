@@ -78,8 +78,7 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
                             return createError("Error: parsing response. No 'value' for coverage metric");
 
                         // todo: select severity based on the value rate
-                        OneMetricResult omResult = new OneMetricResult(getMetric(), ResultSeverity.OK, value + "%");
-                        return omResult;
+                        return new OneMetricResult(getMetric(), ResultSeverity.OK, value + "%");
                     }
                 }
 

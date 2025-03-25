@@ -24,7 +24,7 @@ public class StrUtils {
      * Replaces content of the string by new one.
      * @param template where to replace
      * @param replacementPrefix start place in the template which will be replaced
-     * @param replacementSuffix end place in the template which will be replaces
+     * @param replacementSuffix end place in the template which will be replaced
      * @param replaceWith the new content to be put into template
      * @return new string result
      */
@@ -32,14 +32,11 @@ public class StrUtils {
         int cutStart = template.indexOf(replacementPrefix);
         int cutEnd   = template.indexOf(replacementSuffix) + replacementSuffix.length();
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(template.substring(0, cutStart));
-        sb.append("\n");
-        sb.append(replaceWith);
-        sb.append("\n");
-        sb.append(template.substring(cutEnd));
-
-        return sb.toString();
+        return template.substring(0, cutStart) +
+                "\n" +
+                replaceWith +
+                "\n" +
+                template.substring(cutEnd);
     }
 
     /**
