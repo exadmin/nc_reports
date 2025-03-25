@@ -3,6 +3,7 @@ package org.qubership.reporter.inspectors.impl.postinstpectors.summary;
 import org.qubership.reporter.inspectors.api.AbstractPostInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
+import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 
 import java.util.Comparator;
@@ -28,7 +29,8 @@ public class SortRepositoriesByABC extends AbstractPostInspector {
         // now assign row-nums
         int rowNumber = 1; // virtual row
         for (String row : reportModel.getRepositoryNames()) {
-            reportModel.addData(row, info("" + rowNumber));
+            OneMetricResult omResult = info("" + rowNumber);
+            reportModel.addData(row, omResult);
 
             rowNumber++;
         }

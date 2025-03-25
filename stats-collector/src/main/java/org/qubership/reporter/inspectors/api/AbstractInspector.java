@@ -78,7 +78,7 @@ public abstract class AbstractInspector {
     }
 
     protected OneMetricResult info(String msg, String httpRef, String titleText) {
-        return createMetricResult(msg, ResultSeverity.INFO, httpRef, TextAlign.LEFT_MIDDLE, titleText);
+        return createMetricResult(msg, ResultSeverity.INFO, httpRef, TextAlign.CENTER_MIDDLE, titleText);
     }
 
     // Security Error AUX API
