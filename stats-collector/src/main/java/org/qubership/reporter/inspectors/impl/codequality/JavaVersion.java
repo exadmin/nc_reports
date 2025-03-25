@@ -68,10 +68,16 @@ public class JavaVersion extends AbstractRepositoryInspector {
     }
 
     private static String getStringValue(Map<String, Object> xmlMap, String propertyNameInPropertiesSection) {
-        Map<String, Object> propertiesXmlMap = (Map<String, Object>) xmlMap.get("properties");
-        if (propertiesXmlMap != null) {
+        // Map<String, Object> propertiesXmlMap = (Map<String, Object>) xmlMap.get("properties");
+        Object obj = xmlMap.get("properties");
+        if (obj instanceof Map) {
+            Map propertiesXmlMap = (Map) obj;
             Object propertyValue = propertiesXmlMap.get(propertyNameInPropertiesSection);
             if (propertyValue != null) return propertyValue.toString();
+        }
+
+        if (obj instanceof String) {
+            return obj.toString();
         }
 
         return null;
