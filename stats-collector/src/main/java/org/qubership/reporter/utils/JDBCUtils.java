@@ -2,6 +2,7 @@ package org.qubership.reporter.utils;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JDBCUtils {
@@ -50,7 +51,7 @@ public class JDBCUtils {
                 }
             }
 
-            TheLogger.debug("Executing DML = " + sqlQuery);
+            TheLogger.debug("Executing DML = " + sqlQuery + ", binds = " + Arrays.toString(binds));
             pstm.execute();
 
             try (ResultSet resultSet = pstm.getResultSet()) {

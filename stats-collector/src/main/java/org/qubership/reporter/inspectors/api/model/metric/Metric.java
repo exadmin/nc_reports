@@ -15,13 +15,13 @@ public class Metric {
     private int renderingOrderWeight = 0;
 
     /**
-     * Creates new metric instance of NORMAL type
+     * Creates new metric instance of PERSISTENT type
      * @param visualName
      * @param group
      */
     public Metric(String persistenceId, String visualName, MetricGroup group) {
         this.persistenceId = persistenceId;
-        this.type = MetricType.NORMAL;
+        this.type = MetricType.PERSISTENT;
         this.visualName = visualName;
         this.group = group;
     }

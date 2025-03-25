@@ -14,6 +14,7 @@ import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class RepositoriesAnalyzer {
      * @return Map of RepositoryShortName -> Map<Metric, Value>
      * @throws Exception
      */
-    public ReportModel analyzeAllIn(String allReposRootDir) throws Exception {
+    public ReportModel analyzeAllIn(String allReposRootDir, Connection jdbcConnection) throws Exception {
         File dir = new File(allReposRootDir);
         File[] files = dir.listFiles();
 
@@ -60,7 +61,7 @@ public class RepositoriesAnalyzer {
 
         // run post-inspectors for aggregative functions
         for (AbstractPostInspector postInspector : PostInspectorsRegistry.getRegisteredInspectors()) {
-            postInspector.doPostInspection(report, metaData);
+            postInspector.doPostInspection(report, metaData, jdbcConnection);
         }
 
         return report;

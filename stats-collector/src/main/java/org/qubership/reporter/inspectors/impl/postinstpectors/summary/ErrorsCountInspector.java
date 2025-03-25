@@ -8,6 +8,7 @@ import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
 
+import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -15,13 +16,13 @@ import java.util.Map;
 public class ErrorsCountInspector extends AbstractPostInspector {
 
     @Override
-    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData) {
+    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData, Connection jdbcConnection) {
         // define virtual column with executive results
         for (String repositoryName : reportModel.getRepositoryNames()) {
             int errCount = 0;
 
             for (Metric metric : reportModel.getMetrics()) {
-                if (MetricType.NORMAL.equals(metric.getType())) {
+                if (MetricType.PERSISTENT.equals(metric.getType())) {
                     OneMetricResult omResult = reportModel.getValue(repositoryName, metric.getPersistenceId());
                     ResultSeverity resultSeverity = omResult.getSeverity();
 

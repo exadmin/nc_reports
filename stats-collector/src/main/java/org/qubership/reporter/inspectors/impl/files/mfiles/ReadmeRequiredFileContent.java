@@ -10,7 +10,7 @@ public class ReadmeRequiredFileContent extends AbstractRequiredFileInspector {
 
     @Override
     public Metric getMetric() {
-        Metric metric = new Metric("/README", MetricType.NORMAL, "/README", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        Metric metric = new Metric("/README", MetricType.PERSISTENT, "/README", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
         metric.setDescription("Checks if '/README.md' file exist in the repository and contains not less then 5 lines.");
         return metric;
     }

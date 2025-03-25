@@ -8,6 +8,7 @@ import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class SonarMetricAsInfoText extends AbstractPostInspector {
     private static final String CODE_COVERAGE_ID = new CodeCoverageBySonar().getMetric().getPersistenceId();
 
     @Override
-    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData) {
+    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData, Connection jdbcConnection) {
         Map<String, OneMetricResult> newData = new HashMap<>();
 
         for (String repoName : reportModel.getRepositoryNames()) {

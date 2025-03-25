@@ -1,6 +1,7 @@
 package org.qubership.reporter.renderers.db;
 
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
+import org.qubership.reporter.inspectors.api.model.metric.MetricType;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.utils.DateUtils;
@@ -11,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HSQLDBRenderer {
@@ -19,13 +21,16 @@ public class HSQLDBRenderer {
     public void saveToDB(Connection jdbcConnection, ReportModel report, String dateStrOverride) throws SQLException {
         ensureDB(jdbcConnection);
 
-
-
         List<String> existedColumnNames = JDBCUtils.doSingleColumnSelect(jdbcConnection, SQL_GET_ALL_COLUMNS_IN_NC_REPO_TABLE);
-        List<String> nonExistedColumnNames = new ArrayList<>();
+        List<Metric> persistentMetrics = new ArrayList<>();
+        for (Metric metric : report.getMetrics()) {
+            if (metric.getType().equals(MetricType.PERSISTENT)) persistentMetrics.add(metric);
+        }
+        persistentMetrics = Collections.unmodifiableList(persistentMetrics);
 
         // ensure each metric has it's column in the DB
-        for (Metric metric : report.getMetrics()) {
+        List<String> nonExistedColumnNames = new ArrayList<>();
+        for (Metric metric : persistentMetrics) {
             String metricName = metric.getPersistenceId();
 
             if (!existedColumnNames.contains(metricName)) {
@@ -51,7 +56,7 @@ public class HSQLDBRenderer {
         StringBuilder sql = new StringBuilder("INSERT INTO NC_REPORTS (REPORT_DATE, REPORT_ID, REPOSITORY_NAME");
         StringBuilder binds = new StringBuilder("?, ?, ?");
 
-        for (Metric metric : report.getMetrics()) {
+        for (Metric metric : persistentMetrics) {
             sql.append(", \"").append(metric.getPersistenceId()).append("\"");
             binds.append(", ?");
         }
@@ -67,7 +72,7 @@ public class HSQLDBRenderer {
                 pstm.setString(3, repoName);
 
                 int bindIndex = 4;
-                for (Metric metric : report.getMetrics()) {
+                for (Metric metric : persistentMetrics) {
                     OneMetricResult omrValue = report.getValue(repoName, metric.getPersistenceId());
 
                     String value = omrValue == null ? null : omrValue.getRawValue();

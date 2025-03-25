@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Connection;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -41,7 +42,7 @@ public class ErrorsDeltaInspector extends AbstractPostInspector {
     }
 
     @Override
-    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData) {
+    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData, Connection jdbcConnection) {
 
     }
 

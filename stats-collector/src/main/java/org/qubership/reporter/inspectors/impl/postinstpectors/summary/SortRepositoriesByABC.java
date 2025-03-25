@@ -6,6 +6,7 @@ import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 
+import java.sql.Connection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,7 @@ public class SortRepositoriesByABC extends AbstractPostInspector {
     }
 
     @Override
-    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData) {
+    public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData, Connection jdbcConnection) {
 
         // sort rows by ABC desc
         reportModel.getRepositoryNames().sort(Comparator.naturalOrder());

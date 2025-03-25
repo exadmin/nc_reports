@@ -30,7 +30,7 @@ public class MainApp {
 
             // Run analyze and report creation
             RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
-            ReportModel report = analyzer.analyzeAllIn(args[0]);
+            ReportModel report = analyzer.analyzeAllIn(args[0], jdbcConn);
 
             // Render results into html format
             String htmlReportFileName = args[0] + File.separator + "combined-report.html";
