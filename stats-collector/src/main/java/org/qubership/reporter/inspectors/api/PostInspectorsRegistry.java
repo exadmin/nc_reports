@@ -2,7 +2,7 @@ package org.qubership.reporter.inspectors.api;
 
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsCountInspector;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsDeltaInspector;
-import org.qubership.reporter.inspectors.impl.postinstpectors.summary.SortRepositoriesByABC;
+import org.qubership.reporter.inspectors.impl.system.SortRepositoriesByABC;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.WeeklyStatus;
 
 import java.util.ArrayList;

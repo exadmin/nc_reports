@@ -1,4 +1,4 @@
-package org.qubership.reporter.inspectors.impl.postinstpectors.summary;
+package org.qubership.reporter.inspectors.impl.system;
 
 import org.qubership.reporter.inspectors.api.AbstractPostInspector;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
