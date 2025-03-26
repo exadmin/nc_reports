@@ -28,6 +28,9 @@ public class MainApp {
             jdbcConn.setSchema("PUBLIC");
             jdbcConn.setAutoCommit(true);
 
+            HSQLDBRenderer hsqldbRenderer = new HSQLDBRenderer();
+            hsqldbRenderer.ensureDB(jdbcConn);
+
             // Run analyze and report creation
             RepositoriesAnalyzer analyzer = new RepositoriesAnalyzer();
             ReportModel report = analyzer.analyzeAllIn(args[0], jdbcConn);
@@ -43,7 +46,6 @@ public class MainApp {
             jsonRenderer.saveToFile(report, jsonDataFileName);
 
             // Save current results into HSQL DB
-            HSQLDBRenderer hsqldbRenderer = new HSQLDBRenderer();
             hsqldbRenderer.saveToDB(jdbcConn, report, null);
             jdbcConn.commit();
         } catch (Exception ex) {

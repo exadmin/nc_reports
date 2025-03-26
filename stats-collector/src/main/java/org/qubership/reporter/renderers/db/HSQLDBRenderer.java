@@ -76,6 +76,7 @@ public class HSQLDBRenderer {
                     OneMetricResult omrValue = report.getValue(repoName, metric.getPersistenceId());
 
                     String value = omrValue == null ? null : omrValue.getRawValue();
+                    if (value != null && value.length() >= 255) value = value.substring(0, 254);
                     pstm.setString(bindIndex, value);
                     bindIndex++;
                 }
@@ -88,7 +89,7 @@ public class HSQLDBRenderer {
 
     }
 
-    private void ensureDB(Connection jdbcConnection) {
+    public void ensureDB(Connection jdbcConnection) {
         List<String> existedColumnNames = JDBCUtils.doSingleColumnSelect(jdbcConnection, SQL_GET_ALL_COLUMNS_IN_NC_REPO_TABLE);
 
         if (!existedColumnNames.contains("REPORT_ID")) {

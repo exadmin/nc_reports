@@ -8,6 +8,7 @@ import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
 import org.qubership.reporter.utils.JDBCUtils;
+import org.qubership.reporter.utils.TheLogger;
 
 import java.sql.Connection;
 import java.time.DayOfWeek;
@@ -15,6 +16,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+
+import static org.qubership.reporter.renderers.db.HSQLDBRenderer.SQL_GET_ALL_COLUMNS_IN_NC_REPO_TABLE;
 
 /**
  * Prepares last X weeks summary status
@@ -30,6 +33,12 @@ public class WeeklyStatus extends AbstractPostInspector {
     @Override
     public void doPostInspection(ReportModel reportModel, List<Map<String, Object>> allReposMetaData, Connection jdbcConnection) {
         this.jdbcConnection = jdbcConnection;
+
+        List<String> existedColumnNames = JDBCUtils.doSingleColumnSelect(jdbcConnection, SQL_GET_ALL_COLUMNS_IN_NC_REPO_TABLE);
+        if (!existedColumnNames.contains("\"Errors Count\"")) {
+            TheLogger.warn("WeeklyStatus processor is executed over empty data-base. Skip.");
+            return;
+        }
 
         LocalDateTime prevSunday = getPrevSunday();
         prevSunday = prevSunday.minusWeeks(X_WEEKS_AGO);
