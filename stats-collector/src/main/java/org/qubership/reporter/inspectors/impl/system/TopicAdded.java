@@ -20,16 +20,16 @@ public class TopicAdded extends AbstractRepositoryInspector {
 
     private OneMetricResult _inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         List<Object> topics = (List<Object>) repoMetaData.get("topics");
-        if (topics != null) {
-            StringBuilder sb = new StringBuilder();
-            for (Object topicName : topics) {
-                sb.append(topicName).append(" ");
-            }
-
-            return info(sb.toString());
+        if (topics == null || topics.isEmpty()) {
+            return error("", null, "No topics are set");
         }
 
-        return info("&nbsp;");
+        StringBuilder sb = new StringBuilder();
+        for (Object topicName : topics) {
+            sb.append(topicName).append(" ");
+        }
+
+        return info(sb.toString());
     }
 
     @Override
