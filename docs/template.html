@@ -16,21 +16,51 @@
 
     <!-- JavaScript Start -->
     <script type="text/javascript" charset="utf-8">
+        function getSearchParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const value = urlParams.get(param);
+            return value !== null ? value : "";
+        };
+
         $(document).ready(function() {
             $('#table-1').dataTable({
-                pageLength: -1
+                pageLength: -1,
+                search: {
+                    search: getSearchParam('search')
+                }
+            });
+            $('#table-1').on('search.dt', function() {
+                const searchValue = $('.dataTables_filter input')[0].value;
+                window.history.replaceState(null, null, `?search=${encodeURIComponent(searchValue)}` + window.location.hash);
+                $('.dataTables_filter input')[0].value=$('.dataTables_filter input')[1].value=$('.dataTables_filter input')[2].value=searchValue;
             });
         } );
 
         $(document).ready(function() {
             $('#table-2').dataTable({
-                pageLength: -1
+                pageLength: -1,
+                search: {
+                    search: getSearchParam('search')
+                }
+            });
+            $('#table-2').on('search.dt', function() {
+                var searchValue = $('.dataTables_filter input')[1].value;
+                window.history.replaceState(null, null, `?search=${encodeURIComponent(searchValue)}` + window.location.hash);
+                $('.dataTables_filter input')[0].value=$('.dataTables_filter input')[1].value=$('.dataTables_filter input')[2].value=searchValue;
             });
         } );
 
         $(document).ready(function() {
             $('#table-3').dataTable({
-                pageLength: -1
+                pageLength: -1,
+                search: {
+                    search: getSearchParam('search')
+                }
+            });
+            $('#table-3').on('search.dt', function() {
+                var searchValue = $('.dataTables_filter input')[2].value;
+                window.history.replaceState(null, null, `?search=${encodeURIComponent(searchValue)}` + window.location.hash);
+                $('.dataTables_filter input')[0].value=$('.dataTables_filter input')[1].value=$('.dataTables_filter input')[2].value=searchValue;
             });
         } );
     </script>
@@ -47,7 +77,11 @@
         });
 
         $( function() {
-            $( "#tabs" ).tabs();
+            $( "#tabs" ).tabs({
+                activate: function(event, ui) {
+                    window.location.hash = ui.newPanel.attr('id');
+                }
+            });
           } );
     </script>
 </head>
