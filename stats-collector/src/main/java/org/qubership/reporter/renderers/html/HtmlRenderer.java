@@ -37,14 +37,44 @@ public class HtmlRenderer {
 
         int i = 1;
         sb.append("<script type=\"text/javascript\" charset=\"utf-8\">\n");
+
+        sb.append(" function getSearchParam(param) {\n" +
+                "            const urlParams = new URLSearchParams(window.location.search);\n" +
+                "            const value = urlParams.get(param);\n" +
+                "            return value !== null ? value : \"\";\n" +
+                "        };\n");
+
+        StringBuilder assignLine = new StringBuilder("                ");
         {
-            for (MetricGroup groupName : mGroups) {
-                sb.append("$(document).ready(function() {\n" + "            $('#table-")
+            int k = 0;
+            for (MetricGroup group : mGroups) {
+                assignLine.append("$('.dataTables_filter input')[").append(k).append("].value=");
+                k++;
+            }
+            assignLine.append("searchValue;\n");
+        }
+
+        {
+            for (MetricGroup group : mGroups) {
+                sb
+                        .append("$(document).ready(function() {\n" + "            $('#table-")
                         .append(i)
                         .append("').dataTable({\n")
-                        .append("                pageLength: -1\n")
+                        .append("                pageLength: -1,\n")
+                        .append("                search: {\n")
+                        .append("                    search: getSearchParam('search')\n")
+                        .append("                }\n")
                         .append("            });\n")
-                        .append("        } );\n");
+                        .append("            $('#table-")
+                        .append(i)
+                        .append("').on('search.dt', function() {\n")
+                        .append("                var searchValue = $('.dataTables_filter input')[")
+                        .append(i - 1)
+                        .append("].value;\n")
+                        .append("                window.history.replaceState(null, null, `?search=${encodeURIComponent(searchValue)}` + window.location.hash);\n")
+                        .append(assignLine)
+                        .append("            });\n")
+                        .append("        } );");
 
                 i++;
             }
