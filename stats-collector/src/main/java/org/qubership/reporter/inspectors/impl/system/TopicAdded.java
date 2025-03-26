@@ -36,6 +36,7 @@ public class TopicAdded extends AbstractRepositoryInspector {
     public Metric getMetric() {
         return newMetric("Topics", "Topics", MetricGroupsRegistry.EXECUTIVE_SUMMARY)
                 // .setDescriptionRef("Topics - are labels assigned to repositories in the github.com")
-                .setRenderingOrderWeight(-50);
+                .setRenderingOrderWeight(-50)
+                .setRenderOnEachReportTab(true);
     }
 }
