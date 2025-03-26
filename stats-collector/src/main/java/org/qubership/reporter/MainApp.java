@@ -39,6 +39,7 @@ public class MainApp {
             String htmlReportFileName = args[0] + File.separator + "combined-report.html";
             HtmlRenderer htmlRenderer = new HtmlRenderer();
             htmlRenderer.createHtmlFile(report, htmlReportFileName);
+            TheLogger.debug("New report file is created: " + htmlReportFileName);
 
             // Save current results as json data file
             String jsonDataFileName = args[0] + File.separator + "persisted-data.json";

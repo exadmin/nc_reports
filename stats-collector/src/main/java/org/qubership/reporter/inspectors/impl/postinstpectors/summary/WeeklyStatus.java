@@ -35,7 +35,7 @@ public class WeeklyStatus extends AbstractPostInspector {
         this.jdbcConnection = jdbcConnection;
 
         List<String> existedColumnNames = JDBCUtils.doSingleColumnSelect(jdbcConnection, SQL_GET_ALL_COLUMNS_IN_NC_REPO_TABLE);
-        if (!existedColumnNames.contains("\"Errors Count\"")) {
+        if (!existedColumnNames.contains("Errors Count")) {
             TheLogger.warn("WeeklyStatus processor is executed over empty data-base. Skip.");
             return;
         }
@@ -50,7 +50,7 @@ public class WeeklyStatus extends AbstractPostInspector {
         }
 
         for (int i=1; i<X_WEEKS_AGO; i++) {
-            createColumnForWeek(sundays[i-1], sundays[i], reportModel);
+            createColumnForWeek(sundays[i-1], sundays[i], reportModel, i);
         }
     }
 
@@ -70,12 +70,13 @@ public class WeeklyStatus extends AbstractPostInspector {
         return sunday;
     }
 
-    private void createColumnForWeek(LocalDateTime fromDate, LocalDateTime toDate, ReportModel reportModel) {
+    private void createColumnForWeek(LocalDateTime fromDate, LocalDateTime toDate, ReportModel reportModel, int order) {
         String fromDateStr = fromDate.format(DB_FORMAT);
         String toDateStr   = toDate.format(DB_FORMAT);
 
         String columnName  = fromDate.format(UI_FORMAT);
         Metric metric = new Metric(columnName, MetricType.NON_PERSISTENT, columnName, MetricGroupsRegistry.EXECUTIVE_SUMMARY);
+        metric.setRenderingOrderWeight(-50 + order * 2);
 
         for (String repositoryName : reportModel.getRepositoryNames()) {
             List<String> list = JDBCUtils.doSingleColumnSelect(jdbcConnection, SQL_QUERY, repositoryName, fromDateStr, toDateStr);
