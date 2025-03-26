@@ -7,8 +7,10 @@ import java.util.List;
 
 public class AutomaticPRLabeler extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/Labeler","Labeler", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/Labeler","Labeler", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#automatic-pr-labels-based-on-conventional-commits");
+        return metric;
     }
 
     @Override

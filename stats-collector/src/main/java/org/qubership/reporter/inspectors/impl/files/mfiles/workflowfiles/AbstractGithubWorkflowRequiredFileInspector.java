@@ -14,12 +14,10 @@ public abstract class AbstractGithubWorkflowRequiredFileInspector extends Abstra
 
     @Override
     public final Metric getMetric() {
-        Metric metric = getMetricWithoutDescription();
-        metric.setDescription("Checks if './github/workflows/" + getShortFileNamePlacedInGitHubWorkflowFolder() + "' file exists and have expected content");
-        return metric;
+        return getMetricWithDescription();
     }
 
-    protected abstract Metric getMetricWithoutDescription();
+    protected abstract Metric getMetricWithDescription();
 
     protected abstract String getShortFileNamePlacedInGitHubWorkflowFolder();
 

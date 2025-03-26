@@ -7,7 +7,7 @@ public class Metric {
     private String visualName;
     private MetricGroup group;
     private MetricType type;
-    private String description;
+    private String descriptionRef;
     private boolean renderOnEachReportTab;
 
     // during rendering all metrics can be reordered by order-weight. If order weights are equals then visual-name is used.
@@ -61,12 +61,12 @@ public class Metric {
         return Objects.hash(visualName, group, type);
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescriptionRef() {
+        return descriptionRef;
     }
 
-    public Metric setDescription(String description) {
-        this.description = description;
+    public Metric setDescriptionRef(String descriptionRef) {
+        this.descriptionRef = descriptionRef;
         return getThis();
     }
 

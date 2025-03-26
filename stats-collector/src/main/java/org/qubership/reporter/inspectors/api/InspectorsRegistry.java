@@ -29,7 +29,7 @@ public class InspectorsRegistry {
         registeredInspectors.add(new PRCollectCommitMessagesRequiredFileInspector());
         registeredInspectors.add(new PRConventionalCommitsRequiredFileInspector());
         registeredInspectors.add(new PRLintTitleRequiredFileInspector());
-        registeredInspectors.add(new PrettierRequiredFileInspector());
+        registeredInspectors.add(new DoNotUsePrettierInspector()); // discussed with Roman P - excluded. SuperLinter must be used.
         registeredInspectors.add(new ProfanityFilterRequiredFileInspector());
         registeredInspectors.add(new SuperLinterRequiredFileInspector());
         registeredInspectors.add(new RepoIDInspector());

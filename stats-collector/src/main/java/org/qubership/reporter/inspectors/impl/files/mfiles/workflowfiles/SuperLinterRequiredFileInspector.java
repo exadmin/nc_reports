@@ -7,8 +7,10 @@ import java.util.List;
 
 public class SuperLinterRequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/SuperLinter", "SuperLinter", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/SuperLinter", "SuperLinter", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#lint-code-base-super-linter");
+        return metric;
     }
 
     @Override

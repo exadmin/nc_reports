@@ -7,8 +7,10 @@ import java.util.List;
 
 public class PRCollectCommitMessagesRequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/AddCommitMsg","AddCommitMsg", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/AddCommitMsg","AddCommitMsg", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#add-commit-messages-to-pr-body");
+        return metric;
     }
 
     @Override

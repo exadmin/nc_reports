@@ -10,8 +10,10 @@ import java.util.regex.Pattern;
 
 public class CLARequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/CLA","CLA", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/CLA","CLA", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#cla");
+        return metric;
     }
 
     @Override

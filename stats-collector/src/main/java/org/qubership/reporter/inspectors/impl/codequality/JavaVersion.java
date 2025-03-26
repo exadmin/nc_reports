@@ -25,7 +25,7 @@ public class JavaVersion extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("JavaVersion", "Java Version", MetricGroupsRegistry.CODE_QUALITY_GROUP)
-                .setDescription("Scans all pom.xml files and collects java.version property values");
+                .setDescriptionRef(""); // todo
     }
 
     @Override

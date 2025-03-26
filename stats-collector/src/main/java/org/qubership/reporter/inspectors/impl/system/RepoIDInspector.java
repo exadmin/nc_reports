@@ -26,7 +26,7 @@ public class RepoIDInspector extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("ID", "ID", MetricGroupsRegistry.SYSTEM_METRIC_GROUP)
-                .setDescription("") // todo
+                .setDescriptionRef("") // todo
                 .setRenderingOrderWeight(-100)
                 .setRenderOnEachReportTab(true);
     }

@@ -7,8 +7,10 @@ import java.util.List;
 
 public class PRLintTitleRequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/Lint-Title", "Lint-Title", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/Lint-Title", "Lint-Title", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#lint-pr-title");
+        return metric;
     }
 
     @Override

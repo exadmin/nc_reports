@@ -5,9 +5,10 @@ import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 
 import java.util.List;
 
+@Deprecated
 public class CDXGenRequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
+    protected Metric getMetricWithDescription() {
         return newMetric("WF/CycloneDX","CycloneDX", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
     }
 

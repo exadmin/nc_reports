@@ -7,8 +7,10 @@ import java.util.List;
 
 public class PRConventionalCommitsRequiredFileInspector extends AbstractGithubWorkflowRequiredFileInspector {
     @Override
-    protected Metric getMetricWithoutDescription() {
-        return newMetric("WF/ConvCommits","ConvCommits", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+    protected Metric getMetricWithDescription() {
+        Metric metric = newMetric("WF/ConvCommits","ConvCommits", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
+        metric.setDescriptionRef("https://github.com/Netcracker/qubership-workflow-hub?tab=readme-ov-file#conventional-commits-pr-check");
+        return metric;
     }
 
     @Override

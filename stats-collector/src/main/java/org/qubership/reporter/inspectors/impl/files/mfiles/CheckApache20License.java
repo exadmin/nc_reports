@@ -12,7 +12,7 @@ public class CheckApache20License extends AbstractRequiredFileInspector {
     @Override
     public Metric getMetric() {
         return newMetric("/License","/License", MetricGroupsRegistry.MANDATORY_FILES_GROUP)
-                .setDescription("Checks if '/LICENSE' file exist in repository with expected content (SHA-256 check-sum is used)");
+                .setDescriptionRef("https://www.apache.org/licenses/LICENSE-2.0.txt");
     }
 
     @Override

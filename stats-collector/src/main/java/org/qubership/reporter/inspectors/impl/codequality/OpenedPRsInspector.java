@@ -83,6 +83,6 @@ public class OpenedPRsInspector extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("OpenedPRs", "Open Pull Requests Count", MetricGroupsRegistry.CODE_QUALITY_GROUP)
-                .setDescription("");
+                .setDescriptionRef(""); // todo
     }
 }

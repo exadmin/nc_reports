@@ -25,7 +25,7 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("Sonar Code Coverage", "Code Coverage Status", MetricGroupsRegistry.CODE_QUALITY_GROUP)
-                .setDescription("Returns coverage metric from Sonar Cloud service for the component");
+                .setDescriptionRef(""); // todo
     }
 
     @Override

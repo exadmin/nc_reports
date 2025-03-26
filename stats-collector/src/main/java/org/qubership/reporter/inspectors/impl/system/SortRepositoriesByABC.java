@@ -16,7 +16,7 @@ public class SortRepositoriesByABC extends AbstractPostInspector {
     @Override
     public Metric getMetric() {
         return newMetric("#", "#", MetricGroupsRegistry.SYSTEM_METRIC_GROUP)
-                .setDescription("")
+                .setDescriptionRef("")
                 .setRenderingOrderWeight(-200)
                 .setRenderOnEachReportTab(true);
     }

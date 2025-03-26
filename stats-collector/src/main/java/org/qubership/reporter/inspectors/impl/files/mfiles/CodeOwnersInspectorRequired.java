@@ -9,7 +9,7 @@ public class CodeOwnersInspectorRequired extends AbstractRequiredFileInspector {
     @Override
     public Metric getMetric() {
         return newMetric("Code Owners", "Code Owners", MetricGroupsRegistry.MANDATORY_FILES_GROUP)
-                .setDescription("Checks if file .github/CODEOWNERS exists in the repository");
+                .setDescriptionRef("https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners");
     }
 
     @Override

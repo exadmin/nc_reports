@@ -110,7 +110,14 @@ public class HtmlRenderer {
             sb.append("    <tr>\n");
             for (Metric metric : allMetrics) {
                 if (group.equals(metric.getGroup()) || metric.isRenderOnEachReportTab()) {
-                    sb.append("        <th>").append(metric.getVisualName()).append("</th>\n");
+                    sb.append("        <th>")
+                            .append(metric.getVisualName());
+                    // add reference to help for the metric if set
+                    if (StrUtils.isNotEmpty(metric.getDescriptionRef())) {
+                        sb.append("<a href=\"").append(metric.getDescriptionRef()).append("\">❔</a>");
+                    }
+
+                    sb.append("</th>\n");
                 }
             }
             sb.append("    </tr>\n");

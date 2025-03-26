@@ -38,7 +38,7 @@ public class ErrorsDeltaInspector extends AbstractPostInspector {
     @Override
     public Metric getMetric() {
         return new Metric("Errors Count (Week Ago)", "Errors Count (Week Ago)", MetricGroupsRegistry.SYSTEM_METRIC_GROUP)
-                .setDescription(""); // todo
+                .setDescriptionRef(""); // todo
     }
 
     @Override

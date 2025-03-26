@@ -24,6 +24,6 @@ public class LastUpdatedTime extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("Updated At", "Updated At", MetricGroupsRegistry.CODE_QUALITY_GROUP)
-                .setDescription("Returns time when repository was updated last time");
+                .setDescriptionRef(""); // todo
     }
 }
