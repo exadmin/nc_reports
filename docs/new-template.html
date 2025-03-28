@@ -14,7 +14,23 @@
 
     // Put there required render functions to allow rendering of any object type.
     function defaultRender (data, type, row, meta) {
-        return '<p>' + String(data) + '</p>';
+        // Default render supports:
+        // 1. String: just return the string (can be html).
+        // 2. Object with structure:
+        //   {
+        //      "title": "<html>",      # Tooltip of cell
+        //      "href": "<url>",        # Link in cell
+        //      "value": "string"       # Value of cell
+        //   }
+        if (data.title && data.href) {
+            return '<div title="<p class=\'my-tooltip\'>' + data.title + '</p>"><a href="' + data.href + '" target="_blank">' + (data.value || '&nbsp;') + '</a></div>';
+        } else if  (data.title) {
+            return '<div title="<p class=\'my-tooltip\'>' + data.title + '</p>">' + (data.value || '&nbsp;') + '</div>';
+        } else if (data.href) {
+            return '<a href="' + data.href + '" target="_blank">' + (data.value || '&nbsp;') + '</a>';
+        } else {
+            return String(data);
+        }
     }
 
     $(document).ready(function() {
@@ -80,24 +96,7 @@
                     if (column.help_url) {
                         column.title += `<a href="${column.help_url}" target="_blank" class="help-icon">❔</a>`;
                     }
-                    if (column.render) {
-                        column.render = window[column.render] || defaultRender;
-                    }
-                });
-
-                // Add href links to cell values if exists
-                // Iterate through each row and cell to check for href
-                // and replace the cell value with an anchor tag
-                // This assumes that the cell value is an object with 'value' and 'href' properties
-                // Example: { value: "Click here", href: "http://example.com" }
-                tableData.data.forEach(row => {
-                    Object.entries(row).forEach(
-                        ([key, cell]) => {
-                            if (cell.href && cell.value) {
-                                row[key] = `<a href="${cell.href}" target="_blank">${cell.value}</a>`;
-                            }
-                        }
-                    );
+                    column.render = window[column.render] || defaultRender;
                 });
 
                 // Initialize DataTable

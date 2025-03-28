@@ -5192,7 +5192,7 @@
         {
           "#": "1",
           "id":  {"value":".github", "href":"https://github.com/Netcracker/.github"},
-          "topics": "❌",
+          "topics": {"value": "❌", "title": "Metric    : <b>Topics</b><br>Repository: <b>.github</b><br><br>Message   : <b>No topics are set</b>"},
           "week1": "0",
           "week2": "0",
           "week3": "0",
