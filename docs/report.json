@@ -5172,21 +5172,21 @@
   {
     "title": "Summary",
     "columns": [
-        { "data" : "#", "title": "#"},
-        { "data" : "id", "title": "ID"},
-        { "data" : "topics", "title": "Topics"},
-        { "data" : "week1", "title": "2025-Jan-05"},
-        { "data" : "week2", "title": "2025-Jan-12"},
-        { "data" : "week3", "title": "2025-Jan-19"},
-        { "data" : "week4", "title": "2025-Jan-26"},
-        { "data" : "week5", "title": "2025-Feb-02"},
-        { "data" : "week6", "title": "2025-Feb-09"},
-        { "data" : "week7", "title": "2025-Feb-16"},
-        { "data" : "week8", "title": "2025-Feb-23"},
-        { "data" : "week9", "title": "2025-Mar-02"},
-        { "data" : "week10", "title": "2025-Mar-09"},
-        { "data" : "week11", "title": "2025-Mar-16"},
-        { "data" : "errorscount", "title": "Errors Count"}
+        { "data" : "#", "title": "#", "className":"td-center-middle"},
+        { "data" : "id", "title": "ID", "className":"td-left-middle"},
+        { "data" : "topics", "title": "Topics", "className":"td-center-middle"},
+        { "data" : "week1", "title": "2025-Jan-05", "className":"td-center-middle"},
+        { "data" : "week2", "title": "2025-Jan-12", "className":"td-center-middle"},
+        { "data" : "week3", "title": "2025-Jan-19", "className":"td-center-middle"},
+        { "data" : "week4", "title": "2025-Jan-26", "className":"td-center-middle"},
+        { "data" : "week5", "title": "2025-Feb-02", "className":"td-center-middle"},
+        { "data" : "week6", "title": "2025-Feb-09", "className":"td-center-middle"},
+        { "data" : "week7", "title": "2025-Feb-16", "className":"td-center-middle"},
+        { "data" : "week8", "title": "2025-Feb-23", "className":"td-center-middle"},
+        { "data" : "week9", "title": "2025-Mar-02", "className":"td-center-middle"},
+        { "data" : "week10", "title": "2025-Mar-09", "className":"td-center-middle"},
+        { "data" : "week11", "title": "2025-Mar-16", "className":"td-center-middle"},
+        { "data" : "errorscount", "title": "Errors Count", "className":"td-center-middle"}
     ],
     "data": [
         {

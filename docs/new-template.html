@@ -48,31 +48,29 @@
             }
         } );
 
-        // supported data format of report.json:
-        // {
-        //     "reportName": "Report Name",         // required field
-        //     "reportDate": "2025-03-28 19:23:00", // required field
-        //     "tables": [
-        //         {
-        //             "title": "Table 1",          // optional field
-        //             "columns": [
-        //                 { "title": "Column 1", "data": "column1" },    // required fields
-        //                 { "title": "Column 2", "data": "column2",
-        //                       "help_url": "http://example.com/help" }, // optional field. "help_url" will be rendered as link to column title
-        //                 { "title": "Column 3", "data": "column3",
-        //                       "render": "customRenderFunction" }       // optional field. It should be existing global function in window scope.
-        //                 { "title": "Column 4", "data": "column4",
-        //                       "type": "some-type" }                    // optional field. "some-type" should be a valid type from https://datatables.net/reference/option/columns.type or main javascript code should extend jQuery.fn.dataTableExt.oSort to support new sort type. 
-        //                 // most of options (not functions) from https://datatables.net/reference/option/#:~:text=data%20manipulation%20callback-,DataTables%20%2D%20Columns,-columnDefs should be workable in json data.
-        //             ],
-        //             "data": [
-        //                 { "column1": "Value 1", "column2": "Value 2", "column3": "Value 3" }, // required field
-        //                 { "column1": "Value 4", "column2": "Value 5", "column3": { "value": "Value 6", "href": "http://example.com" }} } // if some data filed (like "column3") is an object, it should have "value" and "href" fields. "href" will be rendered as link to cell value.
-        //             ]
-        //         }
-        //    ]
-        //}
-
+// supported data format of report.json:
+// {
+//     "reportName": "Report Name",         // required field
+//     "reportDate": "2025-03-28 19:23:00", // required field
+//     "tables": [
+//         {
+//             "title": "Table 1",          // optional field
+//             "columns": [
+//                 { "title": "Column 1", "data": "column1"    // required fields
+//                       "help_url": "http://example.com/help" // optional field. "help_url" will be rendered as link to column title
+//                       "render": "customRenderFunction"      // optional field. It should be existing global function in window scope.
+//                       "type": "some-type"                   // optional field. "some-type" should be a valid type from https://datatables.net/reference/option/columns.type or main javascript code should extend jQuery.fn.dataTableExt.oSort to support new sort type.
+//                       "className":"td-center-middle"        // optional field. It should be a valid CSS class name.
+//                 }
+//                 // most of options (not functions) from https://datatables.net/reference/option/#:~:text=data%20manipulation%20callback-,DataTables%20%2D%20Columns,-columnDefs should be workable in json data.
+//             ],
+//             "data": [
+//                 { "column1": "Value 1", "column2": "Value 2", "column3": "Value 3" }, // required field
+//                 { "column1": "Value 4", "column2": "Value 5", "column3": { "value": "Value 6", "href": "http://example.com" }} } // if some data filed (like "column3") is an object, it should have "value" and "href" fields. "href" will be rendered as link to cell value.
+//             ]
+//         }
+//    ]
+//}
         $.getJSON('report.json', function(data) {
             const reportName = data.reportName;
             const reportDate = data.reportDate;
@@ -104,6 +102,7 @@
                     data: tableData.data,
                     columns: tableData.columns,
                     pageLength: -1,
+                    autoWidth: false,
                     search: {
                         search: getSearchParam('search')
                     }
