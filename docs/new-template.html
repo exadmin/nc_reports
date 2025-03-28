@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-US">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Report on #GEN_DATE# UTC</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/ju-1.11.4/jqc-1.11.3,dt-1.10.8/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/r/ju-1.11.4/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+    function getSearchParam(param) {
+        return new URLSearchParams(window.location.search).get(param) || "";
+    };
+
+    // Put there required render functions to allow rendering of any object type.
+    function defaultRender (data, type, row, meta) {
+        return '<p>' + String(data) + '</p>';
+    }
+
+    $(document).ready(function() {
+        // Add custom sorting for 'only-numbers'
+        jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+            "only-numbers-asc": function ( a,b ) {
+                var x = parseFloat(String(a).replace( /[^0-9\.]/g, "" ).replace( /^\.+/g, "")) || -1;
+                var y = parseFloat(String(b).replace( /[^0-9\.]/g, "" ).replace( /^\.+/g, "")) || -1;
+                return x - y;
+            },
+            "only-numbers-desc": function ( a,b ) {
+                var x = parseFloat(String(a).replace( /[^0-9\.]/g, "" ).replace( /^\.+/g, "")) || -1;
+                var y = parseFloat(String(b).replace( /[^0-9\.]/g, "" ).replace( /^\.+/g, "")) || -1;
+                return y - x;
+            }
+        } );
+
+        // supported data format of report.json:
+        // {
+        //     "reportName": "Report Name",         // required field
+        //     "reportDate": "2025-03-28 19:23:00", // required field
+        //     "tables": [
+        //         {
+        //             "title": "Table 1",          // optional field
+        //             "columns": [
+        //                 { "title": "Column 1", "data": "column1" },    // required fields
+        //                 { "title": "Column 2", "data": "column2",
+        //                       "help_url": "http://example.com/help" }, // optional field. "help_url" will be rendered as link to column title
+        //                 { "title": "Column 3", "data": "column3",
+        //                       "render": "customRenderFunction" }       // optional field. It should be existing global function in window scope.
+        //                 { "title": "Column 4", "data": "column4",
+        //                       "type": "some-type" }                    // optional field. "some-type" should be a valid type from https://datatables.net/reference/option/columns.type or main javascript code should extend jQuery.fn.dataTableExt.oSort to support new sort type. 
+        //                 // most of options (not functions) from https://datatables.net/reference/option/#:~:text=data%20manipulation%20callback-,DataTables%20%2D%20Columns,-columnDefs should be workable in json data.
+        //             ],
+        //             "data": [
+        //                 { "column1": "Value 1", "column2": "Value 2", "column3": "Value 3" }, // required field
+        //                 { "column1": "Value 4", "column2": "Value 5", "column3": { "value": "Value 6", "href": "http://example.com" }} } // if some data filed (like "column3") is an object, it should have "value" and "href" fields. "href" will be rendered as link to cell value.
+        //             ]
+        //         }
+        //    ]
+        //}
+
+        $.getJSON('report.json', function(data) {
+            const reportName = data.reportName;
+            const reportDate = data.reportDate;
+            const tables = data.tables;
+
+            document.title = `Report ${reportName} on ${reportDate}`;
+            $('#report-name').text(`Report: ${reportName} generated at ${reportDate}`);
+
+            let tabList = $('#tab-list');
+            let tabsContainer = $('#tabs');
+
+            tables.forEach((tableData, index) => {
+                // Add tab
+                tabList.append(`<li><a href="#tabs-${index + 1}">${tableData.title || index + 1}</a></li>`);
+                
+                // Add tab content with table
+                tabsContainer.append(`<div id="tabs-${index + 1}"><table id="table-${index + 1}" class="display"></table></div>`);
+
+                // Add help urls to column titles if exists
+                tableData.columns.forEach(column => {
+                    if (column.help_url) {
+                        column.title += `<a href="${column.help_url}" target="_blank" class="help-icon">❔</a>`;
+                    }
+                    if (column.render) {
+                        column.render = window[column.render] || defaultRender;
+                    }
+                });
+
+                // Add href links to cell values if exists
+                // Iterate through each row and cell to check for href
+                // and replace the cell value with an anchor tag
+                // This assumes that the cell value is an object with 'value' and 'href' properties
+                // Example: { value: "Click here", href: "http://example.com" }
+                tableData.data.forEach(row => {
+                    Object.entries(row).forEach(
+                        ([key, cell]) => {
+                            if (cell.href && cell.value) {
+                                row[key] = `<a href="${cell.href}" target="_blank">${cell.value}</a>`;
+                            }
+                        }
+                    );
+                });
+
+                // Initialize DataTable
+                $(`#table-${index + 1}`).DataTable({
+                    data: tableData.data,
+                    columns: tableData.columns,
+                    pageLength: -1,
+                    search: {
+                        search: getSearchParam('search')
+                    }
+                });
+                $(`#table-${index + 1}`).on('search.dt', function syncSearches() {
+                    searchValue = $(this).DataTable().search();
+                    window.history.replaceState(null, null, `?search=${encodeURIComponent(searchValue)}` + window.location.hash);
+                    $.fn.dataTable.tables().forEach(function(table) {
+                        if (table !== this) {
+                            $(table).off('search.dt');
+                            $('#'+table.id+'_filter input')[0].value = searchValue;
+                            $(table).DataTable().search(searchValue).draw();
+                            $(table).on('search.dt', syncSearches);
+                        }
+                    });
+                });
+            });
+
+            // Initialize tabs
+            $("#tabs").tabs({
+                    activate: function(event, ui) {
+                        window.location.hash = ui.newPanel.attr('id');
+                    }
+                }
+            );
+        });
+
+        $(function() {
+          $(document).tooltip({
+            content: function() {
+              // Keep this code - to force JQueryUI render <br> as a new line!
+              return $(this).prop('title');
+            }
+          });
+        });
+    });
+    </script>
+</head>
+<body>
+<div class="container">
+    <p id="report-name" class="report-header">Report is generated at #GEN_DATE# UTC</p>
+    <div id="tabs">
+        <ul id="tab-list"></ul>
+    </div>
+</div>
+</body>
+</html>
