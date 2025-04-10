@@ -77,6 +77,7 @@ public class HSQLDBRenderer {
 
                     String value = omrValue == null ? null : omrValue.getRawValue();
                     if (value != null && value.length() >= 255) value = value.substring(0, 254);
+                    if (value != null && value.isEmpty()) value = omrValue.getSeverity().toString();
                     pstm.setString(bindIndex, value);
                     bindIndex++;
                 }
