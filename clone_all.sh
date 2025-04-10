@@ -1,6 +1,9 @@
 #!/bin/bash
+# NOTE: when executing this script from WSL an error like 'bash: ./clone_all.sh: cannot execute: required file not found'
+# NOTE: this relates to windows special characters (carriage-returns) which are not clear for Linux subsystem
+# NOTE: replace such characters by executing: "sed -i 's/\r$//' clone_all.sh"
 
-# Download all existed repositories using paging approach (github does not work stable without paging)
+# Downloads all existed repositories using paging approach (github does not work stable without paging)
 i=1
 
 while true; do
