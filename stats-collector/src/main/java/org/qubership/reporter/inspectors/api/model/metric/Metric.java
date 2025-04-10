@@ -96,4 +96,9 @@ public class Metric {
         this.renderOnEachReportTab = renderOnEachReportTab;
         return getThis();
     }
+
+    public Metric setType(MetricType type) {
+        this.type = type;
+        return getThis();
+    }
 }

@@ -24,8 +24,9 @@ public class ErrorsCountInspector extends AbstractPostInspector {
             for (Metric metric : reportModel.getMetrics()) {
                 if (MetricType.PERSISTENT.equals(metric.getType())) {
                     OneMetricResult omResult = reportModel.getValue(repositoryName, metric.getPersistenceId());
-                    ResultSeverity resultSeverity = omResult.getSeverity();
+                    if (omResult == null) continue;
 
+                    ResultSeverity resultSeverity = omResult.getSeverity();
                     if (resultSeverity.equals(ResultSeverity.ERROR) || resultSeverity.equals(ResultSeverity.WARN) || resultSeverity.equals(ResultSeverity.SECURITY_ISSUE)) {
                         errCount++;
                     }
@@ -41,6 +42,7 @@ public class ErrorsCountInspector extends AbstractPostInspector {
     public Metric getMetric() {
         return newMetric("Errors Count", "Errors Count", MetricGroupsRegistry.EXECUTIVE_SUMMARY)
                 .setDescriptionRef("")
-                .setRenderingOrderWeight(+100);
+                .setRenderingOrderWeight(+100)
+                .setType(MetricType.PERSISTENT);
     }
 }
