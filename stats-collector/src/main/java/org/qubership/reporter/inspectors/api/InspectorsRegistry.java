@@ -8,8 +8,8 @@ import org.qubership.reporter.inspectors.impl.files.mfiles.CheckApache20License;
 import org.qubership.reporter.inspectors.impl.files.mfiles.CodeOwnersInspectorRequired;
 import org.qubership.reporter.inspectors.impl.files.mfiles.ReadmeRequiredFileContent;
 import org.qubership.reporter.inspectors.impl.files.mfiles.workflowfiles.*;
+import org.qubership.reporter.inspectors.impl.system.QubershipTeams;
 import org.qubership.reporter.inspectors.impl.system.RepoIDInspector;
-import org.qubership.reporter.inspectors.impl.system.TopicAdded;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,7 +36,8 @@ public class InspectorsRegistry {
         registeredInspectors.add(new CodeOwnersInspectorRequired());
         registeredInspectors.add(new JavaVersion());
 
-        registeredInspectors.add(new TopicAdded());
+        // registeredInspectors.add(new TopicAdded());
+        registeredInspectors.add(new QubershipTeams());
 
 
         registeredInspectors.add(new OpenedPRsInspector());
