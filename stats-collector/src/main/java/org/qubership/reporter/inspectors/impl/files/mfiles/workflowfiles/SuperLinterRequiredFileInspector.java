@@ -25,6 +25,6 @@ public class SuperLinterRequiredFileInspector extends AbstractGithubWorkflowRequ
 
     @Override
     protected void addExpectedContentRegExps(List<String> regExps) {
-        regExps.add("\\buses\\s*:\\s*super-linter/super-linter@");
+        regExps.add("\\buses\\s*:\\s*super-linter/super-linter(/slim)?@");
     }
 }
