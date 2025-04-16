@@ -1,363 +1,363 @@
 /*C3*/SET SCHEMA PUBLIC
 SET SCHEMA "PUBLIC"
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'.github','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','.github','OK','OK','OK','INFO',NULL,'ERROR','2025-04-09','OK','ERROR','9','ERROR',NULL,NULL,NULL,NULL,'qubership-devops')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'.github','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','.github','OK','OK','OK','INFO',NULL,'ERROR','2025-04-14','OK','ERROR','9','ERROR',NULL,NULL,NULL,NULL,'qubership-devops')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'KubeMarine','ERROR','OK','ERROR',NULL,NULL,'ERROR','KubeMarine','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-infra')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'KubeMarine','ERROR','OK','ERROR',NULL,NULL,'ERROR','KubeMarine','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-14','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-infra')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'base-images-module-base','ERROR','OK','ERROR',NULL,NULL,'ERROR','base-images-module-base','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-12','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'base-images-module-base','ERROR','OK','ERROR',NULL,NULL,'ERROR','base-images-module-base','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-12','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'cassandra-exporter','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','cassandra-exporter','ERROR','ERROR','ERROR','1.8',NULL,'ERROR','2025-03-05','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'cassandra-exporter','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','cassandra-exporter','ERROR','ERROR','ERROR','1.8',NULL,'ERROR','2025-03-05','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'cla-storage','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','cla-storage','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-09','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'cla-storage','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','cla-storage','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-09','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'gatekeeper-library','ERROR','OK','ERROR',NULL,NULL,'ERROR','gatekeeper-library','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2023-09-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'gatekeeper-library','ERROR','OK','ERROR',NULL,NULL,'ERROR','gatekeeper-library','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2023-09-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'get-package-ids','ERROR','OK','ERROR',NULL,NULL,'ERROR','get-package-ids','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-19','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'get-package-ids','ERROR','OK','ERROR',NULL,NULL,'ERROR','get-package-ids','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-19','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'k8s-conformance','ERROR','WARN','ERROR',NULL,NULL,'ERROR','k8s-conformance','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2022-10-11','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'k8s-conformance','ERROR','WARN','ERROR',NULL,NULL,'ERROR','k8s-conformance','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2022-10-11','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'microservice-restclient','ERROR','OK','ERROR',NULL,NULL,'ERROR','microservice-restclient','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-07','OK','ERROR','11','ERROR','93.0%',NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'microservice-restclient','ERROR','OK','ERROR',NULL,NULL,'ERROR','microservice-restclient','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-07','OK','ERROR','11','ERROR','93.0%',NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pg_hint_plan','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','pg_hint_plan','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-01-03','OK','ERROR','11','OK',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pg_hint_plan','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','pg_hint_plan','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-01-03','OK','ERROR','11','OK',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-28','OK','ERROR','12','ERROR',NULL,NULL,'2',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-dbaas-adapter','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-dbaas-adapter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-11','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-dbaas-adapter','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-dbaas-adapter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-monitoring-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-monitoring-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-21','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-monitoring-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-monitoring-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-operator','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-operator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-08','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-operator','OK','OK','ERROR',NULL,NULL,'ERROR','pgskipper-operator','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-15','OK','OK','7','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-operator-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-operator-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-28','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-operator-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-operator-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-patroni','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-patroni','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-patroni','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-patroni','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-pgbackrest-sidecar','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-pgbackrest-sidecar','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-pgbackrest-sidecar','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-pgbackrest-sidecar','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-replication-controller','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-replication-controller','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-21','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-replication-controller','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-replication-controller','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'pgskipper-upgrade','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-upgrade','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-20','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'pgskipper-upgrade','ERROR','OK','ERROR',NULL,NULL,'ERROR','pgskipper-upgrade','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-agent','OK','OK','OK',NULL,NULL,'ERROR','qubership-apihub-agent','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-13','OK','OK','5','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-data-model','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-data-model','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','11','ERROR',NULL,NULL,'1',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-data-model','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-data-model','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','ERROR',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-diff','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-diff','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,'2',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-diff','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-diff','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-doc-viewer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-doc-viewer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-doc-viewer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-doc-viewer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-processor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-processor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-processor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-processor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-unifier','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-unifier','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-unifier','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-unifier','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-api-visitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-visitor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-api-visitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-api-visitor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-apispec-view','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-apispec-view','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-apispec-view','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-apispec-view','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-backend','OK','OK','OK',NULL,NULL,'OK','qubership-apihub-backend','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-10','OK','OK','4','OK',NULL,NULL,'9',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-backend','OK','OK','OK',NULL,NULL,'OK','qubership-apihub-backend','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','4','OK',NULL,NULL,'8',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-build-task-consumer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-build-task-consumer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-build-task-consumer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-build-task-consumer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-ci','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ci','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-ci','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ci','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-14','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-class-view','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-class-view','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-class-view','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-class-view','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-compatibility-suites','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-compatibility-suites','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-compatibility-suites','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-compatibility-suites','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-graphapi','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-graphapi','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-graphapi','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-graphapi','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-http-spec','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-http-spec','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-http-spec','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-http-spec','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-jest-chrome-in-docker-environment','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-jest-chrome-in-docker-environment','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-jest-chrome-in-docker-environment','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-jest-chrome-in-docker-environment','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-json-crawl','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-json-crawl','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-json-crawl','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-json-crawl','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-nodejs-dev-image','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-nodejs-dev-image','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-nodejs-dev-image','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-nodejs-dev-image','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-npm-gitflow','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-npm-gitflow','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-npm-gitflow','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-npm-gitflow','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-postman-collections','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-postman-collections','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-11','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-postman-collections','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-postman-collections','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-protobufjs-research','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-protobufjs-research','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-protobufjs-research','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-protobufjs-research','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-rest-playground','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-rest-playground','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-rest-playground','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-rest-playground','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-sniffer-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-sniffer-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','ERROR',NULL,NULL,'0',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-sniffer-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-sniffer-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-13','OK','ERROR','10','ERROR',NULL,NULL,'0',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-test-service','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-test-service','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-test-service','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-test-service','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-traffic-analyzer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-traffic-analyzer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-traffic-analyzer','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-traffic-analyzer','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-13','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-ui','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ui','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-ui','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ui','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-ui-tests','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ui-tests','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,'2',NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-ui-tests','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-ui-tests','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','10','OK',NULL,NULL,'2',NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-apihub-vscode','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-vscode','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-apihub')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-apihub-vscode','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-apihub-vscode','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-apihub')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-av-scan-service','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-av-scan-service','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-31','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-av-scan-service','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-av-scan-service','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-31','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-cloud-passport-cli','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-cloud-passport-cli','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-02-04','ERROR','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-cloud-passport-cli','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-cloud-passport-cli','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-02-04','ERROR','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-colly','OK','OK','OK',NULL,NULL,'OK','qubership-colly','OK','ERROR','OK','21',NULL,'OK','2025-03-28','OK','OK','2','OK',NULL,NULL,'0',NULL,'qubership-devops')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-colly','OK','OK','ERROR',NULL,NULL,'OK','qubership-colly','OK','ERROR','OK','21',NULL,'OK','2025-04-15','OK','OK','4','OK',NULL,NULL,'1',NULL,'qubership-devops')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-consul','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-28','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-consul','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-28','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-consul-acl-configurator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul-acl-configurator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-18','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-consul-acl-configurator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul-acl-configurator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-18','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-consul-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-28','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-consul-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-consul-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-28','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-arquillian-cube-extension','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-arquillian-cube-extension','OK','ERROR','ERROR','${java.version}',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','62.1%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-arquillian-cube-extension','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-arquillian-cube-extension','OK','ERROR','ERROR','${java.version}',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','62.1%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-base-images','SECURITY','OK','OK',NULL,NULL,'OK','qubership-core-base-images','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-11','OK','SECURITY','7','OK',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-base-images','SECURITY','OK','OK',NULL,NULL,'OK','qubership-core-base-images','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','OK','SECURITY','7','OK',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-blue-green-state-monitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-blue-green-state-monitor','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','81.3%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-blue-green-state-monitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-blue-green-state-monitor','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','81.3%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-blue-green-state-monitor-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-blue-green-state-monitor-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','56.4%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-blue-green-state-monitor-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-blue-green-state-monitor-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','56.4%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-commons','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-commons','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-30','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-context-propagation','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-context-propagation','OK','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','77.8%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-context-propagation','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-context-propagation','OK','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','77.8%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-context-propagation-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-context-propagation-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','94.7%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-context-propagation-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-context-propagation-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','94.7%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-control-plane','SECURITY','ERROR','OK',NULL,NULL,'OK','qubership-core-control-plane','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-03','ERROR','SECURITY','10','ERROR',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-control-plane','SECURITY','ERROR','OK',NULL,NULL,'OK','qubership-core-control-plane','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-03','ERROR','SECURITY','10','ERROR',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-dbaas-agent','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-dbaas-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-07','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-dbaas-agent','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-dbaas-agent','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-07','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-error-handling','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-error-handling','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','36.1%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-error-handling','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-error-handling','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','36.1%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-infra','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-infra','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-infra','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-infra','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-11','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-ingress-gateway','SECURITY','OK','OK',NULL,NULL,'OK','qubership-core-ingress-gateway','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-03','ERROR','SECURITY','8','OK',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-ingress-gateway','SECURITY','OK','OK',NULL,NULL,'OK','qubership-core-ingress-gateway','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-03','ERROR','SECURITY','8','OK',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','77.0%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','77.0%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-actuator-common','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-actuator-common','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.5%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-actuator-common','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-actuator-common','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.5%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-bg-kafka','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-bg-kafka','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','31.5%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-bg-kafka','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-bg-kafka','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','31.5%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-bg-state-monitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-bg-state-monitor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','87.0%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-bg-state-monitor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-bg-state-monitor','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','87.0%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-arangodb-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-arangodb-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','4.8%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-arangodb-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-arangodb-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','4.8%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-base-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-base-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.4%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-base-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-base-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.4%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-cassandra-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-cassandra-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','81.7%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-cassandra-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-cassandra-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','81.7%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-clickhouse-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-clickhouse-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.7%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-clickhouse-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-clickhouse-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','82.7%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-mongo-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-mongo-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','86.7%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-mongo-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-mongo-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','86.7%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-opensearch-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-opensearch-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-14','OK','ERROR','8','OK','76.3%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-opensearch-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-opensearch-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','76.3%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-dbaas-postgres-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-postgres-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','86.4%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-dbaas-postgres-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-dbaas-postgres-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','86.4%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-error-handling','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-error-handling','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','71.2%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-error-handling','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-error-handling','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','71.2%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-fiber-server-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-fiber-server-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','80.6%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-fiber-server-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-fiber-server-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','80.6%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-maas-bg-segmentio','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-bg-segmentio','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','85.7%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-maas-bg-segmentio','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-bg-segmentio','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','85.7%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-maas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','45.7%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-maas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','9','OK','45.7%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-maas-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','54.7%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-maas-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','54.7%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-maas-segmentio','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-segmentio','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','77.7%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-maas-segmentio','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-maas-segmentio','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','77.7%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-mux-server-utils','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-mux-server-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-mux-server-utils','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-mux-server-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','11','ERROR',NULL,NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-paas-mediation-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-paas-mediation-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','ERROR','78.6%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-paas-mediation-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-paas-mediation-client','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','10','ERROR','78.6%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-rest-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-rest-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','84.4%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-rest-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-rest-utils','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','84.4%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-lib-go-stomp-websocket','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-stomp-websocket','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','18.5%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-lib-go-stomp-websocket','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-lib-go-stomp-websocket','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-10','OK','ERROR','8','OK','18.5%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-maas-agent','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-maas-agent','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','9','OK','0.0%',NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-maas-agent','SECURITY','ERROR','OK',NULL,NULL,'OK','qubership-core-maas-agent','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-03-07','ERROR','SECURITY','11','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-microservice-dependencies','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-dependencies','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-microservice-dependencies','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-dependencies','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-microservice-framework','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-framework','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','17.3%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-microservice-framework','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-framework','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','17.3%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-microservice-framework-extensions','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-framework-extensions','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','63.3%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-microservice-framework-extensions','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-microservice-framework-extensions','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','63.3%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-mongo-evolution','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-mongo-evolution','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','59.1%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-mongo-evolution','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-mongo-evolution','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','59.1%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-process-orchestrator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-process-orchestrator','OK','ERROR','ERROR','21',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','85.2%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-process-orchestrator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-process-orchestrator','OK','ERROR','ERROR','21',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','85.2%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-quarkus-extensions','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-quarkus-extensions','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','44.5%',NULL,'1',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-quarkus-extensions','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-quarkus-extensions','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','44.5%',NULL,'1',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-rest-libraries','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-rest-libraries','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','52.5%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-rest-libraries','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-rest-libraries','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','52.5%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-restclient','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-restclient','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-restclient','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-restclient','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-springboot-starter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-springboot-starter','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-springboot-starter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-springboot-starter','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-core-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-utils','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-14','OK','ERROR','10','OK','41.2%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-core-utils','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-core-utils','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-03','OK','ERROR','10','OK','41.2%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-cql-driver','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-cql-driver','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-12','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-cql-driver','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-cql-driver','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-12','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-credential-manager','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-credential-manager','OK','ERROR','SECURITY','INFO',NULL,'ERROR','2025-04-09','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-credential-manager','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-credential-manager','OK','ERROR','SECURITY','INFO',NULL,'ERROR','2025-04-09','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-dbaas','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas','OK','ERROR','ERROR','21',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','63.5%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-dbaas','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas','OK','ERROR','ERROR','21',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','63.5%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-dbaas-adapter-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas-adapter-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-dbaas-adapter-core','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas-adapter-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-18','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-dbaas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas-client','ERROR','ERROR','ERROR','8',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','82.1%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-dbaas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-dbaas-client','ERROR','ERROR','ERROR','8',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','82.1%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-deployment-status-provisioner','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-deployment-status-provisioner','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-18','OK','ERROR','12','ERROR',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-deployment-status-provisioner','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-deployment-status-provisioner','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-18','OK','ERROR','12','ERROR',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-diag-proxy','OK','OK','ERROR',NULL,NULL,'ERROR','qubership-diag-proxy','OK','OK','ERROR','INFO',NULL,'OK','2025-04-08','OK','OK','5','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-diag-proxy','OK','OK','ERROR',NULL,NULL,'ERROR','qubership-diag-proxy','OK','OK','ERROR','INFO',NULL,'OK','2025-04-08','OK','OK','5','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-disaster-recovery-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-disaster-recovery-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-03','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-disaster-recovery-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-disaster-recovery-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-03','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-docker-integration-tests','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-integration-tests','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-docker-integration-tests','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-integration-tests','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-docker-opensearch','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-opensearch','ERROR','ERROR','ERROR','11',NULL,'ERROR','2025-02-28','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-docker-opensearch','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-opensearch','ERROR','ERROR','ERROR','11',NULL,'ERROR','2025-02-28','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-docker-zookeeper','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-zookeeper','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-docker-zookeeper','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-docker-zookeeper','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-env-checker','ERROR','WARN','OK',NULL,NULL,'SECURITY','qubership-env-checker','OK','SECURITY','SECURITY','INFO',NULL,'OK','2025-04-14','ERROR','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-env-checker','ERROR','WARN','OK',NULL,NULL,'SECURITY','qubership-env-checker','OK','SECURITY','SECURITY','INFO',NULL,'OK','2025-04-07','ERROR','ERROR','10','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-envgene','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-15','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-envgene','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-11','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-envgene-instance','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene-instance','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-05','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-envgene-instance','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene-instance','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-05','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-envgene-template','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene-template','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-10','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-envgene-template','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-envgene-template','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-10','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-external-logging-installer','OK','OK','ERROR',NULL,NULL,'OK','qubership-external-logging-installer','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','4','ERROR',NULL,NULL,'0',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-external-logging-installer','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-external-logging-installer','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-03-27','OK','ERROR','7','ERROR',NULL,NULL,'0',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-fluent-pipeline-tests','OK','OK','ERROR',NULL,NULL,'OK','qubership-fluent-pipeline-tests','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-fluent-pipeline-tests','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-fluent-pipeline-tests','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-fluentd','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-fluentd','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','8','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-fluentd','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-fluentd','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','8','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-git-system-follower','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-git-system-follower','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-12','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-git-system-follower','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-git-system-follower','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-01','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-grafana-plugins-init','OK','OK','ERROR',NULL,NULL,'OK','qubership-grafana-plugins-init','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','OK','OK','4','OK',NULL,NULL,'0',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-grafana-plugins-init','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-grafana-plugins-init','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','9','OK',NULL,NULL,'1',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-grafana-reporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-grafana-reporter','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','OK','OK','5','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-grafana-reporter','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-grafana-reporter','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-graphite-remote-adapter','OK','OK','ERROR',NULL,NULL,'OK','qubership-graphite-remote-adapter','OK','ERROR','OK','INFO',NULL,'OK','2025-04-04','OK','OK','4','OK',NULL,NULL,'2',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-graphite-remote-adapter','OK','OK','ERROR',NULL,NULL,'OK','qubership-graphite-remote-adapter','OK','ERROR','OK','INFO',NULL,'OK','2025-04-04','OK','OK','4','OK',NULL,NULL,'1',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-graylog-archiving-plugin','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-graylog-archiving-plugin','OK','ERROR','SECURITY','1.8',NULL,'OK','2025-04-14','OK','ERROR','7','OK',NULL,NULL,'3',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-graylog-archiving-plugin','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-graylog-archiving-plugin','OK','ERROR','ERROR','1.8',NULL,'ERROR','2025-03-27','OK','ERROR','9','OK',NULL,NULL,'1',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-graylog-auth-proxy','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-graylog-auth-proxy','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','OK','ERROR','6','OK',NULL,NULL,'0',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-graylog-auth-proxy','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-graylog-auth-proxy','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-09','OK','ERROR','7','OK',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-graylog-obfuscation-plugin','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-graylog-obfuscation-plugin','OK','ERROR','OK','1.8',NULL,'OK','2025-03-27','OK','ERROR','6','OK',NULL,NULL,'2',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-graylog-obfuscation-plugin','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-graylog-obfuscation-plugin','OK','ERROR','OK','1.8',NULL,'OK','2025-03-27','OK','ERROR','6','OK',NULL,NULL,'1',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-graylog-plugins-init','OK','OK','ERROR',NULL,NULL,'OK','qubership-graylog-plugins-init','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-15','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-hive-metastore','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-hive-metastore','ERROR','ERROR','SECURITY','INFO',NULL,'ERROR','2025-02-28','OK','ERROR','10','OK',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-hive-metastore','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-hive-metastore','ERROR','ERROR','SECURITY','INFO',NULL,'ERROR','2025-02-28','OK','ERROR','10','OK',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-catalog-library','OK','OK','OK',NULL,NULL,'OK','qubership-integration-catalog-library','OK','OK','SECURITY','21',NULL,'OK','2025-04-04','ERROR','OK','5','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-catalog-library','OK','OK','OK',NULL,NULL,'OK','qubership-integration-catalog-library','OK','OK','SECURITY','21',NULL,'OK','2025-04-04','ERROR','OK','5','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-checkstyle','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-integration-checkstyle','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-03-17','OK','ERROR','12','ERROR',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-checkstyle','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-integration-checkstyle','ERROR','ERROR','ERROR','Not specified',NULL,'ERROR','2025-03-17','OK','ERROR','12','ERROR',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-designtime-catalog','OK','OK','OK',NULL,NULL,'OK','qubership-integration-designtime-catalog','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-04','ERROR','OK','6','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-designtime-catalog','OK','OK','OK',NULL,NULL,'OK','qubership-integration-designtime-catalog','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-04','ERROR','OK','6','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-engine','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-integration-engine','OK','ERROR','SECURITY','Not specified',NULL,'ERROR','2025-04-10','ERROR','ERROR','11','OK',NULL,NULL,'6',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-engine','OK','OK','ERROR',NULL,NULL,'ERROR','qubership-integration-engine','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-15','ERROR','OK','8','OK',NULL,NULL,'5',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-platform','OK','OK','OK',NULL,NULL,'OK','qubership-integration-platform','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-01','OK','OK','5','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-platform','OK','OK','OK',NULL,NULL,'OK','qubership-integration-platform','ERROR','OK','SECURITY','INFO',NULL,'OK','2025-04-01','OK','OK','5','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-runtime-catalog','OK','OK','OK',NULL,NULL,'OK','qubership-integration-runtime-catalog','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-01','ERROR','OK','6','OK',NULL,NULL,'2',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-runtime-catalog','OK','OK','OK',NULL,NULL,'OK','qubership-integration-runtime-catalog','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-15','ERROR','OK','6','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-sessions-management','OK','OK','OK',NULL,NULL,'OK','qubership-integration-sessions-management','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-01','ERROR','OK','6','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-sessions-management','OK','OK','OK',NULL,NULL,'OK','qubership-integration-sessions-management','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-11','ERROR','OK','6','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-ui','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-integration-ui','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-28','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-ui','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-integration-ui','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-integration-variables-management','OK','OK','OK',NULL,NULL,'OK','qubership-integration-variables-management','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-01','ERROR','OK','7','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-integration-variables-management','OK','OK','OK',NULL,NULL,'OK','qubership-integration-variables-management','OK','OK','SECURITY','Not specified',NULL,'OK','2025-04-01','ERROR','OK','7','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-inventory-tool-cli','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-inventory-tool-cli','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-08','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-inventory-tool-cli','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-inventory-tool-cli','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-14','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-inventory-tool-core','ERROR','WARN','ERROR',NULL,NULL,'ERROR','qubership-inventory-tool-core','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-09','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-inventory-tool-core','ERROR','WARN','ERROR',NULL,NULL,'ERROR','qubership-inventory-tool-core','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-14','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-jaeger','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-jaeger','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','8','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-jaeger','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-jaeger','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','8','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-kube-events-generator','OK','OK','ERROR',NULL,NULL,'OK','qubership-kube-events-generator','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-09','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-kube-events-generator','OK','OK','ERROR',NULL,NULL,'OK','qubership-kube-events-generator','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-kube-events-reader','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-kube-events-reader','OK','ERROR','ERROR','INFO',NULL,'OK','2025-04-04','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-kube-events-reader','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-kube-events-reader','OK','ERROR','ERROR','INFO',NULL,'OK','2025-04-04','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-landscape-config','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-landscape-config','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-25','OK','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-landscape')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-landscape-config','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-landscape-config','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-25','OK','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-landscape')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-landscape-config-processor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-landscape-config-processor','OK','ERROR','ERROR','11',NULL,'ERROR','2025-03-25','OK','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-landscape')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-landscape-config-processor','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-landscape-config-processor','OK','ERROR','ERROR','11',NULL,'ERROR','2025-03-25','OK','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-landscape')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-log-exporter','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-log-exporter','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-02','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-log-exporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-log-exporter','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','5','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-log-generator','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-log-generator','OK','ERROR','ERROR','Not specified',NULL,'OK','2025-04-08','OK','ERROR','7','OK',NULL,NULL,'0',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-log-generator','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-log-generator','OK','ERROR','ERROR','Not specified',NULL,'OK','2025-04-08','OK','ERROR','7','OK',NULL,NULL,'0',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-logging-operator','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-logging-operator','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-10','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-logging-operator','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-logging-operator','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','OK','ERROR','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-03','OK','ERROR','7','OK','61.9%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','8','OK','61.9%',NULL,'2',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','87.8%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-client','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','87.8%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-client-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','47.6%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-client-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','47.6%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-client-spring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client-spring','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','100.0%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-client-spring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-client-spring','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','100.0%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-declarative-client-commons','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-commons','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','71.9%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-declarative-client-commons','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-commons','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','71.9%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-declarative-client-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','74.9%',NULL,NULL,NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-declarative-client-quarkus','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-quarkus','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','9','OK','74.9%',NULL,NULL,NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-maas-declarative-client-spring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-spring','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','81.9%',NULL,'0',NULL,'qubership-core')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-maas-declarative-client-spring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-maas-declarative-client-spring','ERROR','ERROR','ERROR','17',NULL,'ERROR','2025-04-03','OK','ERROR','8','OK','81.9%',NULL,'0',NULL,'qubership-core')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-mistral','ERROR','WARN','ERROR',NULL,NULL,'ERROR','qubership-mistral','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-27','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-mistral','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-mistral','ERROR','ERROR','SECURITY','INFO',NULL,'ERROR','2025-04-14','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-mongodb-driver','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-mongodb-driver','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-22','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-mongodb-driver','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-mongodb-driver','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-22','OK','ERROR','12','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-monitoring-operator','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-monitoring-operator','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-04','OK','ERROR','8','OK',NULL,NULL,'5',NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-monitoring-operator','ERROR','OK','ERROR',NULL,NULL,'SECURITY','qubership-monitoring-operator','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-04','OK','ERROR','8','OK',NULL,NULL,'5',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-network-latency-exporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-network-latency-exporter','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-09','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-network-latency-exporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-network-latency-exporter','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-09','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-nifi','OK','OK','OK',NULL,NULL,'OK','qubership-nifi','OK','ERROR','OK','\u000a\u000a    ',NULL,'OK','2025-04-07','OK','OK','2','OK','68.4%',NULL,NULL,NULL,'qubership-nifi')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-nifi','OK','OK','OK',NULL,NULL,'OK','qubership-nifi','OK','ERROR','OK','\u000a\u000a    ',NULL,'OK','2025-04-15','OK','OK','2','OK','68.4%',NULL,NULL,NULL,'qubership-nifi')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-nifi-registry','OK','OK','OK',NULL,NULL,'OK','qubership-nifi-registry','OK','ERROR','OK','8',NULL,'OK','2025-04-04','OK','OK','1','OK','79.8%',NULL,'0',NULL,'qubership-nifi')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-nifi-registry','OK','OK','OK',NULL,NULL,'OK','qubership-nifi-registry','OK','ERROR','OK','8',NULL,'OK','2025-04-15','OK','OK','1','OK','79.8%',NULL,'0',NULL,'qubership-nifi')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-nosqldb-operator-core','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-nosqldb-operator-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-03','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-nosqldb-operator-core','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-nosqldb-operator-core','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-03','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-observability-examples','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-observability-examples','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-08','OK','ERROR','8','ERROR',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-observability-examples','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-observability-examples','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-08','OK','ERROR','8','ERROR',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-observability-operator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-observability-operator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-observability-operator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-observability-operator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','11','ERROR',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-open-telemetry-collector','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-open-telemetry-collector','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-04','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-open-telemetry-collector','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-open-telemetry-collector','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-04','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-opensearch','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-05','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-opensearch','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-opensearch-curator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-curator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-28','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-opensearch-curator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-curator','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-01-28','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-opensearch-dbaas-adapter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-dbaas-adapter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-13','OK','ERROR','11','OK',NULL,NULL,'3',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-opensearch-dbaas-adapter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-dbaas-adapter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-13','OK','ERROR','11','OK',NULL,NULL,'3',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-opensearch-monitoring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-monitoring','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-03','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-opensearch-monitoring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opensearch-monitoring','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-03','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-opentelemetry-helm-charts','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opentelemetry-helm-charts','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-07','OK','ERROR','9','OK',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-opentelemetry-helm-charts','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-opentelemetry-helm-charts','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-pipelines-common-python-library','ERROR','OK','ERROR',NULL,NULL,'OK','qubership-pipelines-common-python-library','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-04-07','ERROR','ERROR','8','OK',NULL,NULL,'0',NULL,'qubership-devops')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-pipelines-common-python-library','OK','OK','OK',NULL,NULL,'OK','qubership-pipelines-common-python-library','OK','OK','OK','INFO',NULL,'OK','2025-04-15','OK','OK','1','OK',NULL,NULL,'0',NULL,'qubership-devops')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-profiler-agent','OK','OK','ERROR',NULL,NULL,'ERROR','qubership-profiler-agent','OK','ERROR','ERROR','1.8',NULL,'ERROR','2025-04-10','OK','OK','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-profiler-agent','OK','OK','ERROR',NULL,NULL,'ERROR','qubership-profiler-agent','OK','ERROR','ERROR','1.8',NULL,'ERROR','2025-04-15','OK','OK','7','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-prometheus-adapter-operator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-prometheus-adapter-operator','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-07','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-prometheus-adapter-operator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-prometheus-adapter-operator','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-07','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-query-exporter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-query-exporter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-02-21','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-query-exporter','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-query-exporter','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-15','OK','ERROR','12','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-renovate-config','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-renovate-config','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-20','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-renovate-config','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-renovate-config','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2024-12-20','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-repo-template','SECURITY','ERROR','OK',NULL,NULL,'OK','qubership-repo-template','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-03-04','ERROR','SECURITY','10','ERROR',NULL,NULL,'0',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-repo-template','SECURITY','ERROR','OK',NULL,NULL,'OK','qubership-repo-template','ERROR','ERROR','SECURITY','INFO',NULL,'OK','2025-03-04','ERROR','SECURITY','10','ERROR',NULL,NULL,'0',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-tcp-duplicator','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-tcp-duplicator','OK','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-08','OK','ERROR','9','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-tcp-duplicator','OK','OK','ERROR',NULL,NULL,'OK','qubership-tcp-duplicator','OK','OK','SECURITY','INFO',NULL,'OK','2025-04-14','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-test-pipelines','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-test-pipelines','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-test-pipelines','ERROR','ERROR','ERROR',NULL,NULL,'ERROR','qubership-test-pipelines','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-04-02','OK','ERROR','13','ERROR',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-version-exporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-version-exporter','OK','ERROR','OK','INFO',NULL,'OK','2025-04-08','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-version-exporter','OK','OK','ERROR',NULL,NULL,'OK','qubership-version-exporter','OK','ERROR','OK','INFO',NULL,'OK','2025-04-08','OK','OK','4','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-workflow-hub','SECURITY','WARN','OK',NULL,NULL,'OK','qubership-workflow-hub','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-11','ERROR','SECURITY','8','OK',NULL,NULL,NULL,NULL,'qubership-devops')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-workflow-hub','SECURITY','WARN','OK',NULL,NULL,'OK','qubership-workflow-hub','OK','ERROR','SECURITY','INFO',NULL,'OK','2025-04-15','ERROR','SECURITY','8','OK',NULL,NULL,NULL,NULL,'qubership-devops')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-zookeeper','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-zookeeper','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-zookeeper-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-zookeeper-backup-daemon','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper-backup-daemon','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,'1',NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'qubership-zookeeper-monitoring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper-monitoring','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'qubership-zookeeper-monitoring','ERROR','OK','ERROR',NULL,NULL,'ERROR','qubership-zookeeper-monitoring','ERROR','ERROR','ERROR','INFO',NULL,'ERROR','2025-03-27','OK','ERROR','11','OK',NULL,NULL,NULL,NULL,'ERROR')
 COMMIT
-INSERT INTO NC_REPORTS VALUES('2025-04-11 11:47:17.000000',67,'robot-shop','ERROR','OK','ERROR',NULL,NULL,'ERROR','robot-shop','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-08','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-observability')
+INSERT INTO NC_REPORTS VALUES('2025-04-16 03:14:53.000000',73,'robot-shop','ERROR','OK','ERROR',NULL,NULL,'ERROR','robot-shop','OK','ERROR','ERROR','Not specified',NULL,'ERROR','2025-04-08','OK','ERROR','10','OK',NULL,NULL,NULL,NULL,'qubership-observability')
 COMMIT
 DISCONNECT
