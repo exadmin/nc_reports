@@ -26,7 +26,7 @@ public class MainApp {
 
         TheLogger.debug("Repositories directory = " + args[0]);
         TheLogger.debug("Database file = " + dbFile);
-        TheLogger.debug("GitHub personal token is " + (StrUtils.isEmpty(TokenHolder.getPersonalToken()) ? "set" : "not set"));
+        TheLogger.debug("GitHub personal token is " + (!StrUtils.isEmpty(TokenHolder.getPersonalToken()) ? "set" : "not set"));
 
         try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + dbFile + ";ifexists=false", "SA", "")) {
             jdbcConn.setSchema("PUBLIC");

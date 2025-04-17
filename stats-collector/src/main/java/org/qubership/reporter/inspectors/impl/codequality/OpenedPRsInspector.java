@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.qubership.reporter.inspectors.api.AbstractRepositoryInspector;
+import org.qubership.reporter.inspectors.api.model.TextAlign;
 import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
@@ -90,6 +91,7 @@ public class OpenedPRsInspector extends AbstractRepositoryInspector {
                 private OneMetricResult createError(String titleText) {
                     OneMetricResult omResult = new OneMetricResult(getMetric(), ResultSeverity.ERROR, null);
                     omResult.setTitleText(titleText);
+                    omResult.setTextAlign(TextAlign.CENTER_MIDDLE);
                     return omResult;
                 }
             });
