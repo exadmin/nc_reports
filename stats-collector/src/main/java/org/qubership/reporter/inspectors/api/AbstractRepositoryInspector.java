@@ -1,10 +1,12 @@
 package org.qubership.reporter.inspectors.api;
 
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
+import org.qubership.reporter.utils.RepoUtils;
 import org.qubership.reporter.utils.TheLogger;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -25,6 +27,14 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
      */
     protected abstract OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception;
 
+    /**
+     * Returns list of short repository names (i.e. just name, for instance "qubership-example") which must be ignored by the Inspector.
+     * @return List of Strings
+     */
+    protected List<String> repositoryNamesToIgnore() {
+        return Collections.emptyList();
+    }
+
     protected final OneMetricResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> allReposMetaData) throws Exception {
         File repoDir = new File(pathToRepository);
         String expCloneUrl = "https://github.com/Netcracker/" + repoDir.getName() + ".git";
@@ -39,6 +49,12 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
 
         if (repoMetaData == null) {
             TheLogger.error("Can't find meta-data for the repo " + pathToRepository);
+        }
+
+        // check if repository in the list of ignored
+        String repoShortName = RepoUtils.getRepositoryName(repoMetaData);
+        if (repositoryNamesToIgnore() != null && repositoryNamesToIgnore().contains(repoShortName)) {
+            return skip("");
         }
 
         return inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);

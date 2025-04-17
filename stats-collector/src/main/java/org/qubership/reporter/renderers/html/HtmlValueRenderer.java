@@ -12,9 +12,10 @@ public class HtmlValueRenderer {
     // UTF codes can be found here: https://www.w3schools.com/charsets/ref_emoji.asp
     private static final String OK_PREFIX = "✅&nbsp;";
     private static final String ERROR_PREFIX = "❌&nbsp;";
-    private static final String WARN_PREFIX = "☔&nbsp;";
+    private static final String WARN_PREFIX = "⛅&nbsp;";
     private static final String INFO_PREFIX = "";
     private static final String SECURITY_PREFIX = "&#128561;&nbsp;";
+    private static final String SKIP_PREFIX = "&#x1F4A4&nbsp;";
 
     public String getHtml(OneMetricResult metricValue, Metric metric) {
         String mdStr = escapeHtml4(metricValue.getRawValue());
@@ -24,6 +25,7 @@ public class HtmlValueRenderer {
         if (INFO.equals(metricValue.getSeverity())) mdStr = INFO_PREFIX + notNull(mdStr);
         if (WARN.equals(metricValue.getSeverity())) mdStr = WARN_PREFIX + notNull(mdStr);
         if (SECURITY_ISSUE.equals(metricValue.getSeverity())) mdStr = SECURITY_PREFIX + notNull(mdStr);
+        if (SKIP.equals(metricValue.getSeverity())) mdStr = SKIP_PREFIX + notNull(mdStr);
 
         if (metricValue.getHttpReference() != null) {
             return "<a href=\"" + metricValue.getHttpReference() + "\">" + mdStr + "</a>";

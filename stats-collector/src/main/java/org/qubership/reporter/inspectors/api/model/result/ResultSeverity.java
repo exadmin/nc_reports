@@ -5,7 +5,8 @@ public enum ResultSeverity {
     ERROR("ERROR"),
     INFO("INFO"),
     WARN("WARN"),
-    SECURITY_ISSUE("SECURITY");
+    SECURITY_ISSUE("SECURITY"),
+    SKIP("SKIP");
 
     private final String asString;
 

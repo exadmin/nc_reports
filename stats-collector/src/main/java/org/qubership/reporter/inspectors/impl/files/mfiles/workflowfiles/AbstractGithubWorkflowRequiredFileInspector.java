@@ -4,10 +4,7 @@ import org.qubership.reporter.inspectors.api.model.metric.Metric;
 import org.qubership.reporter.inspectors.impl.files.AbstractRequiredFileInspector;
 import org.qubership.reporter.inspectors.impl.files.RequiredFileExpectations;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public abstract class AbstractGithubWorkflowRequiredFileInspector extends AbstractRequiredFileInspector {
@@ -27,6 +24,11 @@ public abstract class AbstractGithubWorkflowRequiredFileInspector extends Abstra
 
     protected void addRestrictedContentRegExps(Map<String, Integer> regExpMap) {
         regExpMap.put("\\bpull_request_target\\s*:", Pattern.DOTALL + Pattern.CASE_INSENSITIVE);
+    }
+
+    @Override
+    protected List<String> repositoryNamesToIgnore() {
+        return Arrays.asList("qubership-envgene-template", "qubership-envgene-instance");
     }
 
     @Override

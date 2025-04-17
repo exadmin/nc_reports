@@ -93,4 +93,17 @@ public abstract class AbstractInspector {
     protected OneMetricResult secError(String msg, String httpRef, String titleText) {
         return createMetricResult(msg, ResultSeverity.SECURITY_ISSUE, httpRef, TextAlign.CENTER_MIDDLE, titleText);
     }
+
+    // Skip marker
+    protected OneMetricResult skip(String msg, String httpRef, String titleText) {
+        return createMetricResult(msg, ResultSeverity.SKIP, httpRef, TextAlign.CENTER_MIDDLE, titleText);
+    }
+
+    protected OneMetricResult skip(String msg, String httpRef) {
+        return skip(msg, httpRef, null);
+    }
+
+    protected OneMetricResult skip(String msg) {
+        return skip(msg, null, null);
+    }
 }
