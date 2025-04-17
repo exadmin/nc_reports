@@ -4,7 +4,9 @@ import org.qubership.reporter.inspectors.api.model.result.ReportModel;
 import org.qubership.reporter.renderers.db.HSQLDBRenderer;
 import org.qubership.reporter.renderers.html.HtmlRenderer;
 import org.qubership.reporter.renderers.json.JsonRenderer;
+import org.qubership.reporter.utils.StrUtils;
 import org.qubership.reporter.utils.TheLogger;
+import org.qubership.reporter.utils.TokenHolder;
 
 import java.io.File;
 import java.sql.Connection;
@@ -15,14 +17,16 @@ public class MainApp {
         // Initializing DB
         Class.forName("org.hsqldb.jdbc.JDBCDriver");
 
-        if (args.length != 2) {
-            TheLogger.error("Unexpected number of parameters. java -jar xxx.jar $PATH_TO_DIR_WITH_REPOS$ $PATH_TO_HSQLDB_FILE$");
+        if (args.length != 3) {
+            TheLogger.error("Unexpected number of parameters. java -jar xxx.jar $PATH_TO_DIR_WITH_REPOS$ $PATH_TO_HSQLDB_FILE$ $GIT_HIB_PERSONAL_TOKEN$");
         }
 
         String dbFile = args[1];
+        TokenHolder.setPersonalToken(args[2]);
 
         TheLogger.debug("Repositories directory = " + args[0]);
         TheLogger.debug("Database file = " + dbFile);
+        TheLogger.debug("GitHub personal token is " + (StrUtils.isEmpty(TokenHolder.getPersonalToken()) ? "set" : "not set"));
 
         try (Connection jdbcConn = DriverManager.getConnection("jdbc:hsqldb:file:" + dbFile + ";ifexists=false", "SA", "")) {
             jdbcConn.setSchema("PUBLIC");

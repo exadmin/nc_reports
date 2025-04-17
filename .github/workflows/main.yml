@@ -58,7 +58,7 @@ jobs:
           sudo ./clone_all.sh
         
           cd $TMP_DIR
-          sudo java -jar stats-collector.jar $TMP_DIR/netcracker $CURRENT_DIR/reports-are-here/data/db/hsqldb
+          sudo java -jar stats-collector.jar $TMP_DIR/netcracker $CURRENT_DIR/reports-are-here/data/db/hsqldb  ${{ secrets.PERSONAL_TOKEN }}
           
           cd $CURRENT_DIR
           

@@ -26,4 +26,12 @@ public class MiscUtils {
     public static String createComplexKey(String repoName, String metricName) {
         return "[" + repoName + "]:[" + metricName + "]";
     }
+
+    public static void sleep(int milliSecs) {
+        try {
+            Thread.sleep(milliSecs);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+    }
 }

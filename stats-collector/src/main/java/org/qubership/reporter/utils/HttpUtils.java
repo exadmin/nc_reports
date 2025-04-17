@@ -23,6 +23,7 @@ public class HttpUtils {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
             // Create an HTTP GET request
             HttpGet request = new HttpGet(uri);
+            request.setHeader("Authorization", "Bearer " + TokenHolder.getPersonalToken());
 
             // Execute the request
             try (CloseableHttpResponse response = httpClient.execute(request)) {
