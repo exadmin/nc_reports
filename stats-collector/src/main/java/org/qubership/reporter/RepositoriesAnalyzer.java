@@ -72,9 +72,9 @@ public class RepositoriesAnalyzer {
 
         // perform all registered checks
         for (AbstractRepositoryInspector inspector : InspectorsRegistry.getRegisteredInspectors()) {
-            OneMetricResult oneMetricResult = inspector.runInspectionFor(repoDir.getAbsolutePath(), metaData);
+            List<OneMetricResult> oneMetricResults = inspector.runInspectionFor(repoDir.getAbsolutePath(), metaData);
 
-            result.add(oneMetricResult);
+            result.addAll(oneMetricResults);
         }
 
         return result;

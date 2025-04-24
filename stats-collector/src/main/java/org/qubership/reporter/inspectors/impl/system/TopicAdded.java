@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 
 public class TopicAdded extends AbstractRepositoryInspector {
+    @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
 
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         OneMetricResult omResult = _inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);

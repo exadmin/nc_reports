@@ -19,6 +19,11 @@ public abstract class AbstractRequiredFileInspector extends AbstractRepositoryIn
     protected abstract RequiredFileExpectations getFileRequirements();
 
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) {
         RequiredFileExpectations fReqs = getFileRequirements();
         String filePathToAnalyze = null;

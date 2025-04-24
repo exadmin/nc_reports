@@ -27,6 +27,11 @@ public class OpenedPRsInspector extends AbstractRepositoryInspector {
     private static final int SLEEP_BEFORE_NEXT_TRY_MILLIS = 5000;
 
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         String url = RepoUtils.getPullsURL(repoMetaData);
         url = url.replaceAll("\\{/number}", "");

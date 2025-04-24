@@ -13,6 +13,11 @@ import java.util.Map;
 
 public class DoNotUsePrettierInspector extends AbstractRepositoryInspector {
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     public Metric getMetric() {
         return newMetric("WF/Prettier", "Do not use Prettier", MetricGroupsRegistry.MANDATORY_FILES_GROUP);
     }

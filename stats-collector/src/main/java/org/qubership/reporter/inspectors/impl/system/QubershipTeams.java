@@ -11,6 +11,11 @@ import java.util.Map;
 
 public class QubershipTeams extends AbstractRepositoryInspector {
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         List<Object> topics = (List<Object>) repoMetaData.get("topics");
         if (topics == null || topics.isEmpty()) {

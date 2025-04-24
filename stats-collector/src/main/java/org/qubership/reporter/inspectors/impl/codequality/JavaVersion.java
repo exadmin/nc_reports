@@ -23,6 +23,11 @@ public class JavaVersion extends AbstractRepositoryInspector {
     private static final XmlMapper xmlMapper = new XmlMapper();
 
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     public Metric getMetric() {
         return newMetric("JavaVersion", "Java Version", MetricGroupsRegistry.CODE_QUALITY_GROUP)
                 .setDescriptionRef(""); // todo

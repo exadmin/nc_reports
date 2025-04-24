@@ -10,6 +10,11 @@ import java.util.Map;
 
 public class LastUpdatedTime extends AbstractRepositoryInspector {
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         final String rawValue = (String) repoMetaData.get("updated_at");
         int tInddex = rawValue.indexOf('T');

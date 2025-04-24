@@ -11,6 +11,11 @@ import java.util.Map;
 
 public class RepoIDInspector extends AbstractRepositoryInspector {
     @Override
+    protected List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
+        return List.of(inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData));
+    }
+
+    @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
         String repoName = (String) repoMetaData.get("name");
         String url = (String) repoMetaData.get("html_url");

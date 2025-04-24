@@ -27,6 +27,8 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
      */
     protected abstract OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception;
 
+    protected abstract List<OneMetricResult> inspectRepoFolderWithManyMetrics(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception;
+
     /**
      * Returns list of short repository names (i.e. just name, for instance "qubership-example") which must be ignored by the Inspector.
      * @return List of Strings
@@ -35,7 +37,7 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
         return Collections.emptyList();
     }
 
-    protected final OneMetricResult inspectRepoFolder(String pathToRepository, List<Map<String, Object>> allReposMetaData) throws Exception {
+    protected final List<OneMetricResult> inspectRepoFolder(String pathToRepository, List<Map<String, Object>> allReposMetaData) throws Exception {
         File repoDir = new File(pathToRepository);
         String expCloneUrl = "https://github.com/Netcracker/" + repoDir.getName() + ".git";
 
@@ -54,17 +56,18 @@ public abstract class AbstractRepositoryInspector extends AbstractInspector {
         // check if repository in the list of ignored
         String repoShortName = RepoUtils.getRepositoryName(repoMetaData);
         if (repositoryNamesToIgnore() != null && repositoryNamesToIgnore().contains(repoShortName)) {
-            return skip("");
+            return Collections.singletonList(skip(""));
         }
 
-        return inspectRepoFolder(pathToRepository, repoMetaData, allReposMetaData);
+        return inspectRepoFolderWithManyMetrics(pathToRepository, repoMetaData, allReposMetaData);
     }
 
-    public final OneMetricResult runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
+    public final List<OneMetricResult> runInspectionFor(String pathToRepository, List<Map<String, Object>> metaData) {
         try {
             return inspectRepoFolder(pathToRepository, metaData);
         } catch (Exception ex) {
-            return error("Internal error: " + ex + ", " +stackTraceToString(ex));
+            OneMetricResult omResult = error("Internal error: " + ex + ", " +stackTraceToString(ex));
+            return Collections.singletonList(omResult);
         }
     }
 
