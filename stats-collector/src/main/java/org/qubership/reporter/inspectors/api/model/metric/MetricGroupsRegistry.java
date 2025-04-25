@@ -14,6 +14,8 @@ public class MetricGroupsRegistry {
 
     public static final MetricGroup META_DATA_GROUP = new MetricGroup("Meta-data", 4, false);
 
+    public static final MetricGroup CNCF_GROUP = new MetricGroup("Cloud Native Foundation (GenAI Vision)", 5, false);
+
     private static final List<MetricGroup> ALL_METRIC_GROUPS = new ArrayList<>();
     static {
         ALL_METRIC_GROUPS.add(SYSTEM_METRIC_GROUP);
@@ -21,6 +23,7 @@ public class MetricGroupsRegistry {
         ALL_METRIC_GROUPS.add(CODE_QUALITY_GROUP);
         ALL_METRIC_GROUPS.add(MANDATORY_FILES_GROUP);
         ALL_METRIC_GROUPS.add(META_DATA_GROUP);
+        ALL_METRIC_GROUPS.add(CNCF_GROUP);
     }
 
     public static List<MetricGroup> getAllMetricGroups() {

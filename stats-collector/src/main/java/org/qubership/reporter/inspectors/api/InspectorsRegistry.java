@@ -1,5 +1,6 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.inspectors.impl.cncf.CNCFCategorization;
 import org.qubership.reporter.inspectors.impl.codequality.CodeCoverageBySonar;
 import org.qubership.reporter.inspectors.impl.codequality.JavaVersion;
 import org.qubership.reporter.inspectors.impl.codequality.LastUpdatedTime;
@@ -41,6 +42,7 @@ public class InspectorsRegistry {
 
 
         registeredInspectors.add(new OpenedPRsInspector());
+        registeredInspectors.add(new CNCFCategorization());
 
         registeredInspectors = Collections.unmodifiableList(registeredInspectors);
     }

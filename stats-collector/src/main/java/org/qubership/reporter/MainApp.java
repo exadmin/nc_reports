@@ -22,6 +22,7 @@ public class MainApp {
         }
 
         String dbFile = args[1];
+        TokenHolder.setDbFilePath(dbFile);
         TokenHolder.setPersonalToken(args[2]);
 
         TheLogger.debug("Repositories directory = " + args[0]);
