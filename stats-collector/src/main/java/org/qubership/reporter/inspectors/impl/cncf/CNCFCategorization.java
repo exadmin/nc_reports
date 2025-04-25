@@ -39,7 +39,7 @@ public class CNCFCategorization extends AbstractRepositoryInspector {
             TypeReference<ModelsContainer> type = new TypeReference<>() {
             };
 
-            String dsMapFilePath = Paths.get(TokenHolder.getDbFilePath()).getParent().toString() + "./../ds-map.json";
+            String dsMapFilePath = Paths.get(TokenHolder.getDbFilePath()).getParent().toString() + "/../ds-map.json";
             modelsContainer = mapper.readValue(new File(dsMapFilePath), ModelsContainer.class);
         }
 
