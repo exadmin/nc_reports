@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class OneMetricResult {
     private final Metric metric;
-    private final String rawValue;
-    private final ResultSeverity severity;
+    private String rawValue;
+    private ResultSeverity severity;
     private String httpReference;
     private TextAlign textAlign;
     private Map<String, Object> extraData;
@@ -65,5 +65,13 @@ public class OneMetricResult {
 
     public void setTitleText(String titleText) {
         this.titleText = titleText;
+    }
+
+    public void setRawValue(String rawValue) {
+        this.rawValue = rawValue;
+    }
+
+    public void setSeverity(ResultSeverity severity) {
+        this.severity = severity;
     }
 }

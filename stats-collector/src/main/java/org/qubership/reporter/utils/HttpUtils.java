@@ -16,14 +16,16 @@ public class HttpUtils {
         protected abstract T onException(Exception ex);
     }
 
-    public static <T> T doGet(String uri, IResponseHandler<T> handler) {
+    public static <T> T doGet(String uri, IResponseHandler<T> handler, String authToken) {
         RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(HTTP_CALL_TIMEOUT_SEC * 1000).build();
 
         // Create an instance of HttpClient
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().setDefaultRequestConfig(requestConfig).build()) {
             // Create an HTTP GET request
             HttpGet request = new HttpGet(uri);
-            request.setHeader("Authorization", "Bearer " + TokenHolder.getPersonalToken());
+            if (StrUtils.isNotEmpty(authToken)) {
+                request.setHeader("Authorization", "Bearer " + authToken);
+            }
 
             // Execute the request
             try (CloseableHttpResponse response = httpClient.execute(request)) {

@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 public class MiscUtils {
     public static String getSha256FromInputStream(InputStream is) throws IOException, NoSuchAlgorithmException {
@@ -33,5 +35,22 @@ public class MiscUtils {
         } catch (InterruptedException ie) {
             ie.printStackTrace();
         }
+    }
+
+    /**
+     * Returns X first existed elements from source list.
+     * @param source Source list to get elements from
+     * @param itemsPerChunk max number of elements to be returned
+     * @return
+     */
+    public static <T> List<T> getChunk(List<T> source, int itemsPerChunk) {
+        List<T> result = new ArrayList<>();
+        for (int i=0; i<itemsPerChunk; i++) {
+            if (i < source.size()) {
+                result.add(source.get(i));
+            } else  break;
+        }
+
+        return result;
     }
 }

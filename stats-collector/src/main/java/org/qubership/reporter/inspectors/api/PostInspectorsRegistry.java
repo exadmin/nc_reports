@@ -1,5 +1,6 @@
 package org.qubership.reporter.inspectors.api;
 
+import org.qubership.reporter.inspectors.impl.postinstpectors.codequality.SonarMetricValuesBulkFulfilling;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.DailyStatus;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsCountInspector;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsDeltaInspector;
@@ -17,6 +18,7 @@ public class PostInspectorsRegistry {
         registeredInspectors.add(new SortRepositoriesByABC());
        // registeredInspectors.add(new WeeklyStatus());
         registeredInspectors.add(new DailyStatus());
+        registeredInspectors.add(new SonarMetricValuesBulkFulfilling());
     }
 
     public static List<AbstractPostInspector> getRegisteredInspectors() {

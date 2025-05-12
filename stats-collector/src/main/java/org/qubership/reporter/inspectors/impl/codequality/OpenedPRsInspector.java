@@ -13,10 +13,7 @@ import org.qubership.reporter.inspectors.api.model.metric.MetricGroup;
 import org.qubership.reporter.inspectors.api.model.metric.MetricGroupsRegistry;
 import org.qubership.reporter.inspectors.api.model.result.OneMetricResult;
 import org.qubership.reporter.inspectors.api.model.result.ResultSeverity;
-import org.qubership.reporter.utils.HttpUtils;
-import org.qubership.reporter.utils.MiscUtils;
-import org.qubership.reporter.utils.RepoUtils;
-import org.qubership.reporter.utils.TheLogger;
+import org.qubership.reporter.utils.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -99,7 +96,7 @@ public class OpenedPRsInspector extends AbstractRepositoryInspector {
                     omResult.setTextAlign(TextAlign.CENTER_MIDDLE);
                     return omResult;
                 }
-            });
+            }, TokenHolder.getPersonalToken());
 
             // if rate limit triggered
             if (omResult == HTTP_ERROR_403) {

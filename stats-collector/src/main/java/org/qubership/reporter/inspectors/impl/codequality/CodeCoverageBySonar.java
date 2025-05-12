@@ -19,6 +19,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+/**
+ * Produces persistable metric for code-coverage.
+ * But real value fulfilling is happened in bulk mode using org.qubership.reporter.inspectors.impl.postinstpectors.codequality.SonarMetricValuesBulkFulfilling
+ */
 public class CodeCoverageBySonar extends AbstractRepositoryInspector {
 
     @Override
@@ -34,19 +38,8 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
 
     @Override
     protected OneMetricResult inspectRepoFolder(String pathToRepository, Map<String, Object> repoMetaData, List<Map<String, Object>> allReposMetaData) throws Exception {
-        // define if sonar-call is registered in some github-action
-        String prjKey = findSonarProjectKeyValue(pathToRepository, repoMetaData);
-        if (StrUtils.isEmpty(prjKey)) {
-            return error("Not registered");
-        }
-
-        // otherwise doing call to sonar-cloud
-        OneMetricResult omResult = getMetricValueFromSonarCloud(prjKey, "coverage");
-        if (!ResultSeverity.ERROR.equals(omResult.getSeverity())) {
-            omResult.setHttpReference("https://sonarcloud.io/summary/overall?id=" + prjKey + "&branch=main");
-        }
-
-        return omResult;
+        String repoName = RepoUtils.getRepositoryName(repoMetaData);
+        return info("Netcracker_" + repoName);
     }
 
     private static final Pattern REGEXP_PRJ_KEY = Pattern.compile("\\bDsonar\\.projectKey\\s*=\\s*([^\\s]+)\\b", Pattern.CASE_INSENSITIVE);
@@ -104,6 +97,6 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
                 omResult.setTitleText(titleText);
                 return omResult;
             }
-        });
+        }, null);
     }
 }
