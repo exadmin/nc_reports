@@ -33,7 +33,7 @@ public class CodeCoverageBySonar extends AbstractRepositoryInspector {
     @Override
     public Metric getMetric() {
         return newMetric("Sonar Code Coverage", "Code Coverage Status", MetricGroupsRegistry.CODE_QUALITY_GROUP)
-                .setDescriptionRef(""); // todo
+                .setDescriptionRef("https://wiki.qubership.org/en/Personal-space/Larkin/sonar-integration-guide"); // todo
     }
 
     @Override
