@@ -14,11 +14,16 @@ public class OneMetricResult {
     private TextAlign textAlign;
     private Map<String, Object> extraData;
     private String titleText;
+    private boolean skipEscaping = false;
 
     public OneMetricResult(Metric metric, ResultSeverity severity, String rawValue) {
         this.rawValue = rawValue;
         this.severity = severity;
         this.metric = metric;
+    }
+
+    protected OneMetricResult getThis() {
+        return this;
     }
 
     public String getRawValue() {
@@ -37,8 +42,9 @@ public class OneMetricResult {
         return httpReference;
     }
 
-    public void setHttpReference(String httpReference) {
+    public OneMetricResult setHttpReference(String httpReference) {
         this.httpReference = httpReference;
+        return getThis();
     }
 
     public TextAlign getTextAlign() {
@@ -46,13 +52,15 @@ public class OneMetricResult {
         return textAlign;
     }
 
-    public void setTextAlign(TextAlign textAlign) {
+    public OneMetricResult setTextAlign(TextAlign textAlign) {
         this.textAlign = textAlign;
+        return getThis();
     }
 
-    public void setExtraData(String key, Object value) {
+    public OneMetricResult setExtraData(String key, Object value) {
         if (extraData == null) extraData = new HashMap<>();
         extraData.put(key, value);
+        return getThis();
     }
 
     public Map<String, Object> getExtraData() {
@@ -63,15 +71,27 @@ public class OneMetricResult {
         return titleText;
     }
 
-    public void setTitleText(String titleText) {
+    public OneMetricResult setTitleText(String titleText) {
         this.titleText = titleText;
+        return getThis();
     }
 
-    public void setRawValue(String rawValue) {
+    public OneMetricResult setRawValue(String rawValue) {
         this.rawValue = rawValue;
+        return getThis();
     }
 
-    public void setSeverity(ResultSeverity severity) {
+    public OneMetricResult setSeverity(ResultSeverity severity) {
         this.severity = severity;
+        return getThis();
+    }
+
+    public boolean isSkipEscaping() {
+        return skipEscaping;
+    }
+
+    public OneMetricResult setSkipEscaping(boolean skipEscaping) {
+        this.skipEscaping = skipEscaping;
+        return getThis();
     }
 }

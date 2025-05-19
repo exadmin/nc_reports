@@ -22,6 +22,9 @@ public class QubershipTeams extends AbstractRepositoryInspector {
             return error("", null, "No topics are set");
         }
 
+        StringBuilder sb = new StringBuilder();
+        String qsTeam = null;
+
         for (Object topicName : topics) {
             if (topicName == null) continue;
             String topicNameStr = topicName.toString();
@@ -29,11 +32,14 @@ public class QubershipTeams extends AbstractRepositoryInspector {
 
             String tmpName = topicNameStr.toUpperCase();
             if (tmpName.startsWith("QUBERSHIP-")) {
-                return ok(topicNameStr);
+                qsTeam = topicNameStr;
+            } else {
+                if (sb.length() > 0) sb.append(", ");
+                sb.append(topicNameStr);
             }
         }
 
-        return error("");
+        return info( "<b>" + qsTeam + "</b><br><small>" + sb + "</small>").setSkipEscaping(true);
     }
 
     @Override

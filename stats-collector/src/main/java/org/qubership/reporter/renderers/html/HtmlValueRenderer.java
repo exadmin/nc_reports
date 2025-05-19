@@ -18,7 +18,8 @@ public class HtmlValueRenderer {
     private static final String SKIP_PREFIX = "&nbsp;&#x1F4A4;";
 
     public String getHtml(OneMetricResult metricValue, Metric metric) {
-        String mdStr = escapeHtml4(metricValue.getRawValue());
+
+        String mdStr = metricValue.isSkipEscaping() ? metricValue.getRawValue() : escapeHtml4(metricValue.getRawValue());
 
         if (OK.equals(metricValue.getSeverity())) mdStr = notNull(mdStr) + OK_PREFIX;
         if (ERROR.equals(metricValue.getSeverity())) mdStr = notNull(mdStr) + ERROR_PREFIX;
