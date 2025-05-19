@@ -4,6 +4,7 @@ import org.qubership.reporter.inspectors.impl.postinstpectors.codequality.SonarM
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.DailyStatus;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsCountInspector;
 import org.qubership.reporter.inspectors.impl.postinstpectors.summary.ErrorsDeltaInspector;
+import org.qubership.reporter.inspectors.impl.postinstpectors.summary.WeeklyStatus;
 import org.qubership.reporter.inspectors.impl.system.SortRepositoriesByABC;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public class PostInspectorsRegistry {
         registeredInspectors.add(new ErrorsCountInspector());
         registeredInspectors.add(new ErrorsDeltaInspector());
         registeredInspectors.add(new SortRepositoriesByABC());
-       // registeredInspectors.add(new WeeklyStatus());
-        registeredInspectors.add(new DailyStatus());
+        registeredInspectors.add(new WeeklyStatus());
+        // registeredInspectors.add(new DailyStatus());
         registeredInspectors.add(new SonarMetricValuesBulkFulfilling());
     }
 
