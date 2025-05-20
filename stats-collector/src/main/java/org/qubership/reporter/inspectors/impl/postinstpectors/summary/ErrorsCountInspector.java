@@ -40,7 +40,7 @@ public class ErrorsCountInspector extends AbstractPostInspector {
 
     @Override
     public Metric getMetric() {
-        return newMetric("Errors Count", "Errors Count", MetricGroupsRegistry.EXECUTIVE_SUMMARY)
+        return newMetric("Errors Count", "Errors Count Today", MetricGroupsRegistry.EXECUTIVE_SUMMARY)
                 .setDescriptionRef("")
                 .setRenderingOrderWeight(+100)
                 .setType(MetricType.PERSISTENT);
